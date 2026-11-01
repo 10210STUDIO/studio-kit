@@ -1,0 +1,8 @@
+{
+  "name": "studio-kit",
+  "version": "0.1.0",
+  "description": "Uno studio creativo e marketing in Claude Code: 24 agenti coordinati da un lead, due cancelli di veto (margine e qualità), playbook che crescono col lavoro, 35 skill di mestiere e un atlante culturale per foto e video AI. Si installa con /studio-kit:crea-studio.",
+  "author": { "name": "All Black Studio Ltd" },
+  "license": "MIT",
+  "keywords": ["agency", "creative-studio", "agents", "marketing", "higgsfield", "italiano"]
+}

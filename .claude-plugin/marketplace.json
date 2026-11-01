@@ -1,0 +1,14 @@
+{
+  "name": "studio-kit",
+  "description": "Il kit per avere uno studio creativo e marketing funzionante in Claude Code: un team di agenti con regole, memoria e metodo.",
+  "owner": {
+    "name": "All Black Studio Ltd"
+  },
+  "plugins": [
+    {
+      "name": "studio-kit",
+      "source": "./",
+      "description": "Uno studio creativo e marketing in Claude Code: 24 agenti coordinati da un lead, cancelli di margine e qualità, playbook che crescono col lavoro, 35 skill di mestiere e atlante culturale. Si installa con /studio-kit:crea-studio."
+    }
+  ]
+}
