@@ -48,7 +48,7 @@ Non chiedere al cliente "cosa vuoi comunicare". Chiedigli cosa ha visto nei suoi
 
 Il pitch è una email breve a una persona specifica. Struttura:
 
-- **Oggetto**: la notizia in una riga, specifica e senza aggettivi. È il 90% della decisione.
+- **Oggetto**: la notizia in una riga, specifica e senza aggettivi. Spesso è l'unica cosa che viene letta.
 - **Prima frase**: perché scrivi *a lui* — un riferimento concreto a un suo pezzo recente, non una lusinga.
 - **Due o tre frasi**: la storia, il dato, perché adesso.
 - **Cosa offri**: accesso a un portavoce, dati in esclusiva o sotto embargo, visual utilizzabili, un caso con nome e cognome.
@@ -70,7 +70,7 @@ Il comunicato serve come documento di riferimento dopo che l'interesse esiste. N
 
 ## Relazione con la stampa di settore
 
-- Costruisci una lista di persone, non di testate: nome, testata, temi che segue, ultimi pezzi, canale preferito. Tienila nel repository del cliente, aggiornata.
+- Costruisci una lista di persone, non di testate: nome, testata, temi che segue, ultimi pezzi, canale preferito. Sono dati personali: prima di usarla scrivi la base giuridica (vedi `gdpr-marketing-consent`). Tienila nel repository del cliente, aggiornata.
 - Dai prima di chiedere: segnala un dato utile su una storia che non riguarda il cliente, metti in contatto con una fonte, rispondi a una richiesta di commento entro l'ora.
 - Rispetta gli embargo in modo assoluto. Una violazione chiude una relazione in modo permanente, e non solo per quel cliente.
 - Non chiedere di vedere il pezzo prima della pubblicazione. Offri invece la verifica dei fatti e dei numeri: è legittimo e accettato.

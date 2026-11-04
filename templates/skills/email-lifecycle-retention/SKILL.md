@@ -115,7 +115,7 @@ Quando ti serve un benchmark reale per confrontare un cliente col suo settore, n
 - Importare una lista vecchia o acquistata "tanto per provare": l'effetto è permanente e colpisce il brand, non l'ESP.
 - Warm-up fatto sui contatti casuali invece che sui più reattivi.
 - Ottimizzare oggetti sull'open rate dopo la Mail Privacy Protection: stai scegliendo in base a rumore.
-- Dichiarare vincitore un A/B test su una campagna singola con pochi click: vale la sezione `experiment-stats`, non l'intuito.
+- Dichiarare vincitore un A/B test su una campagna singola con pochi click: vale la skill `experiment-stats`, non l'intuito.
 - Costruire venti segmenti che ricevono la stessa email.
 - Sconto in prima email di carrello: addestra il cliente ad abbandonare.
 - Flussi attivati e mai più guardati: link rotti, prodotti fuori catalogo, promozioni scadute che continuano a partire. Metti in calendario una revisione periodica dei flussi attivi.

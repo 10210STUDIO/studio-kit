@@ -1,6 +1,6 @@
 ---
 name: crea-studio
-description: Installa e personalizza studio-kit nel ~/.claude/ dell'utente, dopo poche domande (nome dello studio, chi decide, lingua, gusto). Copia 24 agenti coordinati da studio-lead, le regole dello studio, i playbook, 35 skill di mestiere e l'atlante culturale, senza sovrascrivere niente senza chiedere. Usala quando l'utente dice «crea il mio studio», «installa il team», «configura studio-kit» o vuole aggiornare un'installazione esistente.
+description: Installa e personalizza studio-kit nel ~/.claude/ dell'utente, dopo poche domande (nome dello studio, chi decide, lingua, gusto). Copia 24 agenti coordinati da studio-lead, le regole dello studio, i playbook, i benchmark, i controlli automatici (hook), il collaudo e la manutenzione degli agenti, 35 skill di mestiere e l'atlante culturale, senza sovrascrivere niente senza chiedere. Usala quando l'utente dice «crea il mio studio», «installa il team», «configura studio-kit» o vuole aggiornare un'installazione esistente.
 ---
 
 # Crea il tuo studio
@@ -35,10 +35,14 @@ Per ogni file dei modelli, sostituisci i segnaposto (`{{STUDIO}}`, `{{STUDIO_SLU
 |---|---|
 | `agents/*.md` | `~/.claude/agents/` |
 | `skills/*/` | `~/.claude/skills/` |
-| `studio/STUDIO.md`, `studio/playbooks/`, `studio/benchmarks/` | `~/.claude/studio/` |
+| `studio/STUDIO.md`, `studio/playbooks/`, `studio/benchmarks/`, `studio/hooks/`, `studio/collaudo/`, `studio/manutenzione/` | `~/.claude/studio/` (stessa struttura) |
 | `studio/clients/_esempio/CONTEXT.md` | due copie: `~/.claude/studio/clients/_esempio/CONTEXT.md` (identica, come modello) e `~/.claude/studio/clients/{{STUDIO_SLUG}}/CONTEXT.md`, dove metti il nome dello studio nel titolo, la descrizione (domanda 3) in «Chi è» e **sostituisci** gli esempi di «Gusto e regole visive» con le risposte della domanda 7 (se non ha risposto, lascia gli esempi e scrivi in testa «da compilare») |
 
-Usa uno script (es. Python) che legga ogni file, sostituisca e scriva: non a mano file per file. Dopo, verifica con grep che in `~/.claude/agents/`, `~/.claude/studio/` e nelle skill copiate non resti nessun `{{`.
+Usa uno script (es. Python) che legga ogni file, sostituisca e scriva: non a mano file per file. Dopo:
+
+- rendi eseguibili gli script (`chmod +x` su `studio/hooks/*.py`, `studio/hooks/test_hooks.sh`, `studio/collaudo/collaudo.sh`, `studio/manutenzione/*.sh`, `studio/manutenzione/scadute.py`);
+- verifica con grep che in `~/.claude/agents/`, `~/.claude/studio/` e nelle skill copiate non resti nessun `{{`;
+- lancia `bash ~/.claude/studio/hooks/test_hooks.sh`: deve stampare solo `OK`. Se fallisce, dillo all'utente: i cancelli automatici degli agenti `web-engineer` e `delivery-qa` non funzionerebbero.
 
 ## 4. Dipendenze
 
@@ -50,14 +54,15 @@ Gli agenti nominano anche skill di terzi. Controlla quali mancano: cartelle in `
 
 ## 5. Chiudi
 
-Riassumi in poche righe: cosa è stato installato, cosa è stato saltato, quali dipendenze mancano, e il prossimo passo: «Riavvia Claude Code, poi chiedi a `studio-lead` il primo lavoro». Ricorda di compilare `~/.claude/studio/benchmarks/listino.md` prima di fare preventivi.
+Riassumi in poche righe: cosa è stato installato, cosa è stato saltato, quali dipendenze mancano, l'esito del test degli hook, e il prossimo passo: «Riavvia Claude Code, poi chiedi a `studio-lead` il primo lavoro». Ricorda di compilare `~/.claude/studio/benchmarks/listino.md` prima di fare preventivi. Due cose sono facoltative e non partono da sole: il collaudo degli agenti (`studio/collaudo/README.md`) e la manutenzione settimanale (`studio/manutenzione/README.md`, con l'esempio per launchd); entrambe usano il piano Claude dell'utente, quindi non lanciarle senza un sì.
 
 ## Aggiornare un'installazione
 
 1. **Le risposte non si richiedono:** ricavale dall'installazione esistente. `{{STUDIO}}` dal titolo di `~/.claude/studio/STUDIO.md` (prima di « — Standard operativi»); `{{DESCRIZIONE}}` dalla prima riga di «Chi siamo»; `{{TITOLARE}}`, `{{LINGUA}}`, `{{ALTRE_ATTIVITA}}`, `{{CANALE_NOTIFICHE}}` dalla sezione «Configurazione»; `{{STUDIO_SLUG}}` dal nome della cartella in `~/.claude/studio/clients/` diversa da `_esempio`. Se qualcosa non si trova, chiedi solo quello.
-2. **Confronta** ogni modello (con i segnaposto già sostituiti) con il file installato e dividi in tre gruppi: **uguali**, **diversi**, **nuovi nel kit** (mancano nell'installazione).
+2. **Confronta** ogni modello (con i segnaposto già sostituiti) con il file installato e dividi in tre gruppi: **uguali**, **diversi**, **nuovi nel kit** (mancano nell'installazione). Sono compresi `studio/hooks/`, `studio/collaudo/` e `studio/manutenzione/`: se l'installazione viene da una versione senza queste cartelle, finiscono tutte fra i «nuovi».
 3. **Mostra il riepilogo** con i numeri dei tre gruppi. Se diversi e nuovi sono zero, di' «lo studio è già aggiornato» e fermati.
 4. **Diversi:** mostra le differenze file per file e aggiorna solo quelli che l'utente approva (la skill non sa quali file l'utente ha modificato: chiedi sempre; prima di sovrascrivere, copia `.bak`). **Nuovi:** elencali e chiedi se aggiungerli.
-5. **I playbook dell'utente non si sovrascrivono mai**: sono la sua memoria. Proponi solo di aggiungere in fondo i pattern nuovi del kit che mancano.
+5. **I playbook dell'utente non si sovrascrivono mai**: sono la sua memoria. Proponi solo di aggiungere in fondo i pattern nuovi del kit che mancano (confronta per titolo, ignorando la data: se c'è già una voce con lo stesso titolo, salta). Lo stesso vale per `collaudo/storico.md`, `collaudo/risultati/`, `manutenzione/fonti.md` (l'utente l'ha adattato) e per tutto ciò che la manutenzione ha scritto (`log.txt`, `report/`, `higgs/`).
+6. **Dopo l'aggiornamento** rifai il controllo dei `{{` e lancia di nuovo `test_hooks.sh`.
 
 Se in `installed_plugins.json` la voce `studio-kit@studio-kit` ha più installazioni (es. utente e progetto), usa quella con `scope` uguale a `user`; se non c'è, la più recente.

@@ -26,6 +26,48 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** quando il cliente stesso usa due nomi. Allora si chiede quale va in pubblico.
 **Cliente/progetto:** generale.
 
+## [2026-11-04] Funzioni AI di Google Search: vale la SEO normale, llms.txt non serve
+
+**Pattern:** per comparire nelle funzioni AI di Google (AI Overviews, AI Mode) non si fanno file per le macchine (llms.txt), markup schema.org speciale o contenuti spezzettati. Si lavora su intento, contenuto utile e SEO tecnica di base. Al cliente non si vende llms.txt come leva per Google.
+**Evidenza:** [P] Google Search Central, guida «ai-optimization-guide» pubblicata il 2026-05-15 (pagina aggiornata il 2026-07-10): «You don't need to create new machine readable files, AI text files, markup, or Markdown to appear in Google Search», «Structured data isn't required for generative AI search», «There's no requirement to break your content into tiny pieces». Nota su llms.txt aggiunta il 2026-06-15: i file «won't negatively or positively impact your visibility or rankings». Verificato il 2026-11-04.
+**Quando non vale:** altri motori e assistenti (ChatGPT, Perplexity, Claude). Google stesso dice che tenere llms.txt per altri servizi va bene. Per loro non abbiamo una fonte primaria che dica cosa funziona. Si riverifica dopo il 2027-02-02.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Rich result FAQ: non compaiono più in Google Search
+
+**Pattern:** non si promette al cliente lo snippet FAQ in SERP e non si scrivono sezioni di domande per ottenerlo. Una sezione di domande resta solo se il lettore ha davvero quelle domande in quel punto della pagina.
+**Evidenza:** [P] registro Search Central (developers.google.com/search/updates), 2026-05-08: «This feature will no longer appear in Google Search starting May 7, 2026». Documentazione rimossa a giugno 2026 (giorno esatto non fissato). Verificato il 2026-11-04.
+**Quando non vale:** altri motori, o il markup FAQPage usato per scopi diversi dal rich result Google: non verificato cosa ne fanno.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Title e meta description: nessun limite di caratteri, conta il troncamento
+
+**Pattern:** title e meta si scrivono per il senso, con le parole che contano all'inizio. Si controlla come vengono troncati su mobile e desktop, non si taglia a un numero fisso. Una skill SEO di terzi, se installata, può dare ancora un numero fisso di caratteri: su questo vale questa voce.
+**Evidenza:** [P] Search Central, «title-link» (agg. 2025-12-10): «there's no limit on how long a <title> element can be, the title link is truncated [...] typically to fit the device width». «snippet» (agg. 2026-04-20): stessa frase per la meta description. Letti il 2026-11-04.
+**Quando non vale:** quando il CMS o il plugin del cliente impone un limite proprio, e per i testi degli annunci, che hanno limiti propri da leggere ogni volta sulla documentazione della piattaforma. Google può anche riscrivere title e snippet.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Testi scritti con l'AI su temi di interesse pubblico: revisione umana e responsabile editoriale
+
+**Pattern:** chi pubblica con l'AI un testo che serve a informare il pubblico su temi di interesse pubblico deve dire che è generato. L'obbligo cade se il testo ha avuto revisione umana o controllo editoriale **e** una persona o una società ne ha la responsabilità editoriale. Quindi ogni testo così ha nel file interno della consegna chi l'ha rivisto e chi ne risponde (studio o cliente).
+**Evidenza:** [P] AI Act, Reg. (UE) 2024/1689, art. 50(4), secondo comma: «This obligation shall not apply [...] where the AI-generated content has undergone a process of human review or editorial control and where a natural or legal person holds editorial responsibility for the publication of the content». Si applica dal 2026-08-02 (art. 113). Il rinvio al 2026-12-02 (Reg. UE 2026/1744) vale solo per i fornitori e per la marcatura dell'art. 50(2), non per chi usa lo strumento. Testo letto su Cellar il 2026-11-04.
+**Quando non vale:** il copy commerciale di prodotto di solito non ha lo scopo di «informare il pubblico su temi di interesse pubblico», ma il confine è un'interpretazione: nei casi dubbi la decide `compliance-rights-officer`. Immagini, audio e video deepfake hanno un obbligo separato (art. 50(4), primo comma), che la revisione editoriale non toglie. Non è un parere legale.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Claim ambientali: niente generici dal 27 settembre 2026
+
+**Pattern:** «green», «eco-friendly», «sostenibile» senza prova non si scrivono. Un claim che riguarda un solo aspetto del prodotto non si estende a tutto il prodotto o a tutta l'azienda. Ogni claim ambientale passa da `ad-claims-disclosure` prima della consegna.
+**Evidenza:** [P] Dir. (UE) 2024/825, Allegato I: vieta la dichiarazione ambientale generica «for which the trader is not able to demonstrate recognised excellent environmental performance» e quella sull'intero prodotto «when it concerns only a certain aspect». In Italia D.Lgs. 30/2026 (GU n. 56 del 2026-03-09), applicato dal 2026-09-27. Verificato il 2026-11-04.
+**Quando non vale:** claim specifici e dimostrati, con la prova citata. Fuori dall'UE valgono altre regole.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Le risposte AI citano soprattutto media guadagnati
+
+**Pattern:** una copertura sulla stampa può servire anche come fonte per le risposte AI. Si usa come argomento interno per la PR, mai come promessa o come numero al cliente.
+**Evidenza:** [S] Muck Rack, «What Is AI Reading?», maggio 2026 (muckrack.com/blog/what-is-ai-reading-may-2026): circa l'84% delle citazioni AI da earned media. Ricerca di un fornitore di software PR, campione in gran parte USA, metodo non controllato. Non verificato sulla fonte.
+**Quando non vale:** mercato italiano e settori di nicchia: non c'è un dato. Va confermato su dati con metodo pubblicato prima di diventare regola.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 ## [2026-10-29] Case study con il risultato ignoto: due versioni del "What moved"

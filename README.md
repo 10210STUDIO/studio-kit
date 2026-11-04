@@ -19,6 +19,22 @@
 
 ---
 
+## Novità 0.2.0
+
+- **Gli agenti sono stati rivisti tutti e 24.** Ognuno ha confini più chiari (cosa fa e cosa passa a un altro), usa le skill giuste e non lancia altri agenti da solo: se gli serve un collega, lo scrive nel resoconto e decide il lead.
+- **Regole nuove in `STUDIO.md`.** Ogni fonte è segnata come primaria o secondaria; il lavoro si rilegge anche contro le proprie regole; il resoconto al lead è di massimo 300 parole, con il lavoro vero su file; ogni dato personale ha una base giuridica scritta prima dell'uso; chi firma i contratti si chiede ogni volta al titolare.
+- **Un cancello sul deploy (casi comuni).** Se `web-engineer` prova a mettere online un sito (rsync, scp o i comandi di Vercel, Netlify, Firebase, Wrangler), un controllo lo ferma (riconosce i casi più comuni, non tutti: un alias SSH o uno script non li vede) finché `delivery-qa` non ha dato l'ok e il lead non ha scritto il file `.qa-approvato` nel progetto (vale 24 ore). `delivery-qa`, inoltre, può scrivere solo nel proprio playbook. Stanno in `studio/hooks/`; prova con `bash ~/.claude/studio/hooks/test_hooks.sh`.
+- **Etichetta AI.** Immagini, video e testi generati con AI passano da `compliance-rights-officer` prima di uscire (AI Act, art. 50).
+- **Playbook pieni.** Tutti i 24 partono con voci verificate, datate e con fonte: stato di norme, piattaforme e strumenti al 4 novembre 2026. Ogni voce dice fino a quando vale; sopra i 90 giorni si riverifica.
+- **Tre benchmark** in `studio/benchmarks/`: costi media in Italia, incrementalità del media, margini delle agenzie. Hanno data, fonte e perimetro; non sono soglie per i tuoi clienti.
+- **Collaudo degli agenti** (`studio/collaudo/`). Cinque brief fittizi, un giudice (`delivery-qa`), una rubrica e uno storico dei voti: lo lanci dopo aver cambiato un agente per vedere se è migliorato o peggiorato.
+- **Manutenzione settimanale** (`studio/manutenzione/`). Uno script fa controllare le fonti e le voci scadute da `insight-research` e fa aggiornare i playbook. Parte a mano; il README della cartella spiega come farlo partire da solo.
+- **Skill corrette** su accessibilità, GDPR, contratti, test A/B, Meta Ads, creator e altre, con le fonti riverificate.
+
+**Aggiornare da 0.1.0:** lancia `/studio-kit:crea-studio` e chiedi di aggiornare. I tuoi playbook non vengono toccati: la skill ti propone solo di aggiungere in fondo le voci nuove.
+
+---
+
 ## Come lavora il team
 
 **Un lead, molti specialisti.** Le richieste vanno a `studio-lead`. Il lead non disegna, non scrive copy e non compra media. Fa tre cose:
@@ -52,7 +68,7 @@
 
 Un lavoro andato male vale più di dieci riusciti, e va scritto con il limite. Una voce smentita si cancella. Sopra le 150 righe il playbook si pota. Se un argomento cambia in fretta (piattaforme, prezzi, policy) e la voce ha più di 90 giorni, l'agente la riverifica sul web, su fonti primarie, prima di usarla.
 
-All'installazione 14 playbook su 24 partono con dei pattern (84 voci datate più alcuni elenchi di regole brevi), soprattutto su direzione creativa, QA, foto e film AI. Gli altri 10 partono vuoti.
+All'installazione tutti i 24 playbook partono con dei pattern: circa 210 voci datate in tutto, con fonte e limite.
 
 ---
 
@@ -162,6 +178,7 @@ Il kit porta il metodo. Il resto lo decidi tu, ed è tutto in file di testo nel 
 | **Il listino** | `studio/benchmarks/listino.md` | Tu. Gli agenti non inventano prezzi: se un campo è vuoto, lo chiedono. |
 | **Le regole** | `studio/STUDIO.md` | Tu. Cambiano solo per tua decisione, come le soglie di spesa in crediti (di default: 50 per generazione, 200 per lavoro). |
 | **I playbook** | `studio/playbooks/` | Gli agenti, dal tuo lavoro. Negli aggiornamenti del kit non vengono mai sovrascritti. |
+| **Le fonti da sorvegliare** | `studio/manutenzione/fonti.md` | Tu: parti dall'elenco del kit e tieni solo quelle che toccano i tuoi clienti. |
 | **Le decisioni** | | Tu. Quando due agenti non sono d'accordo e mancano le prove, decidi tu. |
 
 Se hai altre attività o aziende, all'installazione le indichi come separate: nessun agente porta dati da una all'altra.
@@ -183,7 +200,7 @@ Poi, in Claude Code:
 
 Oppure scrivi semplicemente «crea il mio studio»: la skill parte da sola.
 
-La skill fa sette domande, una alla volta: nome dello studio, chi decide, cosa fa lo studio, lingua delle risposte, altre attività da tenere separate, canale per gli alert, gusto dello studio. Poi copia agenti, skill, regole e playbook nel tuo `~/.claude/`, con i tuoi dati al posto dei segnaposto. Se un file esiste già, chiede se saltarlo, sovrascriverlo (dopo averne fatto una copia `.bak`) o annullare. Non sovrascrive niente senza chiedere.
+La skill fa sette domande, una alla volta: nome dello studio, chi decide, cosa fa lo studio, lingua delle risposte, altre attività da tenere separate, canale per gli alert, gusto dello studio. Poi copia agenti, skill, regole, playbook, benchmark, controlli automatici, collaudo e manutenzione nel tuo `~/.claude/`, con i tuoi dati al posto dei segnaposto. Se un file esiste già, chiede se saltarlo, sovrascriverlo (dopo averne fatto una copia `.bak`) o annullare. Non sovrascrive niente senza chiedere.
 
 Riavvia Claude Code e dai il primo lavoro a `studio-lead`. Prima di chiedere un preventivo, compila `~/.claude/studio/benchmarks/listino.md`.
 
@@ -212,6 +229,8 @@ Gli agenti funzionano anche senza le dipendenze qui sotto, ma rendono di più co
 - [ECC](https://github.com/affaan-m/ECC): scrittura, ricerca, contenuti social, SEO, sicurezza (`security-review`, il metodo di base di `security-engineer` se non hai una skill `security-audit`; `growth-log`, usata dal protocollo dei playbook), video editing
 
 **Altre skill opzionali** citate nelle tabelle di routing (installale se ti servono; fonti da verificare): skill Google per Ads, Analytics, BigQuery e Data Manager; `archify`, `image-to-code-skill`, `imagegen-frontend-web`, `imagegen-frontend-mobile`, `img2threejs`, `motion-patterns`, `remotion-video-creation`, `brand-discovery`, `competitive-platform-analysis`, `competitive-report-structure`.
+
+**Skill di terzi che gli agenti nominano «se installata»** (non incluse nel kit; controlla tu fonte e licenza prima di installarle): `seo`, `lead-intelligence`, `research-ops`, `watch` (guardare un video: fotogrammi e trascrizione), `audio-understand` (com'è una musica o un suono), `security-audit`. Senza di loro gli agenti usano gli strumenti di base.
 
 **MCP opzionale:** Splice (campioni musicali) per `motion-video`: gli strumenti `mcp__claude_ai_Splice__*` funzionano solo con quel connettore.
 
@@ -243,7 +262,10 @@ skills/crea-studio/    la skill che installa e personalizza
 templates/
   agents/              24 agenti (con segnaposto {{STUDIO}}, {{TITOLARE}}…)
   skills/              35 skill di mestiere + atlante culturale
-  studio/              STUDIO.md, playbook, listino, CONTEXT di esempio
+  studio/              STUDIO.md, playbook, benchmark, listino, CONTEXT di esempio
+    hooks/             i due controlli automatici (deploy e playbook) e il loro test
+    collaudo/          brief fittizi, rubrica e script per collaudare gli agenti
+    manutenzione/      script settimanale, elenco delle fonti, voci scadute
 ```
 
 Convenzioni per chi contribuisce: [CONTRIBUTING.md](CONTRIBUTING.md).

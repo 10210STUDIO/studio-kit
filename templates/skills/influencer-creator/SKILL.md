@@ -105,7 +105,16 @@ Punti operativi:
 
 Ogni contenuto con un rapporto commerciale — compenso, prodotto gratuito, sconto, affiliazione, viaggio pagato — va dichiarato in modo **chiaro, in evidenza e comprensibile**, nella lingua del pubblico, prima che il contenuto venga consumato. Non in fondo alla caption, non nascosto fra hashtag, non solo nel tag "collaborazione a pagamento" quando il contesto non lo rende evidente.
 
-Non negoziabile, nemmeno su richiesta del cliente o del creator. Un contenuto senza disclosure espone il cliente a sanzioni e lo studio a un problema di responsabilità professionale.
+Non negoziabile, nemmeno su richiesta del cliente o del creator. Un contenuto senza disclosure espone il cliente a contestazioni e lo studio a un problema di responsabilità professionale.
+
+### Italia: regime AGCOM (verificato il 4.11.2026)
+
+- **Delibera AGCOM 197/25/CONS** (linee guida e codice di condotta): vale per gli influencer «rilevanti», con almeno 500.000 follower o un milione di visualizzazioni medie mensili su almeno una piattaforma. L'elenco si aggiorna entro il 15 aprile e il 15 ottobre.
+- **Prima di ogni accordo in Italia** controlla se il creator è nell'elenco e inserisci nel contratto l'obbligo di rispettare linee guida e codice, con correzione o rimozione entro un termine scritto.
+- **Diciture:** le FAQ del 16.3.2026 dicono che «in collaborazione con» non è idonea per la committenza. Il Codice richiama la Digital Chart IAP, non la sostituisce. Le FAQ non sono vincolanti.
+- **Brand e agenzie:** AGCOM si aspetta vigilanza (aspettativa non vincolante), non stabilisce una corresponsabilità nelle sanzioni.
+- **Creator con contenuti AI:** al `compliance-rights-officer` prima della pubblicazione (AI Act, art. 50).
+- Date, fonti e punti ancora da verificare: playbook dell'agente.
 
 Regole specifiche, soglie, formule richieste e autorità competente dipendono dal mercato e cambiano: **applica `ad-claims-disclosure`** per il dettaglio operativo e per la verifica della norma vigente. In caso di dubbio, disclosure più esplicita, non meno.
 
@@ -120,7 +129,7 @@ Regole specifiche, soglie, formule richieste e autorità competente dipendono da
 - **Dimenticare la scadenza di un'autorizzazione di whitelisting.** Campagna spenta nel momento peggiore.
 - **Codice sconto condiviso fra creator.** Misurazione distrutta, nessuna decisione possibile.
 - **Pagare a performance misurata su codici** e poi contestare il dato a posteriori. Relazione finita.
-- **Omettere o annacquare la disclosure.** Rischio sanzionatorio sul cliente, e nessun beneficio: le ricerche disponibili non mostrano che la disclosure corretta distrugga la performance.
+- **Omettere o annacquare la disclosure.** Rischio di contestazione sul cliente, e nessun beneficio: le ricerche disponibili non mostrano che la disclosure corretta distrugga la performance.
 - **Ignorare il passato del creator.** Un contenuto vecchio problematico diventa il problema del brand nelle prime ore.
 - **Nessun contratto scritto perché "ci siamo capiti".** Alla prima divergenza non c'è niente su cui stare.
 - **Sponsorizzare un prodotto che il creator non ha mai usato.** Il pubblico lo sente.

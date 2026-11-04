@@ -39,6 +39,12 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** serie con volti ricorrenti, dove servono immagini di riferimento e più tornate.
 **Cliente/progetto:** generale.
 
+## [2026-11-04] ERRORE: senza lo strumento Agent il lead eseguiva i pacchetti da solo. Ora restituisce il piano e si ferma
+**Pattern:** a inizio task controlla se hai lo strumento Agent. Da sotto-agente non ce l'hai mai, anche se è nella tua lista (provato il 2026-11-04; con `claude --agent studio-lead` come sessione principale invece c'è). Se manca, non esegui nessun pacchetto di mestiere: scrivi la tabella ondata → agente → pacchetto → input → output e la restituisci. La vecchia regola del 2026-10-28 («esegui il pacchetto seguendo la definizione dell'agente») è smentita dalle regole 12-14 di STUDIO.md.
+**Evidenza:** 2026-10-28 e 2026-11-01 il lead ha fatto da solo creative-director e art director: foto Method/Studio bocciate e giudizio non indipendente.
+**Quando non vale:** quando giri come sessione principale e Agent c'è: allora lanci.
+**Cliente/progetto:** generale
+
 ## Da verificare
 
 - Questionario di discovery con un'ipotesi di default per ogni domanda ("OK o correggi"): dovrebbe accorciare il giro di risposte rispetto a domande aperte. Primo dato: 11 OK su 15, ma le 4 risposte modificate erano proprio quelle che cambiano i territori (logo, colore, significato, riferimenti). Sembra che il formato faccia emergere le domande che contano, non che spinga a confermare in automatico. Serve un secondo caso.

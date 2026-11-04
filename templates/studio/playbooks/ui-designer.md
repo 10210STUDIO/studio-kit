@@ -59,6 +59,29 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** se i comandi non spariscono scorrendo giù, la fascia sarebbe sempre presente e diventa una barra.
 **Cliente/progetto:** generale.
 
+## [2026-11-04] Accessibilità: progetta per WCAG 2.2 AA, dichiara al cliente 2.1 AA
+**Pattern:** costruisci a WCAG 2.2 AA; al cliente dichiari come obbligo vigente solo WCAG 2.1 AA (EN 301 549 v3.2.1). «WCAG 2.2 AA obbligatorio» non lo scrivi. WCAG 3.0 non è un riferimento.
+- EN 301 549 v4.1.1 (settembre 2026) si allinea a WCAG 2.2, ma finché non è citata in Gazzetta UE non è il riferimento legale dell'EAA (AccessibleEU, 7.9.2026). Le linee guida AgID v1.0 (4.3.2026) richiamano v3.2.1 e WCAG 2.1 AA.
+- 2.4.11 Focus Not Obscured (Minimum), AA: l'elemento in focus da tastiera non deve essere del tutto nascosto da contenuto dell'autore. Riguarda barre fisse, sticky, banner cookie. Progetta più stretto del minimo: `scroll-padding-top` almeno pari alla barra fissa e prova con Tab su ogni pagina.
+- 2.5.8 Target Size (Minimum), AA: target di puntamento almeno 24×24 px CSS. Eccezioni: spaziatura (cerchio da 24 px non interseca altri target), controllo equivalente, inline nel testo, controllo del browser, presentazione essenziale.
+- 4.1.1 Parsing è rimosso in WCAG 2.2. WCAG 3.0 è Working Draft (ultima pubblicazione 10.9.2026), nessuna Candidate Recommendation.
+**Evidenza:** [P] W3C WCAG 2.2 (Recommendation 12.12.2024) e pagine Understanding di 2.4.11 e 2.5.8, lette il 2026-11-04; [P] ETSI EN 301 549 V4.1.1, copertina; [P] AccessibleEU (Commissione); W3C WCAG 3.0 history. L'AgID è riportata da una verifica altrui, non riletta qui.
+**Quando non vale:** se la v4.1.1 viene citata in Gazzetta UE (non controllato sulla Gazzetta), l'obbligo sale a 2.2 AA: riverificare prima di ogni preventivo o dichiarazione di conformità. Clienti fuori dall'EAA (microimprese escluse: non verificato): il livello lo fissa il contratto.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Immagini e video AI realistici in pagina: spazio per l'etichetta
+**Pattern:** il layout prevede un componente di etichetta «AI» visibile, vicino al contenuto e senza coprirlo, su ogni immagine o video AI realistico. Testo, casi e posizione li fissa `compliance-rights-officer`: non decidere da solo. Per i video l'etichetta va anche nel film (regista e motion-video), non solo nella pagina.
+**Evidenza:** [P] AI Act art. 50 (Reg. UE 2024/1689), obblighi dal 2.8.2026; il rinvio al 2.12.2026 (Reg. UE 2026/1744) vale solo per i fornitori e la marcatura dell'art. 50(2), non per chi usa lo strumento e pubblica (art. 50(4)). Per opere artistiche o creative l'obbligo è dichiarare l'esistenza del contenuto «in an appropriate manner that does not hamper the display or enjoyment of the work». Il Codice di condotta (10.6.2026) prevede icona UE «AI» a inizio video, ripetuta. Fonte: EUR-Lex/Cellar 2026-11-04.
+**Quando non vale:** contenuto non realistico o non deepfake: lo stabilisce compliance, non il design. Le Linee guida C(2026) 5054 non sono vincolanti.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Baseline 2026 e `context7`
+**Pattern:** web.dev/baseline/2026 elenca `field-sizing`, `contrast-color()`, `@scope`, `shape()`. NON elenca `text-box-trim`, `sibling-index()` e le view transition cross-document (c'è «active view transition», che è un'altra cosa). Prima di usarne una controlla il supporto sui browser del cliente.
+`context7` è installato (plugin abilitato in `~/.claude/settings.json`) ma non è nell'elenco `tools` del frontmatter di questo agente: da sotto-agente non è richiamabile. Alternativa: documentazione ufficiale con `WebFetch`, versione annotata.
+**Evidenza:** [P] web.dev/baseline/2026 e file locali, letti il 2026-11-04.
+**Quando non vale:** Baseline dice dove i browser concordano, non cosa supporta il pubblico del cliente. Se il lead aggiunge l'MCP a `tools`, la seconda parte decade.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 (ipotesi non ancora dimostrate)

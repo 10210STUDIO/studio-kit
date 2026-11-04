@@ -47,6 +47,84 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** quando la fonte confronta già gli stessi giorni e lo dichiara.
 **Cliente/progetto:** generale.
 
+## [2026-11-04] AI Act art. 50: cosa vale oggi per lo studio
+**Pattern:** l'art. 50 si applica dal 2/8/2026 (art. 113). Il rinvio al 2/12/2026 (Reg. UE 2026/1744, nuovo art. 111(4), GUUE 24/7/2026) vale solo per i fornitori di sistemi già sul mercato prima del 2/8/2026, e solo per la marcatura leggibile da macchina dell'art. 50(2). Lo studio usa lo strumento: per lui nessun rinvio. Deep fake (50(4), primo comma) e testi AI pubblicati per informare su temi di interesse pubblico (50(4), secondo comma) si dichiarano già, al più tardi alla prima esposizione e in modo accessibile (50(5)). Le Linee guida C(2026) 5054 del 20/7/2026 non sono vincolanti (art. 96(1)(d)).
+**Evidenza:** [P] art. 50 letto su Cellar (celex 32024R1689) il 2026-11-04; Reg. 2026/1744 e Linee guida verificati; FAQ Commissione aggiornata il 24/7/2026: i contenuti generati prima del 2/8/2026 non vanno etichettati retroattivamente.
+**Quando non vale:** testi con revisione umana e un responsabile editoriale; usi autorizzati per legge contro i reati; fornitore entrato sul mercato dopo il 2/8/2026 (per lui niente rinvio).
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Deployer: conta chi ha autorità e controllo, non chi commissiona
+**Pattern:** è deployer la persona giuridica sotto la cui autorità e il cui controllo gira lo strumento: lo studio con il proprio account e le proprie scelte creative lo è. Lo è anche il cliente se lo studio lavora per suo conto e sotto il suo controllo («remains a deployer even if third parties (e.g. contractors, freelancers) are involved»). Nel dubbio si comportano entrambi da deployer, e il SOW dice chi mette l'etichetta e chi la mantiene. Persone e luoghi inventati ma fotorealistici possono essere deep fake («can plausibly exist»). Il regime attenuato per pubblicità «creativa» vale solo caso per caso.
+**Evidenza:** [P] FAQ Commissione (24/7/2026), letta il 2026-11-04; Linee guida C(2026) 5054, par. 14, 113, 116 e 122, lette sul PDF il 2026-11-01. Sostituisce la voce del 2026-11-01 che diceva «lo studio, non il cliente, è il deployer»: troppo assoluta.
+**Quando non vale:** contenuti palesemente irrealistici; un prodotto reale su sfondo AI che non inganna sul prodotto. L'attribuzione del ruolo in un contratto vero va fatta validare da un legale.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Marcatura: C2PA non è un obbligo nominato
+**Pattern:** né le Linee guida né il Codice di condotta (versione finale 10/6/2026, volontario) nominano C2PA. Il Codice chiede metadati firmati e filigrana non percepibile (impronta facoltativa) e propone un'icona UE «AI», nei video all'inizio e ripetuta a intervalli. C2PA (spec corrente 2.5) è un mezzo possibile, non un requisito. Google mette SynthID su tutte le immagini Gemini/Nano Banana e sui video Veo. Non scrivere «C2PA obbligatorio» né «i titoli di coda non bastano» come citazione.
+**Evidenza:** [P] (spec.c2pa.org, aistudio.google.com), 2026-11-04.
+**Quando non vale:** se un atto di esecuzione o una norma armonizzata fissa uno standard. SynthID sulle uscite via Higgsfield: non verificato.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Forma dell'etichetta AI: lo standard dello studio
+**Pattern:** la norma chiede un'informazione «clear and distinguishable», al più tardi alla prima esposizione e accessibile (50(5)); la FAQ la vuole percepibile senza strumenti. Lo studio la traduce così (scelta nostra, non testo di legge): **immagini** su sito, ad e social: testo sovrapposto o accanto all'immagine, visibile senza clic, «Immagine generata con AI» o «Immagine modificata con AI» (EN «AI-generated image»), contrasto almeno 4,5:1, e la stessa dicitura in fondo all'alt; **video e film**: cartello o icona «Generato con AI» dal primo fotogramma, ripetuto a intervalli nei video lunghi come propone il Codice, più la riga nei crediti e nella didascalia; **audio**: annuncio parlato all'inizio; **ad**: dentro la creatività, perché il testo dell'annuncio può essere troncato, più lo strumento della piattaforma se esiste; **opere evidentemente artistiche**: cartello iniziale e crediti, senza coprire l'opera. Una riga nel footer non arriva alla prima esposizione, e il testo deve essere esatto («come riferimenti di stile» detto di immagini pubblicate è inesatto).
+**Evidenza:** [P] art. 50(4) e 50(5) su Cellar e FAQ Commissione (24/7/2026), letti il 2026-11-04; icona ripetuta: Codice di condotta.
+**Quando non vale:** contenuti fuori dal perimetro dei deep fake (grafica palesemente non realistica); se la piattaforma o il cliente impongono una dicitura più forte, vale quella.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Ricodifica: il manifesto C2PA e il tag AIGC si perdono
+**Pattern:** la ricodifica ffmpeg dei master toglie il manifesto C2PA (Seedance, Veo) e il tag AIGC (Kling). La marcatura per macchine è un obbligo del fornitore (50(2)), non dell'utilizzatore, ma toglierla va contro lo scopo della norma. Regola dello studio: 1) archiviare il master originale con il manifesto accanto al job-id; 2) dopo la ricodifica, controllare con `c2patool <file>` cosa resta; 3) se il cliente vuole il file consegnato marcato, rifirmarlo con `c2patool --parent <master>` (il master diventa l'ingrediente), che richiede un certificato di firma dello studio; 4) mai scrivere «marcato» su un file che non lo è. L'etichetta visibile resta dovuta in ogni caso.
+**Evidenza:** misura di `ai-film-director` del 2026-11-04 (non ripetuta da me); `c2patool` 0.28.4 installato, opzione `--parent` letta nell'help il 2026-11-04; explainer C2PA 2.3 §7.2.3: i metadati si possono rimuovere.
+**Quando non vale:** flussi che conservano i metadati (da provare caso per caso); SynthID è nei pixel e resiste alla compressione secondo Google.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Diritto d'autore sull'output AI: tutela dubbia senza apporto umano
+**Pattern:** in Italia l'art. 1 L. 633/1941, modificato dalla L. 132/2025 art. 25 (in vigore dal 10/10/2025), protegge le opere dell'ingegno «umano», anche create con l'AI «purché costituenti risultato del lavoro intellettuale dell'autore». Il nuovo art. 70-septies ammette il TDM su materiali con accesso legittimo, nei limiti degli artt. 70-ter e 70-quater. Negli USA l'Ufficio del copyright (Parte 2, gennaio 2025) dice che i soli prompt non danno controllo sufficiente: è un parere, non una sentenza, e non vale in Italia. Quindi: mai esclusiva garantita, contributo umano documentato, niente logo generato solo da prompt.
+**Evidenza:** [P] (normattiva.it, copyright.gov), 2026-11-04.
+**Quando non vale:** giurisprudenza italiana non verificata, art. 26 L. 132/2025 non letto.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Email promozionali B2B: consenso anche verso il professionista
+**Pattern:** per l'invio promozionale a una persona fisica, anche in contesto professionale, serve il consenso (art. 130 Codice privacy): contratto e legittimo interesse non bastano. Il soft opt-in (c. 4) vale solo per l'email data in una vendita, per servizi analoghi, con opposizione ricordata a ogni invio.
+**Evidenza:** [P] Garante, provv. n. 285 del 17/4/2026, doc-web 10252188; art. 130 c. 4 letto su Normattiva il 2026-11-04.
+**Quando non vale:** è un caso singolo (società Aesir, destinatario un avvocato), non una linea guida. L'ammonimento e i 1.000 euro riguardano violazioni degli artt. 12 e 15 GDPR, non l'invio: non citarlo come «multa per l'email».
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Outreach a giornalisti, creator e su LinkedIn: zona grigia, non via libera
+**Pattern:** l'art. 130 c. 1-2 chiede il consenso per comunicazioni elettroniche «per l'invio di materiale pubblicitario o di vendita diretta [...] o di comunicazione commerciale» via email, SMS «o di altro tipo». Quindi: un DM LinkedIn promozionale va trattato come un'email; un pitch che promuove un cliente a un giornalista può essere comunicazione commerciale; una proposta di lavoro pagato a un creator è meno chiaramente promozionale verso di lui. In nessuno dei tre casi un indirizzo pubblico vale come consenso. Finché un legale non decide: messaggi uno a uno e pertinenti all'attività del destinatario, informativa breve e opposizione in un clic nel primo messaggio, nessun invio massivo, nessun secondo messaggio a chi non risponde, liste con provenienza e base scritte (legittimo interesse con bilanciamento per il GDPR).
+**Evidenza:** [P] art. 130 c. 1-2 letto su Normattiva il 2026-11-04; Garante n. 285/2026 sul professionista persona fisica. Nessuna fonte primaria trovata sul pitch ai giornalisti né sul DM social: la qualificazione è una mia lettura.
+**Quando non vale:** contatti che hanno chiesto di essere aggiornati (consenso documentato); rapporti già in corso.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Influencer in Italia: AGCOM 197/25/CONS, cosa dice davvero
+**Pattern:** le regole specifiche valgono per gli influencer «rilevanti»: almeno 500.000 follower o un milione di visualizzazioni medie mensili su una piattaforma; elenco aggiornato entro il 15/4 e il 15/10. FAQ del 16/3/2026: diciture generiche di committenza non bastano. Verso brand e agenzie c'è un'aspettativa di vigilanza (All. A, punto 3.4), non una responsabilità sanzionatoria condivisa. La Digital Chart IAP è richiamata e incorporata dal Codice AGCOM, non è una regola «più leggera».
+**Evidenza:** [P] delibera del 23/7/2025, pubblicata il 5/8/2025, e FAQ su agcom.it, 2026-11-04.
+**Quando non vale:** creator sotto soglia (restano Codice del consumo e autodisciplina); le FAQ non sono vincolanti; la frase esatta del punto 3.4 non è stata copiata.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Green claim: dal 27/9/2026 sono divieti, non cautele
+**Pattern:** Dir. (UE) 2024/825, recepita con il D.Lgs. 20/2/2026 n. 30 (GU n. 56 del 9/3/2026, in vigore dal 24/3/2026), si applica dal 27/9/2026. Claim ambientale generico senza «eccellenza riconosciuta», claim sull'intero prodotto per un solo aspetto, neutralità da compensazione: vietati. Il dettaglio operativo è in `ad-claims-disclosure`.
+**Evidenza:** [P] Cellar 32024L0825 e normattiva.it, 2026-11-04.
+**Quando non vale:** claim specifico, misurato e con perimetro dichiarato.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] EAA in Italia: chi è obbligato e da quando
+**Pattern:** D.Lgs. 82/2022, obblighi efficaci dal 28/6/2025. Esenti le microimprese che forniscono servizi (art. 3 c. 3): meno di 10 persone **e** fatturato o bilancio annuo fino a 2 milioni (art. 2, lett. bb). Sanzioni da 5.000 a 40.000 euro (art. 24 c. 1). Il 28/6/2030 vale solo per servizi che usano prodotti già in uso e per contratti preesistenti (massimo cinque anni), non è un rinvio generale (art. 25). Linee guida AgID: determinazione n. 38/2026 del 4/3/2026 (GU n. 69 del 24/3/2026), che richiamano EN 301 549 v3.2.1 e WCAG 2.1 AA. La v4.1.1 (2026-09, su WCAG 2.2) non è ancora il riferimento legale: WCAG 2.2 AA è la scelta prudente, non un obbligo verificato.
+**Evidenza:** [P] normattiva.it (artt. 2, 3, 24, 25), gazzettaufficiale.it, ETSI e AccessibleEU 7/9/2026, art. 2 riletto il 2026-11-04.
+**Quando non vale:** dal giorno in cui la v4.1.1 è citata in GUUE (controllare prima di ogni offerta); settore pubblico (altro regime).
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Norme annunciate non sono norme
+**Pattern:** al 4/11/2026 il Digital Fairness Act non è stato proposto (Parlamento europeo: «Announced», Q4 2026). L'Omnibus digitale sul GDPR e l'ePrivacy (COM(2025) 837, procedura 2025/0360(COD)) è «Awaiting committee decision», senza atto finale: GDPR, art. 122 Codice privacy e linee guida cookie del Garante del 2021 si applicano come sono. Non applicare nessuna norma di una proposta come vigente.
+**Evidenza:** [P] Legislative Train (agg. 20/9/2026); Legislative Observatory, letto il 2026-11-04. Il mandato del Consiglio del 21/10/2026 risulta solo da fonti [S].
+**Quando non vale:** dalla pubblicazione in GUUE di un atto finale.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Fonti difficili: come leggerle
+**Pattern:** EUR-Lex blocca curl e WebFetch: usare Cellar `http://publications.europa.eu/resource/celex/<CELEX>` con header `Accept: application/xhtml+xml`, poi togliere i tag e cercare la frase esatta. Normattiva: un articolo alla volta, `N2Ls?urn:nir:stato:<tipo>:<data>;<num>~art<N>` (curl con user-agent da browser basta), `!vig=AAAA-MM-GG` per la versione in una data. PDF: pypdf o PDFKit. TMview via `playwright-cli` (`#/tmview/results?criteria=I|C|F&basicSearch=...`); dettaglio su EUIPO eSearch. EUIPO dà 403 a WebFetch: curl con user-agent. Tariffe UIBM su `uibm.mise.gov.it`. Le pagine Meta non si leggono da WebFetch ma si leggono con `playwright-cli` (provato da un altro agente il 2026-11-04); l'help di TikTok Ads non è stato riprovato.
+**Evidenza:** sessioni 2026-10-28, 2026-11-01 e 2026-11-04 (art. 50 AI Act, art. 2 D.Lgs. 82/2022, art. 130 Codice privacy letti così).
+**Quando non vale:** quando gli URL cambiano. Riverificare dopo 90 giorni.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 (ipotesi non ancora dimostrate)

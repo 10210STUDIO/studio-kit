@@ -64,7 +64,7 @@ Criterio: proponi server-side quando il volume lo giustifica, quando il cliente 
 
 Questa parte è dove si fanno i danni legali. Coordina con `gdpr-marketing-consent`: lì stanno le basi giuridiche, qui l'implementazione.
 
-- **Nessun tag di marketing o di analisi non essenziale parte prima di una scelta esplicita.** Il default è: non attivo. Attendere la scelta non è una penalizzazione tecnica, è l'impostazione corretta.
+- **Nessun tag di marketing o di analisi non essenziale parte prima di una scelta esplicita.** Il default è: non attivo. Attendere la scelta non è una penalizzazione tecnica, è l'impostazione corretta. Nel Consent Mode di Google questa è la modalità Basic. In Advanced i tag Google partono subito e, con consenso negato, inviano misure senza cookie (Google Tag Platform, letta il 2026-11-04): se è ammissibile per quel cliente lo decide la revisione privacy, non il tag manager.
 - Usa il meccanismo di consenso nativo del tag manager e delle piattaforme, non condizioni fatte a mano con variabili improvvisate. I meccanismi nativi comunicano lo stato di consenso alle destinazioni; una condizione fatta a mano blocca il tag ma non informa nessuno.
 - Mappa **ogni tag** a una categoria di consenso, esplicitamente. Un tag senza categoria assegnata è un tag che parte sempre: controllali uno per uno, incluse le integrazioni installate da app o plugin.
 - Cosa deve accadere al rifiuto: il tag **non parte**, non scrive cookie o storage, non invia richieste di rete, non raccoglie identificatori. Verificalo osservando le richieste di rete e lo storage, non fidandoti dell'interfaccia del tag manager.

@@ -95,6 +95,16 @@ Condizioni minime perché valga la pena:
 
 Scelta pragmatica: un cliente medio ottiene più valore da due geo test ben fatti all'anno che da un MMM costruito su dati insufficienti.
 
+### Strumenti open source (stato al 2026-11-04, GitHub; riverificare oltre i 90 giorni)
+
+| Strumento | Cosa fa | Stato |
+|---|---|---|
+| Meridian (Google) | MMM in Python, da far girare in casa | attivo: v2.1.0 del 2026-09-24 (PyPI `google-meridian`), commit su main fino al 2026-11-03 |
+| Robyn (Meta) | MMM («experimental», dalla Marketing Science di Meta) | fermo: ultima release v3.12.0 del 2024-12-19, ultimo commit su main 2025-06-27, non archiviato |
+| GeoLift (Meta) | geo test con controllo sintetico, in R | ultima release v2.6.06 del 2023-05-19, ultimo commit su main 2026-04-01, non archiviato |
+
+Per un MMM nuovo si parte da Meridian; Robyn solo per riprendere un modello già in uso. Prima di installare, rileggi il repository: versioni e requisiti cambiano. Lo strumento non sostituisce le condizioni minime qui sopra.
+
 ## Leggere i risultati
 
 - **Un risultato non significativo non è un risultato nullo.** Significa che il test non distingue l'effetto dal rumore. Riporta la stima con il suo intervallo e di' cosa il test poteva e non poteva rilevare.

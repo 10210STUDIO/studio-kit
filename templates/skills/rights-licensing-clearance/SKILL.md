@@ -89,6 +89,8 @@ Non promettere ciò che nessun fornitore ti promette.
 - **Input**: non caricare materiale di terzi, asset di altri clienti o immagini di persone per generare derivati senza averne i diritti.
 - **Dichiarazione al cliente**: dichiara quali asset sono AI-generated, con quale strumento e quale piano. Se il cliente chiede una garanzia di esclusività o di assenza di pretese di terzi, non concederla senza legale.
 - Dove serve robustezza giuridica, la via è il **contributo umano documentato**: direzione, selezione, rielaborazione, con file di lavoro conservati.
+- **Etichetta (AI Act, art. 50(4) e 50(5))**: un deep fake (persone, luoghi, oggetti o eventi verosimili, anche inventati) porta un'etichetta chiara, visibile senza clic, al più tardi alla prima esposizione e accessibile. Forma usata dallo studio: «Immagine generata con AI» sopra o accanto all'immagine e in fondo all'alt; nei video un cartello «Generato con AI» dal primo fotogramma, ripetuto nei video lunghi, più i crediti; negli ad dentro la creatività. Date e stato delle regole: playbook di `compliance-rights-officer`.
+- **Marcatura per macchine** (manifesto C2PA, tag AIGC, SynthID): la mette il fornitore. Conserva il master originale col job-id; una ricodifica può toglierla, quindi controlla il file consegnato con `c2patool <file>` e non scrivere «marcato» senza averlo letto. C2PA non è un obbligo nominato dalle regole UE.
 
 ## Chi detiene cosa alla fine del progetto
 
@@ -110,7 +112,7 @@ Esegui e allega l'esito al pacchetto di consegna.
 2. **Mappa licenza per asset**: fornitore, tipo di licenza, ID/ordine, perimetro, scadenza, titolare della licenza.
 3. **Confronto perimetro reale vs licenza**: media previsti, territori, durata, paid vs organico, stampa, OOH, app. Qui emergono le lacune.
 4. **Release**: tutte presenti, firmate, in corso di validità, archiviate nel progetto.
-5. **Verifica AI**: quali asset sono generati, con quale strumento e piano, controllo visivo di somiglianza, dichiarazione pronta.
+5. **Verifica AI**: quali asset sono generati, con quale strumento e piano, controllo visivo di somiglianza, etichetta presente in ogni formato, master originale archiviato.
 6. **Verifica font nel codice**: file serviti dal nostro dominio, CDN della foundry, fallback, pageview stimate.
 7. **Nome e marchio**: se il deliverable include un naming o un logo destinato a registrazione, segnala che serve una ricerca di anteriorità da parte di un consulente marchi. Lo studio non fa quella ricerca.
 8. **Lacune**: elenco esplicito di cosa manca, con il rischio e l'azione (acquistare licenza, sostituire asset, ottenere release, fermare la consegna).

@@ -57,7 +57,7 @@ Usa `WebSearch`/`WebFetch` su: **EUR-Lex** per direttive e regolamenti, **Normat
 
 ### Target, spazio e input
 
-- [ ] Area cliccabile adeguata e con spaziatura sufficiente fra target adiacenti; la soglia del criterio 2.5.8 è **da verificare** sulla fonte W3C, perché non è stata letta il 2026-11-01. Attenzione alle icone social in footer e alle paginazioni.
+- [ ] Target di puntamento di almeno **24×24 px CSS** (WCAG 2.2, criterio 2.5.8 Target Size (Minimum), livello AA; [Understanding del W3C](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html), letto il 2026-11-04). Eccezioni: spaziatura (un cerchio di 24 px centrato su ogni target più piccolo non tocca altri target né i cerchi degli altri target piccoli), controllo equivalente sulla stessa pagina, target dentro una frase, dimensione decisa dal browser e non modificata, presentazione essenziale o imposta per legge. Attenzione alle icone social in footer e alle paginazioni.
 - [ ] Etichette persistenti e associate al campo (`label for` / `aria-labelledby`); campi obbligatori segnalati in testo.
 - [ ] Autocomplete corretto sui campi personali; nessun blocco dell'incolla sui campi password o codice.
 - [ ] **Errori**: identificati in testo, descritti in modo utile ("la data deve essere nel formato GG/MM/AAAA"), annunciati agli screen reader via live region, con focus portato sul primo errore.

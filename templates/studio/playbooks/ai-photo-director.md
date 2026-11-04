@@ -68,6 +68,36 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** se cambia la soglia o il formato JPEG delle copie.
 **Cliente/progetto:** generale.
 
+## [2026-11-04] Catalogo immagini Higgsfield: 40 job type
+**Pattern:** il catalogo vero è `higgs model list --image` (40 voci), non le skill. Nano Banana: `nano_banana_2_1` (2.1), `nano_banana_pro`, `nano_banana_flash` (= Nano Banana 2), `nano_banana_2_lite`, `nano_banana`; quattro job type con nome «Nano Banana Pro»: `nano_banana_2_ai_stylist`, `_relight`, `_skin_enhancer`, `_shots`. Soul: `text2image_soul_v2`, `soul_cast`, `soul_location`, `soul_cinematic`. OpenAI/Grok: `gpt_image_2`, `gpt_image_2_5`, `openai_hazel`, `grok_image`, `grok_image_2_0`. Seedream: `seedream_v5_pro`, `seedream_v5_lite`, `seedream_5_0_flash`, `seedream_v4_5`. Altri: `flux_3_image`, `flux_2`, `flux_kontext`, `flux_2_pro_outpaint`, `ideogram_4_5`, `ideogram_vector`, `recraft_v4_1`, `recraft_v4_styles`, `z_image`, `kling_omni_image`, `image_auto`. Strumenti: `outpaint`, `topaz_image`, `topaz_image_generative`, `bytedance_image_upscale`, `image_background_remover`, `3d_jutsu_angles`, `autosprite`. Workflow immagine (`higgs workflow list`): `cinematic_studio_image`, `cinematic_studio_2_5`, `cinematic_studio_soul_cast`, `cinematic_studio_soul_location`, `soul_cinema_studio`, `image_decompose`, `marketing_studio_image`, `marketing_studio_2_image` (Product Shot), `ms_image`.
+**Evidenza:** [P] `higgs model list --image` e `higgs workflow list`, lanciati il 2026-11-04.
+**Quando non vale:** sopra i 30 giorni: rilanciare. L'elenco dice cosa esiste, non i parametri né la qualità.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Nano Banana 2.1 su Higgsfield: parametri e costo
+**Pattern:** `nano_banana_2_1` accetta fino a 14 immagini in ingresso (maschera compresa), risoluzione 1k/2k/4k, `thinking_level` minimal/medium/high (default medium), inpaint con `mask` + `is_inpaint`, formati da 1:1 a 21:9 più 4:1, 1:4, 8:1, 1:8 (ha il 4:5). Costo: 2 crediti a 2k, 3 a 4k; Nano Banana Pro 2 a 2k, 4 a 4k. Per i master 4k il 2.1 costa meno del Pro: confrontarli su due frame prima di una serie.
+**Evidenza:** [P] `higgs model get nano_banana_2_1` e `higgs generate cost` (prompt di prova, thinking default), 2026-11-04. Nessuna generazione: qualità non provata.
+**Quando non vale:** i prezzi cambiano e `thinking_level` alto potrebbe costare di più (non misurato): rifare `higgs generate cost` con i parametri veri.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Trasparenza AI (AI Act art. 50): cosa vale per le nostre foto
+**Pattern:** l'art. 50 si applica dal 2 agosto 2026. Il rinvio al 2 dicembre 2026 (Reg. UE 2026/1744, nuovo art. 111(4)) vale solo per i **fornitori** di sistemi già sul mercato e solo per la marcatura dell'art. 50(2): {{STUDIO}} usa lo strumento, quindi nessun rinvio per noi. Per opere «evidentemente artistiche, creative, satiriche, di finzione» l'obbligo dell'art. 50(4) si limita a dichiarare l'esistenza del contenuto generato in modo che non disturbi la fruizione. Se una foto di campagna rientri nel caso «deepfake» lo decide `compliance-rights-officer`, non io. Il Codice di condotta (10 giugno 2026) chiede metadati firmati e filigrana non percepibile (impronta facoltativa, icona UE «AI») e **non nomina C2PA**. Linee guida C(2026) 5054 del 20 luglio 2026: non vincolanti. Per ogni foto consegnata: registro con modello, job-id, prompt, riferimenti, costo, intervento umano.
+**Evidenza:** [P] Reg. UE 2024/1689 art. 50 e 113; Reg. UE 2026/1744; Codice e Linee guida sul sito della Commissione; letti il 2026-11-04.
+**Quando non vale:** fuori UE; e se compliance dà un'interpretazione diversa sul caso concreto, vale la sua.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Diritto d'autore: senza intervento umano la tutela è dubbia
+**Pattern:** dopo la L. 132/2025 (art. 25, in vigore dal 10/10/2025) l'art. 1 L. 633/1941 protegge le opere dell'ingegno umano «anche laddove create con l'ausilio di strumenti di intelligenza artificiale, purché costituenti risultato del lavoro intellettuale dell'autore». Negli USA l'Ufficio del copyright (Parte 2, gennaio 2025, parere non sentenza): «prompts do not alone provide sufficient control». Quindi il registro deve documentare cosa abbiamo deciso e fatto a mano (direzione, scelta fra N bozze, ritocchi, compositing, testo in post), non solo il prompt.
+**Evidenza:** [P] normattiva.it (L. 132/2025 art. 25) e copyright.gov, letti il 2026-11-04.
+**Quando non vale:** non dice quanto intervento basta: nessuna sentenza italiana verificata. Il giudizio sul singolo caso è di compliance.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] C2PA e SynthID: cosa si può promettere
+**Pattern:** specifica C2PA corrente 2.5. I metadati di provenienza si possono togliere (explainer C2PA §7.2.3); per questo esistono i Content Credentials «durevoli» con watermark e impronta. Google scrive che tutte le immagini dei suoi modelli Nano Banana portano SynthID, ma la pagina vale per la sua API: **sulle uscite via Higgsfield né SynthID né C2PA sono verificati**. Al cliente non si promette nessuna marcatura finché non è provata sul file scaricato (es. `c2patool`); si conservano gli originali non ricodificati.
+**Evidenza:** [P] spec.c2pa.org 2.5 ed explainer 2.3; aistudio.google.com/docs/image-generation; letti il 2026-11-04.
+**Quando non vale:** se Higgsfield documenta la marcatura o un test su un file la conferma: aggiornare questa voce.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 - Nano Banana Pro 2k (2 crediti) dà foto più «moda» e meno sintetiche di soul_cinematic (0,12): 15 scatti su 17 utilizzabili, giudizio del cliente non registrato. Con 21:9 una volta ha prodotto un dittico (due pannelli affiancati): controllare. Con gruppi «four people» a volte ne mette cinque.

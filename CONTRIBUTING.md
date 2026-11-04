@@ -19,6 +19,7 @@ Tutto ciò che sta in `templates/` è un modello: la skill `crea-studio` lo copi
 - Cartella dello studio: `~/.claude/studio/` (mai cartelle con il nome di uno studio specifico).
 - Contesto di un cliente: `~/.claude/studio/clients/<slug>/CONTEXT.md`.
 - Contesto del brand dello studio stesso: `~/.claude/studio/clients/{{STUDIO_SLUG}}/CONTEXT.md`.
+- Script e controlli automatici: `~/.claude/studio/hooks/`, `~/.claude/studio/collaudo/`, `~/.claude/studio/manutenzione/`. Gli script usano `$HOME` o `~`, mai percorsi assoluti di una persona; il test `hooks/test_hooks.sh` deve passare dopo la sostituzione dei segnaposto.
 - Riferimenti approvati (foto, video): `~/.claude/studio/clients/<slug>/riferimenti/`.
 - Asset generati: `~/.claude/studio/clients/<slug>/assets/` o `~/.claude/studio/studio/assets/`.
 

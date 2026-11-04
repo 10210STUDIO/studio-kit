@@ -1,6 +1,6 @@
 ---
 name: visual-identity-marks
-description: Usala quando devi progettare, valutare o consegnare un marchio e la sua identità visiva: scelta del tipo di marchio, costruzione geometrica e correzioni ottiche, dimensione minima, versioni e spazi di rispetto, pacchetto file da consegnare e brand book senza riempitivi.
+description: Usala quando devi progettare, valutare o consegnare un marchio e la sua identità visiva: scelta del tipo di marchio, costruzione geometrica e correzioni ottiche, dimensione minima, versioni e spazi di rispetto, screening per immagine sulle banche dati dei marchi, pacchetto file da consegnare e brand book senza riempitivi.
 ---
 
 # Visual Identity & Marks
@@ -70,6 +70,17 @@ Il set minimo da progettare, non da derivare automaticamente:
 
 Per ogni versione scrivi la condizione d'uso in una riga. Una versione senza regola d'uso verrà usata a caso.
 
+## Screening del segno
+
+Prima di presentare un marchio figurativo, cerca i segni simili già depositati. Si fa su ogni candidato in shortlist, non solo sul preferito, e si rifà sulla versione finale.
+
+- **Per immagine.** Carica il segno (prima il simbolo da solo in un colore, poi la versione completa) negli strumenti pubblici di ricerca per immagine: TMview dell'EUIPO, che copre anche i grandi uffici extraeuropei, e il Global Brand Database della WIPO. Formati e dimensioni accettati si leggono sulla guida dello strumento.
+- **Per codici Vienna.** La classificazione di Vienna descrive gli elementi figurativi (forme, figure, lettere stilizzate). Individua i codici del segno e cerca per codice, restringendo ai prodotti del cliente dove lo strumento lo permette. Completa la ricerca per immagine: ragiona per contenuto, non per somiglianza dei pixel.
+- **Combina con il nome** quando il marchio è un sistema combinato: il rischio nasce spesso dall'insieme.
+- **Registra la ricerca:** data, strumento, file caricato, codici, filtri, i risultati più vicini con numero di deposito. Senza registro non è ripetibile e non serve al consulente.
+
+È screening, non parere: scarta i casi evidenti e segnala il rischio. Somiglianza, registrabilità e deposito restano del consulente in proprietà industriale, e il limite si scrive nel documento che consegni. Un risultato vuoto non vuol dire "libero": dice solo che quella ricerca, quel giorno, non ha trovato niente.
+
 ## Spazi di rispetto e scorrettezze
 
 Definisci l'area di rispetto con una misura interna al marchio stesso — l'altezza di una lettera, il diametro di un elemento, la larghezza di un'asta — così scala da sola. Un valore assoluto in millimetri si rompe al primo cambio di formato.
@@ -94,7 +105,7 @@ Organizza il pacchetto per destinatario, non per formato. Chi lo riceve non sa c
 - **Leggimi di una pagina** nella cartella: quale file per quale uso, in italiano, senza gergo.
 - **Font**: non distribuire i file dei font al cliente o ai fornitori senza verificare la licenza. Il logotipo convertito in curve è una cosa; passare il font è un'altra. Vedi `typography-craft`.
 
-Sui diritti: metti per iscritto la cessione dei diritti di utilizzo sul marchio al cliente, e conserva la documentazione del processo. La valutazione di registrabilità, le ricerche di anteriorità sui segni figurativi e il deposito sono lavoro di un consulente in proprietà industriale: lo studio segnala il rischio di somiglianza quando lo vede, non lo certifica. Per i diritti su immagini e caratteri usati dentro l'identità vedi `rights-licensing-clearance`.
+Sui diritti: metti per iscritto la cessione dei diritti di utilizzo sul marchio al cliente, e conserva la documentazione del processo. La valutazione di registrabilità, le ricerche di anteriorità complete sui segni figurativi e il deposito sono lavoro di un consulente in proprietà industriale: lo studio fa lo screening (vedi sopra) e segnala il rischio di somiglianza, non lo certifica. Per i diritti su immagini e caratteri usati dentro l'identità vedi `rights-licensing-clearance`.
 
 ## Brand book
 

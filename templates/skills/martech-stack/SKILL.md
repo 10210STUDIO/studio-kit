@@ -17,7 +17,7 @@ Non raccomandare nulla prima di aver prodotto la fotografia dell'esistente.
 2. **Mappa dei flussi**: per ogni coppia di sistemi, quali dati passano, in che direzione, con quale meccanismo (integrazione nativa, iPaaS, webhook, API custom, export CSV a mano), con quale frequenza, chi se ne accorge se si rompe.
 3. **Mappa di misurazione**: dove nasce ogni numero che il cliente guarda, e quali sistemi dicono cose diverse sulla stessa metrica.
 4. **Verifica sul campo**: non fidarti dell'inventario dichiarato. Ispeziona il contenitore del tag manager (tag attivi, tag in pausa, trigger duplicati, codice hardcoded nel tema oltre al tag manager), le proprietà analytics e i loro filtri, le conversioni configurate su ogni piattaforma ads e la loro fonte.
-5. **Verifica di conformità**: base giuridica e consenso per ogni flusso che contiene dati personali. Vedi la skill dedicata al consenso: se non esiste, dichiara il buco e fermati prima di aggiungere flussi nuovi.
+5. **Verifica di conformità**: base giuridica e consenso per ogni flusso che contiene dati personali. Usa la skill `gdpr-marketing-consent`; se la base giuridica manca o è dubbia, dichiara il buco e fermati prima di aggiungere flussi nuovi.
 
 Chiudi la diagnosi con due liste: cosa è rotto (si ripara) e cosa è ridondante (si spegne). Lo spegnimento di un tool duplicato vale più dell'introduzione di uno nuovo.
 

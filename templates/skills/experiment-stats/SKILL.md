@@ -64,6 +64,18 @@ Regole operative:
 3. Il monitoraggio in corsa è legittimo **solo** per controlli di salute: errori, varianti rotte, split sbilanciato, crolli anomali. Guardare per interrompere un disastro è corretto; guardare per dichiarare una vittoria non lo è.
 4. Non prolungare un test oltre la fine prevista sperando che diventi significativo: è peeking al contrario, con lo stesso danno.
 
+## Controllo obbligatorio: SRM (sample ratio mismatch)
+
+Non è un errore da evitare fra tanti: è un passo fisso, prima di leggere qualunque risultato.
+
+1. **Dopo le prime 24 ore e a fine test** confronta il numero di utenti per variante con lo split previsto, con un test chi-quadro sui conteggi.
+2. **Se lo split è sbilanciato, il test è invalido.** Non si legge il risultato, nemmeno «con cautela»: si cerca la causa. I passaggi dove nasce sono quattro: assegnazione, esecuzione della variante (redirect, caricamento, variante che si rompe su un browser), raccolta ed elaborazione dei log, filtri dell'analisi.
+3. Se lo sbilanciamento c'è solo il primo giorno e poi sparisce, la causa è di solito legata al tempo (cache, partenza ritardata di una variante).
+4. Con pochissimo traffico il controllo delle prime ore ha poca potenza: un esito pulito non esclude lo SRM, per questo si ripete a fine test.
+5. Scrivi l'esito del controllo nel report e nel registro dei test.
+
+Fonte: Fabijan et al., «Diagnosing Sample Ratio Mismatch in Online Controlled Experiments», KDD 2019. Su piattaforme grandi lo SRM non è raro (circa il 6% degli esperimenti Microsoft nel loro studio): non è un caso di scuola.
+
 ## Confronti multipli
 
 Ogni confronto aggiunto è un'altra occasione di falso positivo. Con k confronti indipendenti a α = 0,05, la probabilità di almeno un falso positivo è 1 − (1 − 0,05)^k: con k = 5 vale circa il 23%, con k = 10 circa il 40%.
@@ -133,7 +145,7 @@ Cosa fare:
 - Nessuna metrica primaria dichiarata prima, o cambiata dopo aver visto i dati.
 - Caccia al segmento dopo un risultato piatto, presentata come scoperta.
 - Test di 4 giorni, o che iniziano e finiscono a metà settimana.
-- Non verificare lo split effettivo del traffico e il funzionamento di entrambe le varianti nelle prime ore (SRM, sample ratio mismatch: uno sbilanciamento rispetto allo split previsto è il segnale che qualcosa è rotto, e invalida il test).
+- Saltare il controllo SRM, o leggere comunque un test con lo split sbilanciato. Vedi la sezione dedicata.
 - Riportare il lift puntuale di un test appena significativo come risultato atteso a regime, e inserirlo in una proiezione annuale.
 - Attribuire a un cambiamento un delta pre/post, senza controllo.
 - Geo test con tre mercati e nessuna analisi di potenza preventiva.

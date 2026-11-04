@@ -80,8 +80,6 @@ Analizzali in questo ordine, sono i quattro modi tipici di perdere soldi senza a
 
 ## 6. Esempio aritmetico del calcolo
 
-Numeri inventati per mostrare la meccanica. **Non sono benchmark e non vanno usati come riferimento.**
-
 Numeri inventati per mostrare il meccanismo. Nessuna cifra qui è un benchmark: non citarle a un cliente.
 
 ```

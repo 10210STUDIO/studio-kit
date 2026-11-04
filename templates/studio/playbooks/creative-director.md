@@ -113,6 +113,12 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** camera ferma o soggetto che non cammina.
 **Cliente/progetto:** generale
 
+## [2026-11-04] Asset AI realistici: etichetta e marcatura si decidono con compliance nella direction, non alla consegna
+**Pattern:** dal 2 agosto 2026 vale l'art. 50 dell'AI Act (Reg. UE 2024/1689, art. 113). Ogni direction con foto, film o audio AI realistici passa da `compliance-rights-officer` per etichetta e marcatura, e la dichiarazione si progetta nel formato (dove sta, come si vede). Il rinvio al 2 dicembre 2026 (Reg. UE 2026/1744, nuovo art. 111(4)) vale solo per i fornitori di sistemi già sul mercato e solo per la marcatura dell'art. 50(2): {{STUDIO}} usa lo strumento, per noi nessun rinvio. Linee guida C(2026) 5054 del 20.7.2026: non vincolanti. Codice di condotta del 10.6.2026: metadati firmati, filigrana non percepibile, impronta facoltativa, icona UE «AI»; nel video l'icona all'inizio, ripetuta a intervalli. **Né Linee guida né Codice nominano C2PA**: può servire allo scopo, ma non va scritto come obbligo.
+**Evidenza:** [P] testo AI Act e Omnibus (Cellar/EUR-Lex), Linee guida e Codice (sito della Commissione), verificati il 2026-11-04.
+**Quando non vale:** opera evidentemente artistica, creativa, satirica o di finzione: l'obbligo dell'art. 50(4) si riduce a dichiarare il contenuto generato «in modo appropriato che non ostacoli la fruizione»; se un lavoro rientra lo decide compliance, non io. Fuori UE vale un'altra norma. Riverificare dopo il 2027-02-02.
+**Cliente/progetto:** generale
+
 ## Da verificare
 
 - Il conto Higgsfield è condiviso fra gli agenti: il saldo non misura la spesa di un lavoro. Conto a mano partendo da `generate cost`.

@@ -54,6 +54,41 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** una sola serie, un solo modello, nessun seed; ogni rigenerazione è un solo tentativo.
 **Cliente/progetto:** generale.
 
+## [2026-11-04] Stampa offset: condizioni Fogra e ISO 12647-2 [P]
+
+**Pattern:** per colore in offset non esiste un profilo universale: chiedi allo stampatore la condizione di stampa e scrivila nella scheda di consegna. Sul sito Fogra le condizioni correnti per foglio sono FOGRA51 (carta patinata, «PS 1», profilo PSO Coated v3) e FOGRA52 (non patinata con sbiancanti ottici, «PS 5», PSO Uncoated v3), archivio V1.0 del 23.09.2020. FOGRA39 («PT1/2», carta patinata 115 g/m², profilo ISO Coated v2) è un set più vecchio, nell'archivio FOGRA39-FOGRA60 v2 del 02.06.2024. Dati di caratterizzazione: fogra.org/en/downloads/work-tools/characterisation-data.
+**Evidenza:** pagina Fogra letta il 2026-11-04. La pagina avverte che le curve di aumento del punto per FOGRA51/52 «are different from ISO 12647-2:2007». ISO 12647-2:2013 (edizione 3) risulta «to be revised» (stadio 90.92 dal 2025-09-09) e sostituita da ISO/CD 12647-2 in sviluppo (pagina ISO, copia archiviata: iso.org rifiuta le richieste dirette).
+**Quando non vale:** non ho letto cosa usa uno stampatore preciso: la pagina Fogra dà le condizioni, non chi le adotta. Digitale, flexo, serigrafia e grande formato hanno altri riferimenti, non cercati. Il «ΔE medio ≤ 3,0» per la certificazione PSO l'ho visto solo in una guida di terzi: non usarlo (vedi Da verificare).
+**Cliente/progetto:** generale.
+
+## [2026-11-04] PDF di stampa: livelli PDF/X [P]
+
+**Pattern:** il livello PDF/X lo sceglie lo stampatore; chiedi quale per iscritto. Dalla tabella PDF Association: PDF/X-1a:2003 (ISO 15930-4:2003) = scambio completo, solo CMYK, nessun dato colour-managed, PDF 1.4 senza trasparenza. PDF/X-4 (ISO 15930-7:2010) = scambio completo, dati colour-managed ammessi (Gray, RGB, CMYK), PDF 1.6; PDF/X-4p = profilo ICC esterno. PDF/X-6 (ISO 15930-9:2020) = PDF 2.0.
+**Evidenza:** pdfa.org/resource/iso-15930-pdfx letta in copia archiviata (richiesta diretta: 403). La pagina ISO di 15930-7:2010 dice «last reviewed and confirmed in 2026», stadio 90.93, quindi resta corrente.
+**Quando non vale:** la tabella dice cosa permette ogni livello, non quale preferire né quale accettano gli stampatori: una frase «X-4 raccomandato, X-1a ancora il più richiesto» l'ho vista solo in un riassunto di motore di ricerca, non sulla pagina: non la considero provata. Se lo stampatore chiede X-1a, il colore va convertito in CMYK prima dell'esportazione.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Imballaggi: Regolamento (UE) 2025/40 (PPWR) [P]
+
+**Pattern:** si applica dal 12 agosto 2026 (art. 71). L'etichetta armonizzata sulla composizione dei materiali (pittogrammi, art. 12(1)) scatta dal 12 agosto 2028 oppure 24 mesi dopo l'entrata in vigore degli atti di esecuzione, «whichever is the latest»: il 2028 è la data più vicina possibile, non certa. Le dichiarazioni ambientali sull'imballaggio (art. 14) sono ammesse solo per proprietà che superano i requisiti minimi del regolamento e devono dire se riguardano l'unità, una parte o tutto l'imballaggio. Gli obblighi sono del fabbricante (cliente o suo fornitore), non dello studio: lo studio chiede al cliente quale marcatura e quale claim sono approvati.
+**Evidenza:** testo del regolamento letto su EUR-Lex/Cellar (celex 32025R0040), 2026-11-04: art. 71, art. 12(1), art. 14.
+**Quando non vale:** letti solo questi tre articoli. Non letti i requisiti per tipo di imballaggio, le esenzioni e gli atti di esecuzione (pittogrammi non ancora definiti). Un claim «riciclabile» o «compostabile» sul pack va comunque a `compliance-rights-officer` (`ad-claims-disclosure`).
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Asset AI in stampa e packaging: si passa da compliance, non si decide qui [P]
+
+**Pattern:** ogni immagine AI che finisce su stampato, packaging o espositore va a `compliance-rights-officer` prima della preparazione definitiva dei file, con: strumento e modello, file originale, prompt, se mostra persone, oggetti o luoghi reali. Lo studio, di norma, usa lo strumento (utilizzatore), non lo fornisce. L'art. 50 dell'AI Act (Reg. UE 2024/1689) si applica dal 2 agosto 2026; il rinvio al 2 dicembre 2026 (Reg. UE 2026/1744, art. 111(4)) vale solo per i fornitori di sistemi già sul mercato e solo per la marcatura dell'art. 50(2): non per chi usa lo strumento. Se il contenuto è un'opera evidentemente artistica, creativa o di finzione, l'art. 50(4) limita l'obbligo alla «disclosure of the existence of such generated or manipulated content in an appropriate manner that does not hamper the display or enjoyment of the work». Le Linee guida C(2026) 5054 (20.7.2026) non sono vincolanti; il Codice di condotta (10.6.2026) chiede metadati firmati e filigrana e non nomina C2PA.
+**Evidenza:** EUR-Lex/Cellar, 2026-11-04.
+**Quando non vale:** non so se un'immagine AI su una scatola o una brochure ricada nell'art. 50(4) né in che forma vada dichiarata su carta: è la domanda per compliance, non una regola che ricavo. Il testo del packaging resta del cliente (vedi PPWR sopra).
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Conservare l'originale AI con i suoi metadati [P]
+
+**Pattern:** archivia accanto al file di stampa l'originale scaricato, senza ricodificarlo, con modello e prompt. La specifica C2PA corrente è la 2.5 (spec.c2pa.org). La documentazione C2PA dice che i metadati di provenienza si possono togliere (§7.2.3 dell'explainer): per questo esistono i Content Credentials «durevoli», con filigrana e impronta.
+**Evidenza:** verifica del 2026-11-04: le specifiche non lo dicono, ma la misura sì: misurato il 2026-11-04 con `c2patool` 0.28.4: il sorgente Seedance ha un manifesto C2PA valido (firma non nella lista di fiducia di c2patool), il master ricodificato con ffmpeg non ha più nessun manifesto («No claim found»); vedi playbook di ai-film-director. Sulle immagini per la stampa non ancora provato.
+**Quando non vale:** non provato se la conversione RGB→CMYK e l'esportazione in PDF/X mantengono il manifesto: per saperlo serve un file vero e `c2patool` (vedi Da verificare). SynthID è verificato solo per le API Google, non per le uscite passate da Higgsfield.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 (ipotesi non ancora dimostrate)

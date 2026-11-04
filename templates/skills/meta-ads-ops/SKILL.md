@@ -14,6 +14,7 @@ Prima di toccare un account vivo: leggi `STUDIO.md`, il playbook dell'agente, e 
 I nomi dei campi, le versioni del Graph API e le feature di Advantage+ cambiano più volte all'anno. Non fidarti di quello che segue come riferimento API letterale: è il *metodo*, non la firma.
 
 Verifica sempre con WebFetch/WebSearch, prima di scrivere codice o di promettere una feature al cliente:
+- `developers.facebook.com/documentation/ads-commerce/marketing-api/advantage-campaigns` — le tre leve di Advantage+ e la migrazione delle ASC/AAC legacy
 - `developers.facebook.com/docs/marketing-apis` — struttura, campi campagna/adset/ad, versione corrente del Graph API e data di deprecazione di quella che usi
 - `developers.facebook.com/docs/marketing-api/conversions-api` — payload eventi, parametri di matching, deduplicazione
 - `developers.facebook.com/docs/marketing-api/catalog` — feed e campi prodotto
@@ -26,9 +27,10 @@ Regola: se il cliente deve prendere una decisione di budget su una feature, cita
 
 Decidi la struttura partendo dall'evento di conversione e dal volume, non dalla segmentazione di marketing.
 
-- Un adset ha bisogno di volume di eventi per uscire dalla fase di apprendimento. Meta dichiara una soglia di eventi per finestra: **verificala nella documentazione corrente**, non assumerla. Se il cliente non può generarla, consolida gli adset invece di segmentare.
+- Un adset ha bisogno di volume per uscire dalla fase di apprendimento. Meta (Business Help Center, «About the learning phase», consultata 2026-11-04) dice circa 50 risultati nella settimana dopo l'ultima modifica significativa, e per le Shops ads almeno 17 acquisti sul sito e 5 su Meta: **rileggila prima di citarla**. Se il cliente non può generarla, consolida gli adset invece di segmentare.
 - Frammentare in molti adset piccoli con lo stesso pubblico produce sovrapposizione d'asta interna e apprendimento mai concluso. Consolida.
-- Usa `Advantage+ Shopping`/campagne a targeting automatizzato quando: catalogo ampio, segnale di conversione pulito, nessun vincolo di esclusione forte. Usa struttura manuale quando: pochi SKU, pubblici da escludere per ragioni di business, test creativo controllato, o audience B2B ristretta.
+- Una campagna è Advantage+ (sales, leads, app) solo se sono attive tutte e tre le leve: budget a livello campagna, audience Advantage+ (o nessun targeting oltre alla geografia), placement Advantage+ senza restrizioni. Se ne spegni una è manuale con lo stesso obiettivo. Le ASC/AAC legacy non si creano più via API (da v24.0) e dalla v26.0 non si modificano: si migrano, e la migrazione riavvia l'apprendimento (Meta, Marketing API, Advantage campaigns, consultata 2026-11-04).
+- Usa Advantage+ sales/leads quando: catalogo ampio, segnale di conversione pulito, nessun vincolo di esclusione forte. Usa struttura manuale quando: pochi SKU, pubblici da escludere per ragioni di business, test creativo controllato, o audience B2B ristretta.
 - Non far convivere la stessa audience in una campagna automatizzata e una manuale sullo stesso obiettivo: competono.
 - CBO (budget a livello campagna) quando vuoi che Meta allochi; budget per adset quando devi garantire spesa minima a un segmento per ragioni contrattuali.
 - Ogni modifica a target, offerta o evento di ottimizzazione riapre l'apprendimento. Accorpa le modifiche in una finestra sola e dichiaralo nel report.
@@ -50,8 +52,8 @@ Attribuzione: Meta riporta su finestre proprie e su modello proprio. I suoi nume
 
 ## Post-ATT e Aggregated Event Measurement
 
-- Su iOS gli eventi web passano per Aggregated Event Measurement: priorità degli eventi configurata a livello dominio, un numero limitato di eventi utilizzabili, latenza e aggregazione nel reporting. Ordina la priorità mettendo in alto l'evento su cui ottimizzi davvero.
-- Verifica il dominio nel Business Manager: senza verifica non configuri le priorità e perdi l'ottimizzazione su una fetta rilevante di traffico.
+- Su iOS gli eventi web passano per Aggregated Event Measurement (aggregazione e latenza nel reporting). Per le campagne web Meta dice che non c'è alcuna azione di setup da fare («There are no actions you need to take», Business Help Center, consultata 2026-11-04): la configurazione delle priorità per dominio non è più il lavoro da fare. Per le app serve ancora l'idoneità o SKAdNetwork.
+- Il dominio verificato nel Business Manager resta buona pratica per altri motivi (controllo dei link negli annunci), ma non promettere al cliente che serva a recuperare l'ottimizzazione iOS: rileggi la pagina Help prima di citarlo.
 - Le dimensioni di breakdown sono limitate o assenti per il traffico aggregato: non promettere al cliente report per piazzamento/età/genere su quelle conversioni.
 - Conseguenza pratica: le finestre di attribuzione brevi sottostimano gli acquisti a considerazione lunga. Confronta con i dati del backend prima di dichiarare una campagna fallita.
 
@@ -103,7 +105,7 @@ Prima di cambiare qualsiasi cosa, verifica se la differenza che stai guardando �
 - **Ottimizzare su un evento proxy.** Ottimizzare su add to cart quando il business ha bisogno di acquisti porta Meta a cercare persone che aggiungono al carrello e non comprano. Ottimizza sull'evento che paga, se il volume lo consente.
 - **Ottimizzare su un lead non qualificato.** Lead gen senza rimando dello stadio qualificato produce volumi alti e pipeline vuota. Rimanda al sistema l'evento di lead qualificato.
 - **Identificativo prodotto diverso fra eventi e catalogo.** Il retargeting dinamico smette di funzionare silenziosamente: la campagna gira, la rilevanza è zero.
-- **Dominio non verificato o priorità eventi non configurata.** Perdi ottimizzazione e reporting sul traffico iOS, senza alcun messaggio d'errore evidente.
+- **Dare per scontato lo stato di una funzione senza rileggerlo.** Advantage+, Aggregated Event Measurement e le finestre di reporting sono cambiati più volte nel 2025-2026: controlla la pagina ufficiale e la data.
 - **Riportare i numeri di Meta come fatturato.** Confrontali col backend prima di scriverli in un documento che il cliente mostra al suo capo.
 - **Riavviare l'apprendimento ogni due giorni.** Ogni ritocco azzera; l'operatore interpreta l'instabilità come un problema creativo e cambia di nuovo.
 - **Categoria speciale non dichiarata.** Rischio di sospensione dell'account, e il recupero non è nelle tue mani.
@@ -122,7 +124,7 @@ Prima di cambiare qualsiasi cosa, verifica se la differenza che stai guardando �
 ## Controlli prima di dare per lanciata una campagna
 
 Non dichiarare un setup completo senza aver verificato, uno per uno:
-- dominio verificato nel Business Manager e priorità eventi configurata;
+- dominio verificato nel Business Manager, se serve ad altro (vedi sopra);
 - evento di ottimizzazione che riceve dati, visibile nella diagnostica, senza duplicati;
 - valore e valuta presenti sugli eventi monetizzabili;
 - parametri UTM coerenti con il modello di reporting del cliente, così che il backend possa riconciliare;

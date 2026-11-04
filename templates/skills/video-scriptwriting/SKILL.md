@@ -47,7 +47,7 @@ Cosa non funziona mai:
 - la costruzione lenta di un'atmosfera, su piattaforme dove non c'è tempo di costruire nulla;
 - lo stesso attacco di tutti i concorrenti.
 
-Operativamente: **scrivi tre aperture diverse per ogni script** e dichiara quale raccomandi e perché. Se il video è pubblicitario con budget media, le aperture alternative servono anche a essere testate: coordina con `cro-experimentation` per la misurazione.
+Operativamente: **scrivi tre aperture diverse per ogni script** e dichiara quale raccomandi e perché. Se il video è pubblicitario con budget media, le aperture alternative servono anche a essere testate: coordina con `cro-experimentation` per la misurazione. Attenzione: su Meta annunci simili per aspetto e tema contano come una creatività sola (Meta for Business, 2025-12-16), quindi tre aperture sullo stesso corpo testano l'hook, non il concetto. Per testare concetti servono script diversi.
 
 ## 3. Scrivi per il muto, il parlato è uno strato in più
 

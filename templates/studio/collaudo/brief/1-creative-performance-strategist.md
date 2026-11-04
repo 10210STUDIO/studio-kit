@@ -1,0 +1,4 @@
+Cliente fittizio "Ferri 1952", calzoleria artigiana di Firenze, scarpe da uomo su misura e pronto moda, prezzo medio 690 €. Vende online in UE. Obiettivo: acquisti dal sito con campagne Meta (Reels e Feed), budget 6.000 €/mese, primo mese di test. Clienti attuali: uomini 35-60, professionisti, molti regali da parte delle compagne. Recensioni ricorrenti: "comode dal primo giorno", "risuolate dopo 8 anni", "il servizio di misura per posta funziona". Concorrenti: grandi marchi inglesi del Goodyear e brand DTC più economici.
+Consegna: 5 angoli strutturalmente diversi (con origine di ogni angolo), 3 hook per angolo per video da 15 s, la matrice del primo test (cosa si testa prima e perché, come leggerlo, quando fermare) e cosa NON fare. Massimo 900 parole.
+
+(Cliente inventato per il collaudo: nomi e dati sono di fantasia.)

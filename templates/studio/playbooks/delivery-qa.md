@@ -104,6 +104,34 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** sotto 768, o quando le colonne meta passano sotto al titolo fino a circa 1024.
 **Cliente/progetto:** generale.
 
+## [2026-11-04] Etichetta AI: l'art. 50 dell'AI Act vale già per chi pubblica
+
+**Pattern:** dal 2 agosto 2026 vale l'art. 50 del Reg. (UE) 2024/1689. Il rinvio al 2 dicembre 2026 (Reg. UE 2026/1744, art. 111(4), GUUE 24.7.2026) riguarda solo i fornitori di sistemi già sul mercato e solo la marcatura dell'art. 50(2): chi usa lo strumento e pubblica deepfake deve già etichettare (art. 50(4)). Per opere evidentemente artistiche, creative o di finzione l'obbligo si limita a dichiarare l'esistenza del contenuto generato «in modo adeguato che non ostacoli la fruizione dell'opera». Il Codice di condotta (10.6.2026, non vincolante) chiede metadati firmati e filigrana, e per i video l'icona all'inizio, ripetuta a intervalli; non nomina C2PA. In QA: un media AI realistico senza etichetta visibile è un rilievo bloccante; forma e sufficienza dell'etichetta le giudica `compliance-rights-officer`.
+**Evidenza:** [P] testo AI Act e Reg. 2026/1744 su Cellar; Linee guida C(2026) 5054 del 20.7.2026 (non vincolanti, art. 96(1)(d)); Codice di condotta. Letti il 2026-11-04. «I titoli di coda non bastano» NON è una frase dei documenti: non citarla come norma.
+**Quando non vale:** contenuti chiaramente non realistici (il giudizio resta a compliance); il rinvio di dicembre vale per i fornitori dei modelli, non per {{STUDIO}}.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Accessibilità: WCAG 2.1 AA è l'obbligo, WCAG 2.2 AA la progettazione
+
+**Pattern:** il riferimento legale per l'EAA resta EN 301 549 v3.2.1, cioè WCAG 2.1 AA; le linee guida AgID (det. 38/2026 del 4.3.2026, GU n. 69 del 24.3.2026) seguono la v3.2.1. La v4.1.1 (settembre 2026) si basa su WCAG 2.2 ma dà presunzione di conformità solo dopo la citazione in Gazzetta UE. In QA: si boccia sotto 2.1 AA; i criteri nuovi di 2.2 AA (2.4.11 Focus Not Obscured, 2.5.8 Target Size) si segnalano come rilievi di progettazione, e nessun testo per il cliente presenta WCAG 2.2 come obbligo. 2.5.8: target di almeno 24×24 px CSS, salvo spaziatura (cerchio di 24 px centrato che non tocca altri target), controllo equivalente nella pagina, target dentro una frase, dimensione decisa dal browser, presentazione essenziale. WCAG 3.0 è Working Draft (10.9.2026): non è un riferimento.
+**Evidenza:** [P] ETSI EN 301 549 v4.1.1 (prefazione), AccessibleEU 7.9.2026, AgID v1.0, W3C WCAG 2.2 (REC 12.12.2024) e Understanding 2.4.11; testo di 2.5.8 letto sulla pagina Understanding del W3C il 2026-11-04.
+**Quando non vale:** se la v4.1.1 è stata citata in Gazzetta UE dopo il 7.9.2026 (non controllato); microimprese che forniscono servizi, esentate (D.Lgs. 82/2022, art. 3 c. 3): l'esenzione la valuta compliance, il QA segnala comunque.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Core Web Vitals: soglie al 75° percentile, mobile e desktop separati
+
+**Pattern:** LCP ≤ 2,5 s, INP ≤ 200 ms, CLS ≤ 0,1, al 75° percentile dei caricamenti, mobile e desktop separati. Le varianti con soft navigation per le SPA aggiunte a CrUX (dataset di settembre 2026) sono sperimentali: non sono il criterio. Una misura di laboratorio (Lighthouse) su un sito non ancora online non è il p75 dei visitatori: nel report si scrive come stima di laboratorio.
+**Evidenza:** [P] web.dev/articles/vitals (pagina del 31.10.2024), note di rilascio CrUX del 13.10.2026. I blog SEO con «LCP 2,0 s dal 2026» non hanno riscontro nelle fonti Chrome.
+**Quando non vale:** deliverable che non sono pagine web (deck, video, PDF).
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Claim ambientali: dal 27 settembre 2026 i generici sono vietati
+
+**Pattern:** la Dir. (UE) 2024/825, recepita dal D.Lgs. 20.2.2026 n. 30 (GU n. 56 del 9.3.2026, in vigore dal 24.3.2026), si applica dal 27.9.2026. Vieta i claim ambientali generici («eco-friendly», «green») senza prestazione ambientale eccellente riconosciuta, e i claim sull'intero prodotto o sull'intera attività quando riguardano solo un aspetto. In QA: ogni claim ambientale nel deliverable è un punto da passare a `compliance-rights-officer`, anche se ha una fonte.
+**Evidenza:** [P] Cellar 32024L0825 (Allegato I) e Normattiva D.Lgs. 30/2026. Vigilanza AGCM: [S], da una sintesi non riletta sulla fonte.
+**Quando non vale:** claim non ambientali (prezzo, primati, confronti): restano nel controllo 2 con `ad-claims-disclosure`.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 (ipotesi non ancora dimostrate)

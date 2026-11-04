@@ -113,7 +113,7 @@ Tieni un registro unico per cliente, in `clients/<slug>/`, con una riga per test
 
 Serve a tre cose: non ritestare quello che è già stato testato, accumulare conoscenza sul pubblico del cliente che nessun concorrente ha, e difendere le decisioni quando cambia l'interlocutore. Registra i perdenti e gli inconcludenti con lo stesso rigore dei vincenti; sono la parte più informativa.
 
-Prima di ogni lancio, QA della variante: entrambe le versioni su mobile e desktop, sui browser principali, con e senza blocker, a carrello vuoto e pieno, in stato logged-in e anonimo. Verifica che l'evento della metrica primaria scatti in entrambe. Un'ora di QA evita un mese di test invalido.
+Prima di ogni lancio, QA della variante: entrambe le versioni su mobile e desktop, sui browser principali, con e senza blocker, a carrello vuoto e pieno, in stato logged-in e anonimo. Verifica che l'evento della metrica primaria scatti in entrambe. Un'ora di QA evita un mese di test invalido. Dopo il lancio, controllo SRM obbligatorio dopo 24 ore e a fine test (vedi `experiment-stats`): con lo split sbilanciato il test non si legge.
 
 ## Errori che costano
 

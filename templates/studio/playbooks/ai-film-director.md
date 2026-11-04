@@ -7,7 +7,7 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 
 ## [2026-10-30] Piano sequenza text-to-video, non still animati montati
 **Pattern:** un solo piano sequenza generato text-to-video (Seedance 2.5), camera che segue, mondo vivo intorno, gesto finale chiaro.
-**Evidenza:** in un progetto reale il cliente ha bocciato due film: still animati con Kling («hold their pose») = «AI statica»; 5 inquadrature Veo/Kling a tagli secchi = «cambi scena robotici, si vede che è AI». Ha indicato come direzione un esempio pubblico Seedance 2.5 di Higgsfield (15 s, un solo piano sequenza che segue un personaggio dentro un interno d'epoca).
+**Evidenza:** un cliente ha bocciato due film: still animati con Kling («hold their pose») = «AI statica»; 5 inquadrature Veo/Kling a tagli secchi = «cambi scena robotici, si vede che è AI». Ha indicato come direzione un esempio pubblico Seedance 2.5 di Higgsfield (15 s, un solo piano sequenza che segue un personaggio dentro un interno d'epoca).
 **Quando non vale:** quando serve tenere un volto o un luogo già approvato: allora `omni_reference`, sempre in un solo movimento.
 **Cliente/progetto:** generale.
 
@@ -61,6 +61,52 @@ Il video di riferimento va ripulito dai movimenti di bocca non voluti (avanti-in
 - `draft_job_id` accetta solo job draft: un 480p non draft non si porta a 1080p.
 
 **Quando non vale:** se la camera si muove molto nella coda, la dissolvenza si vede. La coda rigenerata non è identica al pixel (circa 26 dB di PSNR).
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Catalogo Higgsfield: cosa è modello e cosa è workflow
+**Pattern:** `higgs model list --video` non mostra tutto. Sono **workflow** (si vedono con `higgs workflow list`, parametri con `higgs workflow get`, si lanciano con `higgs generate workflow`): Cinema Studio 4.0 (`cinematic_studio_video_4_0`), Kling 3.0 Motion Control (`kling3_0_motion_control`), Reframe (`reframe`), `dubbing`, `voice_change`. Sono **modelli**: `seedance_2_5`, `kling4_0`, `kling_o3_image_reference` (Kling 3.0 Omni), `veo3_1`, `veo3_1_lite`, `gemini_omni_flash_1_1`, Genjutsu (`hf_mult_motion_control`, `hf_mult_replace_object`), `topaz_hyperion_2_5`, `topaz_video`, `video_upscale`, `bytedance_video_upscale`, `fps_boost`, `video_deflicker`. La skill `higgsfield` non documenta ancora Kling 4.0 né Topaz Hyperion 2.5: per questi vale solo la CLI.
+**Evidenza:** [P] `higgs model list --video` (45 voci) e `higgs workflow list`, 2026-11-04. Veo: Google ha messo il 22 ott 2026 come data **più vicina possibile** di ritiro delle versioni preview di Veo 3.1 nell'API Gemini (sostituto `gemini-omni-1.1-flash`), non come chiusura confermata (aistudio.google.com/docs/deprecations, letta il 2026-11-04); su Higgsfield `veo3_1` c'è ancora e risponde a `generate cost` (32 crediti, parametri di default).
+**Quando non vale:** il catalogo cambia di settimana in settimana: rilanciare i due comandi a ogni progetto. Essere nel catalogo non dice nulla sulla qualità. Katana sta solo nell'MCP: non verificato da CLI.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Limiti reali di Seedance 2.5 e Kling 4.0 (schema CLI)
+**Pattern:**
+- Seedance 2.5: durata fino a 30 s (31 rifiutato); al massimo 30 immagini (contando inizio e fine) e 50 riferimenti in totale; `start_image`/`end_image` solo in `omni_reference`; `t2v` non accetta media; `draft` e `draft_job_id` si escludono. Risoluzioni 480p, 720p, 1080p.
+- Kling 4.0: durata fino a 30 s (31 rifiutato); 720p o 1080p; nessuna bozza; al massimo 10 immagini e 15 riferimenti fra immagini, video ed elementi; text-to-video vuole un formato fisso.
+- Cinema Studio 4.0 ha le stesse modalità di Seedance 2.5 (t2v, omni_reference, video_edit, video_extension) più id di camera, obiettivo, diaframma, epoca, genere, ritmo, luce e palette; nessun `draft` nello schema.
+**Evidenza:** [P] `higgs model get seedance_2_5|kling4_0`, `higgs workflow get cinematic_studio_video_4_0`, `generate cost` con `--duration 31`, 2026-11-04.
+**Quando non vale:** è lo schema, non una prova di qualità: 30 s in un piano solo non l'abbiamo mai generato. Riverificare a ogni progetto.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Listino misurato (stime `higgs generate cost`, gratis)
+**Pattern:**
+- Seedance 2.5 (2026-10-30, riconfermato 2026-11-04): 3 cr/s in bozza 480p, 7 a 720p, 16 a 1080p. 15 s: 45 / 105 / 240. 30 s: 90 in bozza, 480 a 1080p. Il prezzo dipende solo da durata e risoluzione: non cambiano `omni_reference` con fotogramma iniziale e finale, il 9:16, l'audio nativo.
+- Cinema Studio 4.0 (2026-11-02): stessi prezzi di Seedance 2.5.
+- Kling 4.0 (2026-11-02, riconfermato 2026-11-04): 3,25 cr/s a 1080p (15 s = 48,75; 30 s = 97,5), 5 volte meno di Seedance a 1080p. Senza bozza: si gira direttamente a 1080p. Il blog Higgsfield dice 4 o 7,5: vale la CLI del giorno.
+- Veo 3.1 (2026-11-02): 4 cr/s base, 10 in alta qualità. Hailuo 2.3: 11 crediti per 10 s.
+- Rifinitura su 15 s (2026-11-02): ByteDance upscale 4K 4; Topaz Hyperion 2.5 37; FPS Boost Topaz 50; Deflicker 2; Reframe 9:16 70,5 a 720p, 183 a 1080p. Upscale e FPS Boost si stimano solo passando il file (`--video`); `reframe` con il file fallisce, si stima con `--duration`.
+- Coda `omni_reference` di 5 s (2026-10-30): 15 crediti a 480p, 80 a 1080p.
+- Euro: `playwright-cli open https://higgsfield.ai/pricing` + `eval document.body.innerText` (WebFetch non vede i prezzi). Ultra 129 €/mese (99 annuale) per 3.000 crediti, IVA esclusa (2026-11-02).
+**Evidenza:** [P] stime della CLI alle date indicate, nessun credito speso; «Un'uscita sola» (`spot-agenzia/06_costi_uscita_sola.md`).
+**Quando non vale:** i prezzi cambiano: sopra i 30 giorni si riverifica prima di un preventivo. La qualità di Kling 4.0 non è provata da noi. In zsh i flag in una variabile (`$x="--draft true"`) non si spezzano: scriverli per esteso.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Metadati di provenienza: chi li mette e quando si perdono
+**Pattern:** i file scaricati da Higgsfield arrivano già marcati in modo diverso secondo il modello. Seedance 2.5 e Veo 3.1 portano un manifesto C2PA (Seedance: `c2pa.claim.v2`, hash `c2pa.hash.bmff.v3`, firma, `digitalSourceType = trainedAlgorithmicMedia`; Veo: firmato da Google). Kling non ha C2PA ma un tag `AIGC` nei metadati del contenitore (`ContentProducer: kling`). Tutti i nostri master ricodificati con ffmpeg in H.264/WebM non hanno più né l'uno né l'altro. Quindi: tenere sempre il sorgente originale accanto al master e dichiarare nel `.md` che il master non è marcato.
+**Evidenza:** [P] misura nostra, 2026-11-04, ricerca dei byte `c2pa`/`AIGC` e `ffprobe` su file scaricati da Higgsfield e sui master ricodificati da questi: le sorgenti Seedance hanno il manifesto; le clip Veo hanno il manifesto Google; le clip Kling hanno il tag AIGC; i master ricodificati (mp4 e webm) non hanno nulla. La specifica C2PA (2.5) non dice nulla su H.264: dice solo che il manifesto si può togliere e che per questo esistono i Content Credentials «durevoli» con filigrana (explainer 2.3 §7.2.3).
+**Quando non vale:** validato dal lead con `c2patool` 0.28.4 (2026-11-04): la sorgente Seedance ha un manifesto «Valid» con firma `signingCredential.untrusted` (l'emittente non è nella lista di fiducia di c2patool), il master ricodificato dà «No claim found». Non provato un remux senza ricodifica (`-c copy`): con l'hash sui byte del file probabilmente il manifesto resta ma non è più valido. SynthID di Google (filigrana nei pixel dei video Veo, dichiarata resistente alla compressione) non si vede con questi strumenti: non verificato se sopravviva nel master.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] AI Act art. 50: cosa vale per noi che pubblichiamo
+**Pattern:** dal 2 agosto 2026 vale l'art. 50 (Reg. UE 2024/1689). Il rinvio al 2 dicembre 2026 (Reg. UE 2026/1744, nuovo art. 111(4)) vale solo per i **fornitori** dei sistemi già sul mercato e solo per la marcatura dell'art. 50(2): chi usa lo strumento e pubblica deepfake (art. 50(4)) deve già etichettare, **nessuna proroga**. Per opere «evidentemente artistiche, creative, satiriche, di finzione» l'obbligo si riduce a dichiarare la presenza di contenuto generato «in modo appropriato che non ostacoli la visione». Il Codice di condotta (10 giu 2026) chiede metadati firmati più filigrana e l'icona all'inizio del video, ripetuta a intervalli; non nomina C2PA. Le Linee guida C(2026) 5054 (20 lug 2026) non sono vincolanti. Per noi: etichetta visibile decisa con `compliance-rights-officer`, più il registro di ogni film.
+**Evidenza:** [P] testo AI Act e Omnibus su Cellar, Codice e Linee guida sul sito della Commissione, letti, 2026-11-04.
+**Quando non vale:** se un nostro film sia un «deepfake» (somiglia a persone, luoghi o eventi reali e sembrerebbe autentico) e se rientri nell'eccezione creativa lo decide `compliance-rights-officer` caso per caso, non noi. Riverificare sopra i 90 giorni: Linee guida e Codice possono essere aggiornati.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Registro dell'intervento umano: serve anche per i diritti
+**Pattern:** per ogni film scrivere nel `.md` modello, job-id, prompt integrale e le scelte umane (casting, luce, camera, selezione fra le bozze, montaggio, correzioni). In Italia l'art. 1 della L. 633/1941 (modificato dalla L. 132/2025, art. 25) protegge le opere «anche laddove create con l'ausilio di strumenti di intelligenza artificiale, purché costituenti risultato del lavoro intellettuale dell'autore»: un film da solo prompt ha tutela dubbia, il registro è la prova del lavoro umano.
+**Evidenza:** [P] normattiva.it, letto, 2026-11-04. Negli USA l'Ufficio del copyright (rapporto Parte 2, gen 2025) dice che i soli prompt non bastano: è un parere, non una sentenza.
+**Quando non vale:** il registro non garantisce la tutela; la valutazione la fa `compliance-rights-officer` con `rights-licensing-clearance`.
 **Cliente/progetto:** generale.
 
 ## Da verificare

@@ -112,7 +112,7 @@ Filtri operativi:
 - Formule ambigue o nascoste non bastano: sigle poco note, hashtag in fondo a venti altri hashtag, "grazie a" senza indicazione della natura commerciale. Le FAQ AGCOM del 16/03/2026, lette solo in sintesi, accettano «Pubblicità», «Advertising», «ADV» o formule equivalenti, a inizio didascalia prima del «altro»: **da verificare sul PDF delle FAQ** prima di fissare la formula. Verifica anche la Digital Chart dell'IAP (richiamata dall'art. 7 del Codice di Autodisciplina) e la policy della piattaforma.
 - **Affiliazione**: va dichiarata anche quando non c'è un accordo diretto col brand.
 - **Omaggi non richiesti** di cui il creator parla: se il prodotto è stato inviato dal brand, va detto.
-- **Contratto**: la clausola di disclosure deve essere nel contratto col creator, con obbligo di mantenerla nel tempo e responsabilità in caso di rimozione. Il brand resta esposto anche quando è il creator a sbagliare: la verifica post-pubblicazione è parte del lavoro, non un extra.
+- **Contratto**: la clausola di disclosure deve essere nel contratto col creator, con obbligo di mantenerla nel tempo e responsabilità in caso di rimozione. Il brand resta esposto anche quando è il creator a sbagliare: la verifica post-pubblicazione è parte del lavoro, non un extra. Nel regime AGCOM, però, verso committenti e intermediari c'è un'aspettativa di vigilanza non vincolante (delibera 197/25/CONS, Allegato A, punto 3.4), non una sanzione condivisa: non scrivere «corresponsabilità» al cliente senza legale.
 - **UGC e dipendenti**: chi parla del brand avendone un interesse economico lo dichiara, dipendenti compresi.
 - **Minori**: regole più severe, sia come pubblico sia come protagonisti. Fermati e chiedi.
 
