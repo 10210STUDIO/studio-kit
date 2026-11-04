@@ -28,7 +28,7 @@
 - **Playbook pieni.** Tutti i 24 partono con voci verificate, datate e con fonte: stato di norme, piattaforme e strumenti al 4 novembre 2026. Ogni voce dice fino a quando vale; sopra i 90 giorni si riverifica.
 - **Tre benchmark** in `studio/benchmarks/`: costi media in Italia, incrementalità del media, margini delle agenzie. Hanno data, fonte e perimetro; non sono soglie per i tuoi clienti.
 - **Collaudo degli agenti** (`studio/collaudo/`). Cinque brief fittizi, un giudice (`delivery-qa`), una rubrica e uno storico dei voti: lo lanci dopo aver cambiato un agente per vedere se è migliorato o peggiorato.
-- **Manutenzione settimanale** (`studio/manutenzione/`). Uno script fa controllare le fonti e le voci scadute da `insight-research` e fa aggiornare i playbook. Parte a mano; il README della cartella spiega come farlo partire da solo.
+- **Manutenzione settimanale** (`studio/manutenzione/`). Uno script scarica le fonti ufficiali di `fonti.md`, le fa leggere a un modello senza strumenti (il testo del web entra come dato, mai come istruzione) e scrive nei playbook solo le voci la cui citazione compare davvero nella pagina. Il resto finisce nel report da guardare a mano. Schema ripreso dai controlli di [harvey](https://github.com/ethanplusai/harvey). Parte a mano; il README della cartella spiega come farlo partire da solo.
 - **Skill corrette** su accessibilità, GDPR, contratti, test A/B, Meta Ads, creator e altre, con le fonti riverificate.
 
 **Aggiornare da 0.1.0:** lancia `/studio-kit:crea-studio` e chiedi di aggiornare. I tuoi playbook non vengono toccati: la skill ti propone solo di aggiungere in fondo le voci nuove.
