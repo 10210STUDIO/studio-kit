@@ -13,7 +13,7 @@
 | **24 agenti** | Direzione, brand, design, foto e film AI, copy, media, CRM, CRO, PR, dati, web, sicurezza, vendite, operazioni, qualità e conformità. |
 | **Regole dello studio** | Un file, `STUDIO.md`, letto da ogni agente prima di ogni lavoro: numeri sempre con fonte, brief prima dell'esecuzione, chi produce non giudica, due cancelli con potere di veto. |
 | **Playbook** | La memoria di ogni agente: cosa funziona, con la prova e il limite. Si aggiornano a fine lavoro. |
-| **35 skill di mestiere** | Metodo e checklist per posizionamento, naming, identità, tipografia, stampa, script video, campagne a pagamento, test, tracking, GDPR, diritti, contratti, margine e altro. |
+| **35 skill di mestiere** (+ 4 di HyperFrames) | Metodo e checklist per posizionamento, naming, identità, tipografia, stampa, script video, campagne a pagamento, test, tracking, GDPR, diritti, contratti, margine e altro. |
 | **Atlante culturale** | 437 riferimenti di arte, design, architettura, moda, fotografia, cinema e musica, tradotti in istruzioni per i modelli di immagine e video. |
 | **Una cartella per progetto** | Crei la cartella di un cliente e la apri con Claude: si prepara da sola, con il team e il solo contesto di quel cliente, e `studio-lead` a dirigere. |
 | **`/studio-kit:crea-studio`** | Una skill che fa otto domande e installa tutto nel tuo `~/.claude/`, con il nome del tuo studio. |
@@ -23,6 +23,7 @@
 ## Novità 0.3
 
 - **Una cartella per progetto.** All'installazione scegli dove tieni i progetti. Ogni cartella che crei lì dentro e apri con Claude (dal Terminale o dall'app Desktop, sezione Code) si prepara da sola: il team collegato, un `CLAUDE.md` che carica solo il contesto di quel cliente (`studio/clients/<sigla>/CONTEXT.md`, creato vuoto se il cliente è nuovo) e, dalla sessione dopo, `studio-lead` come direttore che chiama gli specialisti. Niente richieste di permesso per leggere e aggiornare playbook e contesti. Se la cartella non la vuoi diretta, togli il suo `.claude/settings.json`.
+- **Video da HTML con HyperFrames.** Incluse 4 skill (`hyperframes`, `hyperframes-cli`, `hyperframes-registry`, `remotion-to-hyperframes`), copiate da [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) (Apache-2.0, licenza accanto a ogni skill) e modificate: CLI fissa alla 0.9.10, niente aggiornamenti automatici, niente comandi che caricano il progetto sui server HeyGen. `motion-video` le usa per titoli, testi animati e varianti a volume. La CLI la installi tu: `crea-studio` ti propone i comandi e i blocchi nei permessi.
 - **Aggiornamenti continui.** Le regole e le voci nuove dei playbook arrivano al kit man mano, riscritte senza nomi né dati: aggiornare con `/studio-kit:crea-studio` ti propone solo le novità.
 
 **Aggiornare da 0.2:** `/plugin marketplace update studio-kit`, poi `/studio-kit:crea-studio` e chiedi di aggiornare; ti chiede la cartella dei progetti.
@@ -238,7 +239,7 @@ Gli agenti funzionano anche senza le dipendenze qui sotto, ma rendono di più co
 
 **Altre skill opzionali** citate nelle tabelle di routing (installale se ti servono; fonti da verificare): skill Google per Ads, Analytics, BigQuery e Data Manager; `archify`, `image-to-code-skill`, `imagegen-frontend-web`, `imagegen-frontend-mobile`, `img2threejs`, `motion-patterns`, `remotion-video-creation`, `brand-discovery`, `competitive-platform-analysis`, `competitive-report-structure`.
 
-**Skill di terzi che gli agenti nominano «se installata»** (non incluse nel kit; controlla tu fonte e licenza prima di installarle): `seo`, `lead-intelligence`, `research-ops`, `watch` (guardare un video: fotogrammi e trascrizione), `audio-understand` (com'è una musica o un suono), `hyperframes` con `hyperframes-cli`, `hyperframes-registry` e `remotion-to-hyperframes` (video da HTML, [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes), Apache-2.0: fissa la CLI a una versione, spegni la telemetria e non usare i comandi cloud), `security-audit`. Senza di loro gli agenti usano gli strumenti di base.
+**Skill di terzi che gli agenti nominano «se installata»** (non incluse nel kit; controlla tu fonte e licenza prima di installarle): `seo`, `lead-intelligence`, `research-ops`, `watch` (guardare un video: fotogrammi e trascrizione), `audio-understand` (com'è una musica o un suono), `security-audit`. Senza di loro gli agenti usano gli strumenti di base.
 
 **MCP opzionale:** Splice (campioni musicali) per `motion-video`: gli strumenti `mcp__claude_ai_Splice__*` funzionano solo con quel connettore.
 
@@ -269,7 +270,7 @@ Gli agenti funzionano anche senza le dipendenze qui sotto, ma rendono di più co
 skills/crea-studio/    la skill che installa e personalizza
 templates/
   agents/              24 agenti (con segnaposto {{STUDIO}}, {{TITOLARE}}…)
-  skills/              35 skill di mestiere + atlante culturale
+  skills/              35 skill di mestiere + atlante culturale + 4 skill HyperFrames
   studio/              STUDIO.md, playbook, benchmark, listino, CONTEXT di esempio
     hooks/             i due controlli automatici (deploy e playbook) e il loro test
     collaudo/          brief fittizi, rubrica e script per collaudare gli agenti

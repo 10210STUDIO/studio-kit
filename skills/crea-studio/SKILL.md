@@ -39,10 +39,10 @@ Per ogni file dei modelli, sostituisci i segnaposto (`{{STUDIO}}`, `{{STUDIO_SLU
 | `studio/STUDIO.md`, `studio/nuovo-cliente.sh`, `studio/playbooks/`, `studio/benchmarks/`, `studio/hooks/`, `studio/collaudo/`, `studio/manutenzione/` | `~/.claude/studio/` (stessa struttura) |
 | `studio/clients/_esempio/CONTEXT.md` | due copie: `~/.claude/studio/clients/_esempio/CONTEXT.md` (identica, come modello) e `~/.claude/studio/clients/{{STUDIO_SLUG}}/CONTEXT.md`, dove metti il nome dello studio nel titolo, la descrizione (domanda 3) in «Chi è» e **sostituisci** gli esempi di «Gusto e regole visive» con le risposte della domanda 7 (se non ha risposto, lascia gli esempi e scrivi in testa «da compilare») |
 
-Usa uno script (es. Python) che legga ogni file, sostituisca e scriva: non a mano file per file. Dopo:
+Usa uno script (es. Python) che legga ogni file, sostituisca e scriva: non a mano file per file. I file che non sono testo UTF-8 (font, immagini) si copiano byte per byte, senza sostituzioni. Dopo:
 
 - rendi eseguibili gli script (`chmod +x` su `studio/hooks/*.py`, `studio/hooks/*.sh`, `studio/nuovo-cliente.sh`, `studio/collaudo/collaudo.sh`, `studio/manutenzione/*.sh`, `studio/manutenzione/scadute.py`);
-- verifica con grep che in `~/.claude/agents/`, `~/.claude/studio/` e nelle skill copiate non resti nessun `{{`;
+- verifica con grep che in `~/.claude/agents/`, `~/.claude/studio/` e nelle skill copiate non resti nessuno dei segnaposto dell'intervista (`grep -rE '\{\{(STUDIO|STUDIO_SLUG|TITOLARE|DESCRIZIONE|LINGUA|ALTRE_ATTIVITA|CANALE_NOTIFICHE)\}\}'`; le graffe del codice React nelle skill HyperFrames sono normali);
 - lancia `bash ~/.claude/studio/hooks/test_hooks.sh`: deve stampare solo `OK`. Se fallisce, dillo all'utente: i cancelli automatici degli agenti `web-engineer` e `delivery-qa` non funzionerebbero.
 
 ## 3b. Cartelle progetto
@@ -59,6 +59,7 @@ Da lì in poi: cartella nuova dentro la cartella dei progetti → la si apre con
 Gli agenti nominano anche skill di terzi. Controlla quali mancano: cartelle in `~/.claude/skills/` e plugin elencati in `~/.claude/plugins/installed_plugins.json` (o con `claude plugin list`). Proponi all'utente i comandi; **qui, durante l'installazione, non installare nulla senza un sì** (la frase di `STUDIO.md` «li usi senza chiedere» vale per gli agenti al lavoro, dopo che gli strumenti sono stati installati):
 
 - **Higgsfield** (foto, video, audio AI): CLI `npm i -g @higgsfield/cli` poi `higgs auth login`; skill ufficiali `npx skills add higgsfield-ai/skills -g -a claude-code`; skill di prompt esperti `git clone https://github.com/OSideMedia/higgsfield-ai-prompt-skill ~/.claude/skills/higgsfield`. Serve un account Higgsfield a pagamento.
+- **HyperFrames** (video da HTML, per `motion-video`; le 4 skill sono già nel kit): CLI `npm i -g hyperframes@0.9.10 --ignore-scripts`, poi `hyperframes telemetry disable`. Proponi di aggiungere in `~/.claude/settings.json`: `env` con `HYPERFRAMES_NO_TELEMETRY=1` e `DO_NOT_TRACK=1`, e in `permissions.deny` i comandi che caricano il progetto fuori o cambiano versione: `Bash(hyperframes cloud*)`, `Bash(hyperframes publish*)`, `Bash(hyperframes lambda*)`, `Bash(hyperframes cloudrun*)`, `Bash(hyperframes play*)`, `Bash(hyperframes present*)`, `Bash(hyperframes upgrade*)`, `Bash(hyperframes login*)`, `Bash(hyperframes *heygen*)` (e le stesse con `npx hyperframes`).
 - Plugin Claude Code: `/plugin install <nome>@<marketplace>` dopo `/plugin marketplace add <repo>`, con i repository elencati nel README.
 - Gli altri (design, sviluppo, ricerca) sono elencati nel `README.md` del kit, sezione «Requisiti e dipendenze». Senza di loro gli agenti funzionano lo stesso: usano gli strumenti di base.
 
