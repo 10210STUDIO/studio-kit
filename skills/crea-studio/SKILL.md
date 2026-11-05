@@ -1,6 +1,6 @@
 ---
 name: crea-studio
-description: Installa e personalizza studio-kit nel ~/.claude/ dell'utente, dopo poche domande (nome dello studio, chi decide, lingua, gusto). Copia 24 agenti coordinati da studio-lead, le regole dello studio, i playbook, i benchmark, i controlli automatici (hook), il collaudo e la manutenzione degli agenti, 35 skill di mestiere e l'atlante culturale, senza sovrascrivere niente senza chiedere. Usala quando l'utente dice «crea il mio studio», «installa il team», «configura studio-kit» o vuole aggiornare un'installazione esistente.
+description: Installa e personalizza studio-kit nel ~/.claude/ dell'utente, dopo poche domande (nome dello studio, chi decide, lingua, gusto). Copia 24 agenti coordinati da studio-lead, le regole dello studio, i playbook, i benchmark, i controlli automatici (hook), le cartelle progetto che si preparano da sole, il collaudo e la manutenzione degli agenti, 35 skill di mestiere e l'atlante culturale, senza sovrascrivere niente senza chiedere. Usala quando l'utente dice «crea il mio studio», «installa il team», «configura studio-kit» o vuole aggiornare un'installazione esistente.
 ---
 
 # Crea il tuo studio
@@ -20,6 +20,7 @@ I modelli stanno nella cartella del plugin, in `templates/`. Per trovarla: leggi
 5. Il titolare ha altre attività o aziende da tenere separate? (elenco o «nessuna») → `{{ALTRE_ATTIVITA}}`.
 6. Canale per gli alert urgenti? (Telegram, Slack, email, nessuno) → `{{CANALE_NOTIFICHE}}`.
 7. Il gusto dello studio, per il `CONTEXT.md` del proprio brand: registro, riferimenti amati, cose vietate, colori. Se l'utente non sa rispondere ora, lascia l'esempio e dillo.
+8. In quale cartella tieni i progetti dei clienti? (default: `~/Progetti`) → la cartella dei progetti (passo 3b). Ogni cartella creata lì dentro e aperta con Claude diventa un progetto cliente. Se l'utente non la vuole, salta il passo 3b.
 
 ## 2. Controllo prima di scrivere
 
@@ -40,9 +41,18 @@ Per ogni file dei modelli, sostituisci i segnaposto (`{{STUDIO}}`, `{{STUDIO_SLU
 
 Usa uno script (es. Python) che legga ogni file, sostituisca e scriva: non a mano file per file. Dopo:
 
-- rendi eseguibili gli script (`chmod +x` su `studio/hooks/*.py`, `studio/hooks/test_hooks.sh`, `studio/collaudo/collaudo.sh`, `studio/manutenzione/*.sh`, `studio/manutenzione/scadute.py`);
+- rendi eseguibili gli script (`chmod +x` su `studio/hooks/*.py`, `studio/hooks/*.sh`, `studio/nuovo-cliente.sh`, `studio/collaudo/collaudo.sh`, `studio/manutenzione/*.sh`, `studio/manutenzione/scadute.py`);
 - verifica con grep che in `~/.claude/agents/`, `~/.claude/studio/` e nelle skill copiate non resti nessun `{{`;
 - lancia `bash ~/.claude/studio/hooks/test_hooks.sh`: deve stampare solo `OK`. Se fallisce, dillo all'utente: i cancelli automatici degli agenti `web-engineer` e `delivery-qa` non funzionerebbero.
+
+## 3b. Cartelle progetto
+
+Con la risposta 8: crea la cartella se non c'è, poi **mostra all'utente la modifica a `~/.claude/settings.json` e chiedi un sì** (prima fai una copia `settings.json.bak`). Con uno script Python che legge il JSON e lo riscrive:
+
+- in `hooks.SessionStart` aggiungi `{"hooks": [{"type": "command", "command": "bash \"<HOME>/.claude/studio/hooks/cartella-cliente.sh\" \"<cartella dei progetti>\""}]}`, con percorsi assoluti; se c'è già una voce con `cartella-cliente.sh`, sostituiscila;
+- in `permissions.additionalDirectories` aggiungi `<HOME>/.claude/studio` e la cartella dei progetti, e in `permissions.allow` le regole `Read(/<percorso>/**)` e `Edit(/<percorso>/**)` per tutte e due (il percorso assoluto comincia già con `/`, quindi la regola ha `//`). Così gli agenti leggono e scrivono playbook e contesti da qualunque progetto senza chiedere permessi.
+
+Da lì in poi: cartella nuova dentro la cartella dei progetti → la si apre con Claude (Terminale o app Desktop, sezione Code) → l'hook la prepara (collegamento agli agenti, `CLAUDE.md` che carica solo `studio/clients/<sigla>/CONTEXT.md`, creato vuoto se il cliente è nuovo) e dalla sessione dopo Claude parte come `studio-lead`. Per un cliente già presente in `studio/clients/` basta che il nome della cartella cominci con la sua sigla. A mano: `bash ~/.claude/studio/nuovo-cliente.sh "<cartella>" <sigla>`.
 
 ## 4. Dipendenze
 
@@ -54,7 +64,7 @@ Gli agenti nominano anche skill di terzi. Controlla quali mancano: cartelle in `
 
 ## 5. Chiudi
 
-Riassumi in poche righe: cosa è stato installato, cosa è stato saltato, quali dipendenze mancano, l'esito del test degli hook, e il prossimo passo: «Riavvia Claude Code, poi chiedi a `studio-lead` il primo lavoro». Ricorda di compilare `~/.claude/studio/benchmarks/listino.md` prima di fare preventivi. Due cose sono facoltative e non partono da sole: il collaudo degli agenti (`studio/collaudo/README.md`) e la manutenzione settimanale (`studio/manutenzione/README.md`, con l'esempio per launchd); entrambe usano il piano Claude dell'utente, quindi non lanciarle senza un sì.
+Riassumi in poche righe: cosa è stato installato, cosa è stato saltato, quali dipendenze mancano, l'esito del test degli hook, la cartella dei progetti, e il prossimo passo: «Riavvia Claude Code, crea la cartella del primo cliente dentro la cartella dei progetti e aprila con Claude; oppure chiedi a `studio-lead` il primo lavoro». Ricorda di compilare `~/.claude/studio/benchmarks/listino.md` prima di fare preventivi. Due cose sono facoltative e non partono da sole: il collaudo degli agenti (`studio/collaudo/README.md`) e la manutenzione settimanale (`studio/manutenzione/README.md`, con l'esempio per launchd); entrambe usano il piano Claude dell'utente, quindi non lanciarle senza un sì.
 
 ## Aggiornare un'installazione
 
@@ -64,5 +74,6 @@ Riassumi in poche righe: cosa è stato installato, cosa è stato saltato, quali 
 4. **Diversi:** mostra le differenze file per file e aggiorna solo quelli che l'utente approva (la skill non sa quali file l'utente ha modificato: chiedi sempre; prima di sovrascrivere, copia `.bak`). **Nuovi:** elencali e chiedi se aggiungerli.
 5. **I playbook dell'utente non si sovrascrivono mai**: sono la sua memoria. Proponi solo di aggiungere in fondo i pattern nuovi del kit che mancano (confronta per titolo, ignorando la data: se c'è già una voce con lo stesso titolo, salta). Lo stesso vale per `collaudo/storico.md`, `collaudo/risultati/`, `manutenzione/fonti.md` (l'utente l'ha adattato) e per tutto ciò che la manutenzione ha scritto (`log.txt`, `report/`, `higgs/`).
 6. **Dopo l'aggiornamento** rifai il controllo dei `{{` e lancia di nuovo `test_hooks.sh`.
+7. **Cartelle progetto:** se in `~/.claude/settings.json` non c'è un hook con `cartella-cliente.sh`, fai la domanda 8 e il passo 3b.
 
 Se in `installed_plugins.json` la voce `studio-kit@studio-kit` ha più installazioni (es. utente e progetto), usa quella con `scope` uguale a `user`; se non c'è, la più recente.

@@ -15,9 +15,17 @@
 | **Playbook** | La memoria di ogni agente: cosa funziona, con la prova e il limite. Si aggiornano a fine lavoro. |
 | **35 skill di mestiere** | Metodo e checklist per posizionamento, naming, identità, tipografia, stampa, script video, campagne a pagamento, test, tracking, GDPR, diritti, contratti, margine e altro. |
 | **Atlante culturale** | 437 riferimenti di arte, design, architettura, moda, fotografia, cinema e musica, tradotti in istruzioni per i modelli di immagine e video. |
-| **`/studio-kit:crea-studio`** | Una skill che fa sette domande e installa tutto nel tuo `~/.claude/`, con il nome del tuo studio. |
+| **Una cartella per progetto** | Crei la cartella di un cliente e la apri con Claude: si prepara da sola, con il team e il solo contesto di quel cliente, e `studio-lead` a dirigere. |
+| **`/studio-kit:crea-studio`** | Una skill che fa otto domande e installa tutto nel tuo `~/.claude/`, con il nome del tuo studio. |
 
 ---
+
+## Novità 0.3
+
+- **Una cartella per progetto.** All'installazione scegli dove tieni i progetti. Ogni cartella che crei lì dentro e apri con Claude (dal Terminale o dall'app Desktop, sezione Code) si prepara da sola: il team collegato, un `CLAUDE.md` che carica solo il contesto di quel cliente (`studio/clients/<sigla>/CONTEXT.md`, creato vuoto se il cliente è nuovo) e, dalla sessione dopo, `studio-lead` come direttore che chiama gli specialisti. Niente richieste di permesso per leggere e aggiornare playbook e contesti. Se la cartella non la vuoi diretta, togli il suo `.claude/settings.json`.
+- **Aggiornamenti continui.** Le regole e le voci nuove dei playbook arrivano al kit man mano, riscritte senza nomi né dati: aggiornare con `/studio-kit:crea-studio` ti propone solo le novità.
+
+**Aggiornare da 0.2:** `/plugin marketplace update studio-kit`, poi `/studio-kit:crea-studio` e chiedi di aggiornare; ti chiede la cartella dei progetti.
 
 ## Novità 0.2.0
 
@@ -200,9 +208,9 @@ Poi, in Claude Code:
 
 Oppure scrivi semplicemente «crea il mio studio»: la skill parte da sola.
 
-La skill fa sette domande, una alla volta: nome dello studio, chi decide, cosa fa lo studio, lingua delle risposte, altre attività da tenere separate, canale per gli alert, gusto dello studio. Poi copia agenti, skill, regole, playbook, benchmark, controlli automatici, collaudo e manutenzione nel tuo `~/.claude/`, con i tuoi dati al posto dei segnaposto. Se un file esiste già, chiede se saltarlo, sovrascriverlo (dopo averne fatto una copia `.bak`) o annullare. Non sovrascrive niente senza chiedere.
+La skill fa otto domande, una alla volta: nome dello studio, chi decide, cosa fa lo studio, lingua delle risposte, altre attività da tenere separate, canale per gli alert, gusto dello studio, cartella dei progetti. Poi copia agenti, skill, regole, playbook, benchmark, controlli automatici, collaudo e manutenzione nel tuo `~/.claude/`, con i tuoi dati al posto dei segnaposto. Se un file esiste già, chiede se saltarlo, sovrascriverlo (dopo averne fatto una copia `.bak`) o annullare. Non sovrascrive niente senza chiedere.
 
-Riavvia Claude Code e dai il primo lavoro a `studio-lead`. Prima di chiedere un preventivo, compila `~/.claude/studio/benchmarks/listino.md`.
+Riavvia Claude Code. Poi crea la cartella del primo cliente dentro la cartella dei progetti e aprila con Claude, oppure dai il primo lavoro a `studio-lead`. Prima di chiedere un preventivo, compila `~/.claude/studio/benchmarks/listino.md`.
 
 **Aggiornare.** Lancia `/studio-kit:crea-studio` e chiedi di aggiornare l'installazione: ti mostra le differenze file per file, aggiorna solo quelli che approvi e ti propone i pattern nuovi del kit senza toccare i tuoi playbook.
 
@@ -230,7 +238,7 @@ Gli agenti funzionano anche senza le dipendenze qui sotto, ma rendono di più co
 
 **Altre skill opzionali** citate nelle tabelle di routing (installale se ti servono; fonti da verificare): skill Google per Ads, Analytics, BigQuery e Data Manager; `archify`, `image-to-code-skill`, `imagegen-frontend-web`, `imagegen-frontend-mobile`, `img2threejs`, `motion-patterns`, `remotion-video-creation`, `brand-discovery`, `competitive-platform-analysis`, `competitive-report-structure`.
 
-**Skill di terzi che gli agenti nominano «se installata»** (non incluse nel kit; controlla tu fonte e licenza prima di installarle): `seo`, `lead-intelligence`, `research-ops`, `watch` (guardare un video: fotogrammi e trascrizione), `audio-understand` (com'è una musica o un suono), `security-audit`. Senza di loro gli agenti usano gli strumenti di base.
+**Skill di terzi che gli agenti nominano «se installata»** (non incluse nel kit; controlla tu fonte e licenza prima di installarle): `seo`, `lead-intelligence`, `research-ops`, `watch` (guardare un video: fotogrammi e trascrizione), `audio-understand` (com'è una musica o un suono), `hyperframes` con `hyperframes-cli` e `hyperframes-registry` (video da HTML, [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes), Apache-2.0: fissa la CLI a una versione, spegni la telemetria e non usare i comandi cloud), `security-audit`. Senza di loro gli agenti usano gli strumenti di base.
 
 **MCP opzionale:** Splice (campioni musicali) per `motion-video`: gli strumenti `mcp__claude_ai_Splice__*` funzionano solo con quel connettore.
 
@@ -290,4 +298,4 @@ I nomi di artisti, fotografi, registi, designer e marchi citati nell'atlante son
 
 ## English summary
 
-`studio-kit` turns Claude Code into a creative and marketing studio. A lead agent turns each request into a five-line brief, splits it into work packages and dispatches 24 specialists in parallel: creative direction, brand, UI, AI photo and film direction, motion, copy, PR, media planning and buying, creative testing, creators, CRM, CRO, measurement, research, web, security, sales and operations. Whoever produces never judges their own work. Two gates can veto: margin before a project is accepted, quality and compliance before anything is delivered. Every agent reads the studio rules, its own playbook and the client's context before working, and adds verified patterns to its playbook afterwards. The kit also includes 35 craft skills and a 437-entry cultural atlas that translates art, design, architecture, fashion, photography, film and music references into prompt fragments for image and video models. All content is in Italian. Install the plugin, run `/studio-kit:crea-studio`, answer seven questions, and the kit is copied and personalised into your `~/.claude/`. Your brand, clients, taste, rate card and playbooks stay yours.
+`studio-kit` turns Claude Code into a creative and marketing studio. A lead agent turns each request into a five-line brief, splits it into work packages and dispatches 24 specialists in parallel: creative direction, brand, UI, AI photo and film direction, motion, copy, PR, media planning and buying, creative testing, creators, CRM, CRO, measurement, research, web, security, sales and operations. Whoever produces never judges their own work. Two gates can veto: margin before a project is accepted, quality and compliance before anything is delivered. Every agent reads the studio rules, its own playbook and the client's context before working, and adds verified patterns to its playbook afterwards. The kit also includes 35 craft skills and a 437-entry cultural atlas that translates art, design, architecture, fashion, photography, film and music references into prompt fragments for image and video models. All content is in Italian. Install the plugin, run `/studio-kit:crea-studio`, answer eight questions, and the kit is copied and personalised into your `~/.claude/`. Choose a projects folder: every folder you create there and open with Claude sets itself up as a client project, with the team, only that client's context, and the lead agent directing. Your brand, clients, taste, rate card and playbooks stay yours.

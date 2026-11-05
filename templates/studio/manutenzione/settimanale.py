@@ -7,7 +7,7 @@ Modello ripreso da ethanplusai/harvey (untrusted.py, gate.py, claude_runtime.py)
 3. il modello gira SENZA strumenti (--tools "" --safe-mode ...): un'istruzione nascosta non ha con cosa agire;
 4. un controllo in CODICE accetta una voce solo se la citazione compare davvero nella pagina scaricata,
    l'URL è fra quelli scaricati e il testo non contiene comandi, link estranei o istruzioni;
-5. è il CODICE a scrivere la voce nel playbook, in formato fisso. Il resto va nel report per Mario.
+5. è il CODICE a scrivere la voce nel playbook, in formato fisso. Il resto va nel report per {{TITOLARE}}.
 
 fence() e il regex _TAG sono adattati da ethanplusai/harvey, licenza MIT, Copyright (c) 2026 Ethan Rogers.
 
