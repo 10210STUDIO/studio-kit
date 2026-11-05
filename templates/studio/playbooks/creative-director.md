@@ -125,8 +125,8 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** azione già in corso nel keyframe apposta; oggetto che deve fluttuare; musica senza griglia.
 **Cliente/progetto:** generale
 
-## [2026-11-04] ERRORE: ho tolto elementi dal brief di idea del cliente senza chiedere (spot bocciato)
-**Pattern:** quando il cliente dà un'idea scritta, il brief è il contratto. In testa alla direction va una checklist numerata, una riga per elemento (anche quelli audio e le decisioni successive), con l'inquadratura in cui si esegue; si spunta prima di ogni altro voto e una riga mancante vuol dire NON PASSA. Se un elemento mi sembra debole (il rallentatore «banale») non lo tolgo: rispondo netto e propongo come renderlo forte, e decide il cliente. Le aggiunte mie (look, materiali) vanno marcate «da confermare».
+## [2026-11-04] ERRORE: ho tolto elementi da un'idea scritta senza chiedere (spot bocciato)
+**Pattern:** quando chi commissiona (il cliente o il titolare) dà un'idea scritta, il brief è il contratto. In testa alla direction va una checklist numerata, una riga per elemento (anche quelli audio e le decisioni successive), con l'inquadratura in cui si esegue; si spunta prima di ogni altro voto e una riga mancante vuol dire NON PASSA. Se un elemento mi sembra debole (il rallentatore «banale») non lo tolgo: rispondo netto e propongo come renderlo forte, e decide il cliente. Le aggiunte mie (look, materiali) vanno marcate «da confermare».
 **Evidenza:** una versione dello spot priva di alcuni elementi chiesti nel brief, tra cui personaggi, azioni e finale, è stata bocciata: «non ha completamente rispettato il brief di idea». La versione successiva è stata riscritta con una checklist di 40 righe, non ancora giudicata.
 **Quando non vale:** quando il cliente chiede esplicitamente di reinterpretare l'idea.
 **Cliente/progetto:** generale

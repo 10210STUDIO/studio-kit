@@ -125,12 +125,6 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** quando gli URL cambiano. Riverificare dopo 90 giorni.
 **Cliente/progetto:** generale.
 
-## [2026-11-04] Marcatura per macchine: C2PA non è obbligatorio, ma la ricodifica la toglie
-**Pattern:** né le Linee guida né il Codice di condotta (finale 10/6/2026, volontario) nominano C2PA: il Codice chiede metadati firmati e filigrana (impronta facoltativa) e propone un'icona UE «AI», nei video all'inizio e ripetuta. Non scrivere «C2PA obbligatorio» né «i titoli di coda non bastano». La ricodifica ffmpeg toglie il manifesto C2PA (Seedance, Veo) e il tag AIGC (Kling). La marcatura è del fornitore (50(2)), ma i Termini Higgsfield (23/10/2026, sez. 5.5) vietano per contratto di «remove, alter, or obscure any provenance signals». Regola: 1) master originale archiviato col manifesto accanto all'identificativo del lavoro; 2) dopo la ricodifica `c2patool <file>`; 3) per un file consegnato marcato `c2patool --parent <master>` (serve un certificato dello studio); 4) mai scrivere «marcato» senza averlo letto. L'etichetta visibile resta dovuta.
-**Evidenza:** Linee guida e Codice di condotta; termini Higgsfield letti il 2026-11-04. Misura del 2026-11-04 (non ripetuta); `c2patool` 0.28.4, `--parent` letto nell'help.
-**Quando non vale:** flussi che conservano i metadati; atto di esecuzione o norma armonizzata che fissi uno standard. SynthID (Google, nei pixel) sulle uscite via Higgsfield: non verificato. Se la ricodifica viola la 5.5: domanda al legale.
-**Cliente/progetto:** generale.
-
 ## [2026-11-04] Voce sintetica: le voci di sistema macOS non sono licenziate per il lavoro
 **Pattern:** la licenza macOS Tahoe 26, sez. 2F, permette le voci di sistema (`say`) solo «for your personal, non-commercial use» e vieta «recording, publishing or redistribution [...] in a profit, non-profit, public sharing or commercial context». Quindi `say` non entra in nessun deliverable, anteprima al cliente o post dello studio: al più come guida dei tempi in bozza interna, sostituita prima di mostrarla. Ogni voce sintetica si registra al cancello come un asset: strumento, voce, licenza del piano letta quel giorno, prova. Una voce realistica è una «person» del deep fake (Linee guida par. 113: «image, voice»): annuncio parlato o cartello alla prima esposizione, salvo personaggio palesemente di finzione. Clonare la voce di una persona reale solo con liberatoria scritta: l'art. 612-quater c.p. (L. 132/2025 art. 26) punisce chi diffonde senza consenso «voci falsificati o alterati» con AI causando un danno ingiusto.
 **Evidenza:** [P] SLA EA1955 (11/7/2025), dal PDF apple.com/legal/sla/docs/macOSTahoe.pdf e dall'RTF installato su macOS 26.6.2, stesso testo, letti il 2026-11-04; Linee guida C(2026) 5054 par. 113 sul PDF; art. 26 L. 132/2025 su Normattiva, 2026-11-04.
@@ -141,12 +135,6 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Pattern:** Termini del 23/10/2026, sez. 4.4: nessuna rivendicazione su input e output, nessun limite all'uso commerciale, diritti sublicenziabili ai clienti; ma input, contenuti e output «may be used by Company to train» i modelli, salvo Enterprise Agreement. Sez. 5.3: chi carica un volto o una voce garantisce i consensi. Quindi: nessun materiale riservato del cliente (prodotti non lanciati, volti, documenti) caricato senza autorizzazione scritta nel SOW; volti e voci di persone reali solo con liberatoria che copra anche questo uso.
 **Evidenza:** [P] https://higgsfield.ai/terms-of-use-agreement, letto il 2026-11-04.
 **Quando non vale:** con un Enterprise Agreement (verificare se è attivo). I termini cambiano senza preavviso (sez. 19.6): rileggerli a ogni progetto.
-**Cliente/progetto:** generale.
-
-## [2026-11-01] Alt e claim si controllano sull'artefatto finale, non sul prompt o sul piano
-**Pattern:** ogni alt si legge con la foto finale davanti, in tutti i formati, e si controlla che il codice punti ai file finali. Un claim su un dato letto prima della fine del periodo dice i giorni («1–30 ottobre»).
-**Evidenza:** su un sito l'alt descriveva un gesto sull'avambraccio mentre nella foto la matita toccava il petto, e il codice delle immagini puntava ancora alle bozze (2026-11-01); su un altro sito «ottobre 2026 +50%» era un dato letto il 31/10/2026, a mese non concluso.
-**Quando non vale:** alt: mai. Claim: se la fonte confronta già gli stessi giorni e lo dichiara.
 **Cliente/progetto:** generale.
 
 ## [2026-11-04] Volto AI che «ricorda» una persona nota: l'etichetta non basta

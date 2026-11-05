@@ -36,7 +36,7 @@ Per ogni file dei modelli, sostituisci i segnaposto (`{{STUDIO}}`, `{{STUDIO_SLU
 |---|---|
 | `agents/*.md` | `~/.claude/agents/` |
 | `skills/*/` | `~/.claude/skills/` |
-| `studio/STUDIO.md`, `studio/playbooks/`, `studio/benchmarks/`, `studio/hooks/`, `studio/collaudo/`, `studio/manutenzione/` | `~/.claude/studio/` (stessa struttura) |
+| `studio/STUDIO.md`, `studio/nuovo-cliente.sh`, `studio/playbooks/`, `studio/benchmarks/`, `studio/hooks/`, `studio/collaudo/`, `studio/manutenzione/` | `~/.claude/studio/` (stessa struttura) |
 | `studio/clients/_esempio/CONTEXT.md` | due copie: `~/.claude/studio/clients/_esempio/CONTEXT.md` (identica, come modello) e `~/.claude/studio/clients/{{STUDIO_SLUG}}/CONTEXT.md`, dove metti il nome dello studio nel titolo, la descrizione (domanda 3) in «Chi è» e **sostituisci** gli esempi di «Gusto e regole visive» con le risposte della domanda 7 (se non ha risposto, lascia gli esempi e scrivi in testa «da compilare») |
 
 Usa uno script (es. Python) che legga ogni file, sostituisca e scriva: non a mano file per file. Dopo:
@@ -50,9 +50,9 @@ Usa uno script (es. Python) che legga ogni file, sostituisca e scriva: non a man
 Con la risposta 8: crea la cartella se non c'è, poi **mostra all'utente la modifica a `~/.claude/settings.json` e chiedi un sì** (prima fai una copia `settings.json.bak`). Con uno script Python che legge il JSON e lo riscrive:
 
 - in `hooks.SessionStart` aggiungi `{"hooks": [{"type": "command", "command": "bash \"<HOME>/.claude/studio/hooks/cartella-cliente.sh\" \"<cartella dei progetti>\""}]}`, con percorsi assoluti; se c'è già una voce con `cartella-cliente.sh`, sostituiscila;
-- in `permissions.additionalDirectories` aggiungi `<HOME>/.claude/studio` e la cartella dei progetti, e in `permissions.allow` le regole `Read(/<percorso>/**)` e `Edit(/<percorso>/**)` per tutte e due (il percorso assoluto comincia già con `/`, quindi la regola ha `//`). Così gli agenti leggono e scrivono playbook e contesti da qualunque progetto senza chiedere permessi.
+- in `permissions.additionalDirectories` aggiungi `<HOME>/.claude/studio` e la cartella dei progetti; in `permissions.allow` aggiungi `Read(/<HOME>/.claude/studio/**)`, `Read(/<cartella dei progetti>/**)`, `Edit(/<cartella dei progetti>/**)`, `Edit(/<HOME>/.claude/studio/playbooks/**)` e `Edit(/<HOME>/.claude/studio/clients/**)` (il percorso assoluto comincia già con `/`, quindi la regola ha `//`). Così gli agenti aggiornano playbook e contesti da qualunque progetto senza chiedere, mentre regole, hook e script dello studio continuano a chiedere conferma: non dare `Edit` su tutto `~/.claude/studio`.
 
-Da lì in poi: cartella nuova dentro la cartella dei progetti → la si apre con Claude (Terminale o app Desktop, sezione Code) → l'hook la prepara (collegamento agli agenti, `CLAUDE.md` che carica solo `studio/clients/<sigla>/CONTEXT.md`, creato vuoto se il cliente è nuovo) e dalla sessione dopo Claude parte come `studio-lead`. Per un cliente già presente in `studio/clients/` basta che il nome della cartella cominci con la sua sigla. A mano: `bash ~/.claude/studio/nuovo-cliente.sh "<cartella>" <sigla>`.
+Da lì in poi: cartella nuova dentro la cartella dei progetti → la si apre con Claude (Terminale o app Desktop, sezione Code) → l'hook la prepara (collegamento agli agenti, `CLAUDE.md` che carica solo `studio/clients/<sigla>/CONTEXT.md`, creato vuoto se il cliente è nuovo) e dalla sessione dopo Claude parte come `studio-lead`. La sigla del cliente si ricava dal nome della cartella (minuscole, trattini, senza accenti). Se esiste già un cliente con la stessa parola iniziale, l'hook non decide da solo: Claude chiede se è lo stesso. A mano: `bash ~/.claude/studio/nuovo-cliente.sh "<cartella>" <sigla>`.
 
 ## 4. Dipendenze
 
@@ -68,7 +68,7 @@ Riassumi in poche righe: cosa è stato installato, cosa è stato saltato, quali 
 
 ## Aggiornare un'installazione
 
-1. **Le risposte non si richiedono:** ricavale dall'installazione esistente. `{{STUDIO}}` dal titolo di `~/.claude/studio/STUDIO.md` (prima di « — Standard operativi»); `{{DESCRIZIONE}}` dalla prima riga di «Chi siamo»; `{{TITOLARE}}`, `{{LINGUA}}`, `{{ALTRE_ATTIVITA}}`, `{{CANALE_NOTIFICHE}}` dalla sezione «Configurazione»; `{{STUDIO_SLUG}}` dal nome della cartella in `~/.claude/studio/clients/` diversa da `_esempio`. Se qualcosa non si trova, chiedi solo quello.
+1. **Le risposte non si richiedono:** ricavale dall'installazione esistente. `{{STUDIO}}` dal titolo di `~/.claude/studio/STUDIO.md` (prima di « — Standard operativi»); `{{DESCRIZIONE}}` dalla prima riga di «Chi siamo»; `{{TITOLARE}}`, `{{LINGUA}}`, `{{ALTRE_ATTIVITA}}`, `{{CANALE_NOTIFICHE}}` dalla sezione «Configurazione»; `{{STUDIO_SLUG}}`: la cartella di `~/.claude/studio/clients/` il cui `CONTEXT.md` ha come titolo il nome dello studio (con le cartelle progetto i clienti sono tanti: non prendere la prima che trovi; se non sei sicuro, chiedilo). Se qualcosa non si trova, chiedi solo quello.
 2. **Confronta** ogni modello (con i segnaposto già sostituiti) con il file installato e dividi in tre gruppi: **uguali**, **diversi**, **nuovi nel kit** (mancano nell'installazione). Sono compresi `studio/hooks/`, `studio/collaudo/` e `studio/manutenzione/`: se l'installazione viene da una versione senza queste cartelle, finiscono tutte fra i «nuovi».
 3. **Mostra il riepilogo** con i numeri dei tre gruppi. Se diversi e nuovi sono zero, di' «lo studio è già aggiornato» e fermati.
 4. **Diversi:** mostra le differenze file per file e aggiorna solo quelli che l'utente approva (la skill non sa quali file l'utente ha modificato: chiedi sempre; prima di sovrascrivere, copia `.bak`). **Nuovi:** elencali e chiedi se aggiungerli.
