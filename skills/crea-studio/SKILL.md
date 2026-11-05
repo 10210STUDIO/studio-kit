@@ -47,7 +47,7 @@ Usa uno script (es. Python) che legga ogni file, sostituisca e scriva: non a man
 
 ## 3b. Cartelle progetto
 
-Con la risposta 8: crea la cartella se non c'è, poi **mostra all'utente la modifica a `~/.claude/settings.json` e chiedi un sì** (prima fai una copia `settings.json.bak`). Con uno script Python che legge il JSON e lo riscrive:
+Con la risposta 8: crea la cartella se non c'è. Se c'è già e contiene sottocartelle, elencale e avvisa: ognuna, aperta con Claude, diventerà un progetto cliente (a meno che abbia già un `CLAUDE.md`); se dentro ci sono repository di codice o altro che non è un cliente, meglio scegliere una cartella dedicata. Poi **mostra all'utente la modifica a `~/.claude/settings.json` e chiedi un sì** (prima fai una copia `settings.json.bak`). Con uno script Python che legge il JSON e lo riscrive:
 
 - in `hooks.SessionStart` aggiungi `{"hooks": [{"type": "command", "command": "bash \"<HOME>/.claude/studio/hooks/cartella-cliente.sh\" \"<cartella dei progetti>\""}]}`, con percorsi assoluti; se c'è già una voce con `cartella-cliente.sh`, sostituiscila;
 - in `permissions.additionalDirectories` aggiungi `<HOME>/.claude/studio` e la cartella dei progetti; in `permissions.allow` aggiungi `Read(/<HOME>/.claude/studio/**)`, `Read(/<cartella dei progetti>/**)`, `Edit(/<cartella dei progetti>/**)`, `Edit(/<HOME>/.claude/studio/playbooks/**)` e `Edit(/<HOME>/.claude/studio/clients/**)` (il percorso assoluto comincia già con `/`, quindi la regola ha `//`). Così gli agenti aggiornano playbook e contesti da qualunque progetto senza chiedere, mentre regole, hook e script dello studio continuano a chiedere conferma: non dare `Edit` su tutto `~/.claude/studio`.
