@@ -140,6 +140,12 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Nota di metodo:** `python3 -m http.server` non serve le richieste Range, quindi `currentTime = duration - x` riporta il video quasi all'inizio e `ended` non scatta mai. Per provare la fine di un video lascialo arrivare in fondo da solo, oppure usa un server che supporta Range.
 **Cliente/progetto:** generale.
 
+## [2026-11-05] Kit: un file nuovo deve entrare nella tabella di copia, e non rompere ciò che l'aggiornamento deduce
+**Pattern:** per ogni file nuovo del kit cerca la riga della tabella di copia dell'installer che lo porta a destinazione (un `chmod` sul file non lo copia). Poi chiediti se la funzione nuova riempie cartelle che l'aggiornamento usa per dedurre le risposte. Gli script che ricavano una sigla dal nome di una cartella vanno provati con un nome di soli caratteri non ASCII e con un simbolo in mezzo («Cognome ★ Città»), accanto a un cliente esistente con la stessa prima parola: `iconv //TRANSLIT` di macOS si ferma al primo carattere che non sa convertire e butta il resto (serve `-c`). Le voci di playbook riscritte da un modello vanno confrontate per contenuto con quelle già nel file: l'aggiornamento confronta solo i titoli.
+**Evidenza:** in una versione del kit, uno script per i nuovi clienti era stato reso eseguibile ma mancava dalla tabella, quindi l'hook sarebbe fallito senza errori; lo slug dello studio era dedotto da «l'unica cartella clienti diversa da quella di esempio», condizione che le cartelle progetto facevano saltare; un nome di sole lettere accentate dava una sigla vuota e un percorso con un segmento mancante; una voce di compliance su C2PA ripeteva due voci con titoli diversi. Nella versione successiva, un nome con un simbolo in mezzo veniva accorciato alla prima parola e caricava in silenzio il contesto di un cliente esistente; nomi che iniziavano con un'emoji o con caratteri non latini non facevano nulla.
+**Quando non vale:** installer che copiano l'intera cartella dei modelli senza un elenco.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 (ipotesi non ancora dimostrate)
