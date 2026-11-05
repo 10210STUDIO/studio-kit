@@ -146,7 +146,7 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 ## [2026-11-04] Splice: uso commerciale sì, ma niente AI e niente preview
 **Pattern:** i Termini (agg. 24/7/2026), sez. 3.1.1.2, permettono i Creative Works (sync, social) «for non-commercial and commercial purposes». La prova per ogni suono è la Certified License. La sez. 3.1.1.3 vieta i suoni in «preview» o non scaricati (f, g) e l'uso «as source or training material» per modelli di AI generativa (h). Quindi nessun suono Splice va caricato come riferimento in Kling o Higgsfield. La licenza è «non-transferable»: l'account deve essere di chi pubblica.
 **Evidenza:** [P] splice.com/terms, letto il 2026-11-04.
-**Quando non vale:** suoni presi fuori da Splice Sounds (altri termini).
+**Quando non vale:** suoni presi fuori da Splice Sounds (altri termini). La pubblicità non è nominata fra i Creative Works: per uno spot vedi la voce di `motion-video` (conferma scritta di Splice).
 **Cliente/progetto:** generale.
 
 ## Da verificare
