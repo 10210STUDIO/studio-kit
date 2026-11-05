@@ -76,6 +76,13 @@ La provenance prova da dove arriva il pacchetto, non che sia innocuo. Il trusted
 **Quando non vale:** documentazione che non ha un repository pubblico. In quel caso usa curl con lo user-agent di un browser, oppure `playwright-cli`.
 **Cliente/progetto:** generale.
 
+## [2026-11-04] Plugin e skill di terzi: il rischio è nelle istruzioni, non nel manifest
+
+**Pattern:** prima di installare un plugin Claude Code di terzi, oltre a hook/MCP/agenti nel manifest, cerca nelle skill: `npx <pkg>@latest` o non fissato, `pip install` senza versione, istruzioni del tipo «aggiorna senza chiedere», telemetria accesa di default e server locali che ascoltano su tutte le interfacce. Un plugin da marketplace GitHub si aggiorna: ciò che oggi non ha hook può averli domani. Correzione minima: copiare solo le skill da un commit fissato, togliere le righe di auto-aggiornamento, CLI a versione fissa con telemetria spenta via env.
+**Evidenza:** HyperFrames 0.9.10 (HeyGen): manifest pulito (niente hook, MCP, agenti), ma 434 `npx hyperframes` non fissati, `hyperframes@latest upgrade` «act on the signal», `pip install` di torch/transformers nell'interprete di default, PostHog acceso di default, `play`/`present` in ascolto su tutte le interfacce.
+**Quando non vale:** plugin interni dello studio o fissati a un commit con aggiornamento automatico spento.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 (ipotesi non ancora dimostrate)

@@ -98,6 +98,12 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** se Higgsfield documenta la marcatura o un test su un file la conferma: aggiornare questa voce.
 **Cliente/progetto:** generale.
 
+## [2026-11-05] Corsa vera e filtro di GPT Image
+**Pattern:** per una corsa con fase di volo Nano Banana Pro fa una camminata da passerella (2 su 2); Seedream 5 Pro, con lo stesso prompt e gli stessi riferimenti, ha fatto la corsa al primo colpo (busto avanti, braccia che pompano, piede staccato dal riflesso). Seedream: 2,5 crediti, massimo 2k, niente 4:5 (3:4 e ritaglio). `gpt_image_2_5` blocca con stato «nsfw» (non addebitato) un riferimento con lingerie in vista, anche se il prompt non la nomina: con quel look andare subito su Seedream. Rosso in scena su un set arancio: misurare in Lab (tinta < 40°, C* > 40); l'HSV sotto 15° prende anche il muro.
+**Evidenza:** prove a confronto sulla stessa scena di uno spot, job bloccati con stato «nsfw» e misura del rosso in Lab con uno script.
+**Quando non vale:** 1 su 1 per Seedream: confermare su un'altra scena d'azione.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 - Nano Banana Pro 2k (2 crediti) dà foto più «moda» e meno sintetiche di soul_cinematic (0,12): 15 scatti su 17 utilizzabili, giudizio del cliente non registrato. Con 21:9 una volta ha prodotto un dittico (due pannelli affiancati): controllare. Con gruppi «four people» a volte ne mette cinque.

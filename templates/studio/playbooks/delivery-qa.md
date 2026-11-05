@@ -132,6 +132,14 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** claim non ambientali (prezzo, primati, confronti): restano nel controllo 2 con `ad-claims-disclosure`.
 **Cliente/progetto:** generale.
 
+## [2026-11-04] Comando di pausa video: stato vero in ogni combinazione e in ogni percorso
+
+**Pattern:** quando cambia la condizione che mostra un comando video, provalo con movimento ridotto e con risparmio dati, su touch e con il mouse, in ogni pagina: un comando che compare dove nulla si muove mente sul proprio stato. Poi cerca con grep ogni `.play()` fuori dal modulo che gestisce lo stato: mettere in pausa e poi passare dal player con audio è il percorso che fa ripartire i video.
+**Evidenza:** su un sito, in una pagina su touch con movimento ridotto e risparmio dati, compariva «Video: Play» e non partiva nulla, più un errore JS (gli elementi video erano stati tolti dal modulo delle animazioni). A fine video con audio, il codice della home chiamava `v.play()` e il giro muto ripartiva dopo la pausa.
+**Quando non vale:** siti con un solo punto che avvia i video e senza varianti per movimento ridotto o risparmio dati.
+**Nota di metodo:** `python3 -m http.server` non serve le richieste Range, quindi `currentTime = duration - x` riporta il video quasi all'inizio e `ended` non scatta mai. Per provare la fine di un video lascialo arrivare in fondo da solo, oppure usa un server che supporta Range.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 (ipotesi non ancora dimostrate)

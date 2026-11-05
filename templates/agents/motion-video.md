@@ -28,7 +28,7 @@ Il movimento serve a guidare l'attenzione o a comunicare un cambiamento di stato
 
 **Durate corte e curve credibili.** Nelle interfacce, le transizioni che si notano sono già troppo lente. Rispetta la preferenza di movimento ridotto del sistema: non è un dettaglio di accessibilità opzionale. Nei siti valgono anche WCAG 2.2.2 (moto automatico oltre 5 s: controllo di pausa) e 2.3.1 (max tre lampi al secondo).
 
-**Il volume si ottiene dal codice, ma il test vuole concetti.** `remotion-video-creation` genera video da React: stesso corpo, formati e aperture parametrizzati. Su Meta però annunci simili per aspetto e tema contano come una creatività sola: cambiare testo o apertura è iterazione. Per testare servono concetti diversi (li dà `creative-performance-strategist`), non file diversi.
+**Il volume si ottiene dal codice, ma il test vuole concetti.** Titoli, testi, forme e varianti di testo o colore: `hyperframes` (HTML → MP4, `render --batch`, Apache-2.0, nessun limite di persone; provato il 2026-11-04). `remotion-video-creation` resta per i progetti in React o con logica. Con HyperFrames: `init --skip-skills`, GSAP e font in `assets/` (niente CDN), e dopo ogni batch controlla a pixel la zona sicura (`check` non lo fa). Il volume audio si misura sul MP4 finito (`ffmpeg ebur128`), non con `normalize-audio`, che misura la traccia da sola. Sottotitoli: `hyperframes transcribe <file> --engine whisper --model small --language it --no-runtime-install` (whisper.cpp in locale, installato il 2026-11-04; tempi parola per parola). Mai `--engine heygen`: manda l'audio a HeyGen e si paga (bloccato dai permessi). Controlla comunque la sincronia sul video finito. Le voci di `say` non sono licenziate per uso commerciale (licenza macOS Tahoe 26, sez. 2F, letta il 2026-11-04): solo per i tempi in bozza interna, da sostituire prima di mostrare il lavoro al cliente. Ogni altra voce passa al cancello con licenza e prova. Mai `cloud render`, `publish` (anche `npm run publish`), `lambda`, `cloudrun`, `play`, `present`, `login`, `upgrade`, `skills update`, `npx …@latest`: caricano il progetto fuori o cambiano versione (sono anche bloccati dai permessi). Su Meta però annunci simili per aspetto e tema contano come una creatività sola: cambiare testo o apertura è iterazione. Per testare servono concetti diversi (li dà `creative-performance-strategist`), non file diversi.
 
 **Licenza Remotion.** Cliente con più di 3 persone: verifica la licenza prima di consegnare (segue chi lo usa). Soglie nel playbook.
 
@@ -36,7 +36,8 @@ Il movimento serve a guidare l'attenzione o a comunicare un cambiamento di stato
 
 | Serve | Skill |
 |---|---|
-| Video programmatico in React, varianti a volume | `remotion-video-creation` |
+| Titoli, testi e forme animati, varianti di testo/colore a volume (HTML → MP4, CLI `hyperframes` fissa alla 0.9.10) | `hyperframes` (+ `hyperframes-cli`, `hyperframes-registry`); da un progetto Remotion: `remotion-to-hyperframes` |
+| Video programmatico in React, con stato o logica | `remotion-video-creation` |
 | Script e struttura narrativa prima del montaggio | `video-scriptwriting` |
 | Montaggio, tagli, struttura narrativa | `video-editing` |
 | Musica, voci, loop Splice e filmati di stock: licenze | `rights-licensing-clearance`, prima di usare il suono in un deliverable |

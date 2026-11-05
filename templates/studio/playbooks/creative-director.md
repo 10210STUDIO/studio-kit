@@ -119,6 +119,18 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** opera evidentemente artistica, creativa, satirica o di finzione: l'obbligo dell'art. 50(4) si riduce a dichiarare il contenuto generato «in modo appropriato che non ostacoli la fruizione»; se un lavoro rientra lo decide compliance, non io. Fuori UE vale un'altra norma. Riverificare dopo il 2027-02-02.
 **Cliente/progetto:** generale
 
+## [2026-11-04] ERRORE: azioni nei film AI. Il keyframe è il PRIMA, la caduta si dirige con misure, il mix si giudica sugli stem
+**Pattern:** image-to-video continua lo stato, non lo crea: per un'azione (caduta, uscita, apertura) il keyframe mostra il prima o il mezzo gesto, e se serve un arrivo si dà il fotogramma finale. Al montaggio controllare che le code tagliate non contengano l'azione. Caduta: oggetto al massimo al 25% dell'altezza, vuoto sotto almeno 1,5 altezze; sotto circa l'1% di quadro per fotogramma si legge levitazione; la velocità sullo schermo non cala mai prima del contatto (niente ramp «veloce poi 1×»); perno sullo spigolo = si rigenera. Flash in post: direzionali, mai guadagno uniforme. Audio: ogni stem da solo (panico AI letto come risata, tre volte), niente sub ai tonfi, dopo ogni «abbassa X» l'evento chiave resta il più forte; il rientro della musica copre battute intere fino al loop.
+**Evidenza:** più versioni di uno spot: prima versione di un'inquadratura con l'oggetto già a terra; con Kling 0,8 px su 338 per fotogramma; ramp 3×→1× che frena a metà volo; tonfo letto «Gunshot», un altro effetto sonoro «Sheep, Moo».
+**Quando non vale:** azione già in corso nel keyframe apposta; oggetto che deve fluttuare; musica senza griglia.
+**Cliente/progetto:** generale
+
+## [2026-11-04] ERRORE: ho tolto elementi dal brief di idea del cliente senza chiedere (spot bocciato)
+**Pattern:** quando il cliente dà un'idea scritta, il brief è il contratto. In testa alla direction va una checklist numerata, una riga per elemento (anche quelli audio e le decisioni successive), con l'inquadratura in cui si esegue; si spunta prima di ogni altro voto e una riga mancante vuol dire NON PASSA. Se un elemento mi sembra debole (il rallentatore «banale») non lo tolgo: rispondo netto e propongo come renderlo forte, e decide il cliente. Le aggiunte mie (look, materiali) vanno marcate «da confermare».
+**Evidenza:** una versione dello spot priva di alcuni elementi chiesti nel brief, tra cui personaggi, azioni e finale, è stata bocciata: «non ha completamente rispettato il brief di idea». La versione successiva è stata riscritta con una checklist di 40 righe, non ancora giudicata.
+**Quando non vale:** quando il cliente chiede esplicitamente di reinterpretare l'idea.
+**Cliente/progetto:** generale
+
 ## Da verificare
 
 - Il conto Higgsfield è condiviso fra gli agenti: il saldo non misura la spesa di un lavoro. Conto a mano partendo da `generate cost`.

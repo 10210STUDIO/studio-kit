@@ -109,6 +109,12 @@ Il video di riferimento va ripulito dai movimenti di bocca non voluti (avanti-in
 **Quando non vale:** il registro non garantisce la tutela; la valutazione la fa `compliance-rights-officer` con `rights-licensing-clearance`.
 **Cliente/progetto:** generale.
 
+## [2026-11-05] Nano Banana Pro, modifica del solo viso: rifà tutto il quadro, si incolla solo il viso
+**Pattern:** chiedendo «edit only the face, keep everything else identical» Nano Banana Pro ridisegna l'immagine intera (scala +5%, marchio presente nell'immagine rifatto male). Si tiene solo l'ovale del viso: si riscala e si allinea la modifica sull'originale per correlazione su una zona fuori dal viso (spalle), poi maschera ellittica sfumata. 0 crediti in più, cucitura invisibile.
+**Evidenza:** una scena di un film, una generazione da 2 crediti, allineamento scala 0,945, correlazione 0,976.
+**Quando non vale:** se la modifica cambia anche la posa della testa o la luce sul collo, l'ovale non combacia. 1 caso.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 - Costo del doppiaggio Higgsfield (`dubbing`, MCP o CLI): `higgs generate cost dubbing` resta appeso con `--input_video` e rifiuta `--video` senza `duration` (che però non è un parametro accettato). L'MCP non ha anteprima del costo. Inoltre traduce da solo: «Are you ready?» potrebbe diventare «sei pronto?», non «siete pronti?». Alternativa provata: il pattern della coda `omni_reference`.
