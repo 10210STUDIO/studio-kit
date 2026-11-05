@@ -5,6 +5,8 @@
 set -euo pipefail
 [ $# -eq 2 ] || { echo "Uso: bash nuovo-cliente.sh \"CARTELLA DEL PROGETTO\" sigla"; exit 1; }
 S="$(cd "$(dirname "$0")" && pwd)"; DIR="$1"; SIGLA="$2"; case "$DIR" in /*) ;; *) DIR="$PWD/$DIR";; esac; N="$(basename "$DIR")"
+case "$SIGLA" in ""|-*|*[!a-z0-9-]*) echo "La sigla può avere solo minuscole, numeri e trattini."; exit 1;; esac
+case "$N" in *[[:cntrl:]]*) echo "Il nome della cartella contiene caratteri non ammessi."; exit 1;; esac
 mkdir -p "$DIR/.claude" "$S/clients/$SIGLA"
 [ -f "$S/clients/$SIGLA/CONTEXT.md" ] || printf '# %s — contesto\n\nDa compilare: chi è, cosa vende, decisioni ferme, materiali.\n' "$N" > "$S/clients/$SIGLA/CONTEXT.md"
 [ -e "$DIR/.claude/agents" ] || ln -s "$HOME/.claude/agents" "$DIR/.claude/agents"

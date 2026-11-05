@@ -3,11 +3,15 @@
 # la prepara come progetto cliente (team, contesto, studio-lead come direttore). Fuori da lì non fa niente.
 R="${1%/}"; D="${CLAUDE_PROJECT_DIR:-$PWD}"; N="$(basename "$D")"; S="$(cd "$(dirname "$0")/.." && pwd)"
 [ -n "$R" ] && [ "$(dirname "$D")" = "$R" ] && [ "$D" != "$S" ] && [ "$D" != "$(dirname "$S")" ] && [ "${N#.}" = "$N" ] && [ ! -e "$D/CLAUDE.md" ] || exit 0
-SIGLA="$(printf '%s' "$N" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9' '-' | sed 's/^-//;s/-$//')"
-# Cliente che esiste già (la cartella «ROSSI CAFFÈ SRL» → clients/rossi): si usa il suo contesto.
-[ -d "$S/clients/${SIGLA%%-*}" ] && SIGLA="${SIGLA%%-*}"
+case "$N" in *[[:cntrl:]]*) exit 0;; esac  # a capo o caratteri di controllo nel nome: non si tocca
+SIGLA="$(printf '%s' "$N" | iconv -f UTF-8 -t ASCII//TRANSLIT 2>/dev/null | tr -d "\`'^~\"" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9' '-' | sed 's/^-//;s/-$//')"
+[ -n "$SIGLA" ] || exit 0
 [ -f "$S/clients/$SIGLA/CONTEXT.md" ] && NUOVO="" || NUOVO=1
 bash "$S/nuovo-cliente.sh" "$D" "$SIGLA" >/dev/null || exit 0
 echo "Cartella progetto «${N}» preparata (cliente $SIGLA): team collegato, studio-lead farà da direttore dalla prossima sessione."
-if [ -n "$NUOVO" ]; then echo "Il contesto ~/.claude/studio/clients/$SIGLA/CONTEXT.md è vuoto: prima di lavorare chiedi all'utente chi è il cliente, cosa vende e cosa serve, e compilalo."
+if [ -n "$NUOVO" ]; then
+  echo "Il contesto ~/.claude/studio/clients/$SIGLA/CONTEXT.md è vuoto: prima di lavorare chiedi all'utente chi è il cliente, cosa vende e cosa serve, e compilalo."
+  # Un cliente con la stessa parola iniziale esiste già: può essere lo stesso, ma non si decide da soli.
+  P="${SIGLA%%-*}"; [ "$P" != "$SIGLA" ] && [ -d "$S/clients/$P" ] && echo "Esiste già il cliente «${P}»: chiedi all'utente se è lo stesso. Se sì, in CLAUDE.md usa clients/$P e cancella la cartella vuota clients/$SIGLA."
 else echo "Contesto del cliente: leggi ~/.claude/studio/clients/$SIGLA/CONTEXT.md."; fi
+exit 0
