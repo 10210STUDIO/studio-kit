@@ -115,6 +115,76 @@ Il video di riferimento va ripulito dai movimenti di bocca non voluti (avanti-in
 **Quando non vale:** se la modifica cambia anche la posa della testa o la luce sul collo, l'ovale non combacia. 1 caso.
 **Cliente/progetto:** generale.
 
+## [2026-11-06] CLI `higgs` da agente: sempre `< /dev/null`
+**Pattern:** da una shell non interattiva `higgs generate cost|create` (sicuro con `--video`) resta appeso a leggere il prompt da stdin. Aggiungere `< /dev/null` a ogni chiamata. `--video` e `--start-image` accettano un job-id al posto del file: niente upload. `timeout` può non esistere su Mac: verificare prima di farci affidamento.
+**Evidenza:** [P] cost con `--video` appeso per oltre 8 minuti; con `< /dev/null` risposta in 0,7 s (una clip, 2026-11-06).
+**Quando non vale:** in un terminale interattivo non serve.
+**Cliente/progetto:** generale.
+
+## [2026-11-04] Limiti reali di Seedance 2.5, Kling 4.0, Cinema Studio 4.0 (schema CLI)
+**Pattern:**
+- Seedance 2.5: fino a 30 s; al massimo 30 immagini (inizio e fine compresi) e 50 riferimenti; `start_image`/`end_image` solo in `omni_reference`; `t2v` non accetta media; `draft` e `draft_job_id` si escludono; 480p, 720p, 1080p. Fotogramma iniziale e finale con stesso formato e stessi pixel.
+- Kling 4.0: fino a 30 s; 720p o 1080p; nessuna bozza; `end_image` in image-to-video; al massimo 10 immagini e 15 riferimenti; t2v vuole un formato fisso. Anche `kling3_0` ha `end_image`.
+- Cinema Studio 4.0: stesse modalità di Seedance 2.5 (anche `end_image` in omni) più id di camera, obiettivo, diaframma, epoca, genere, ritmo, luce, palette; nessun `draft` nello schema.
+**Evidenza:** [P] `higgs model get` / `workflow get`, `generate cost` con `--duration 31`, 2026-11-04 e 2026-11-06.
+**Quando non vale:** è lo schema, non qualità. `end_image` su Seedance mai generato da noi (su Kling sì).
+**Cliente/progetto:** generale.
+
+## [2026-11-06] Bozza 480p ingrandita a 1080p invece della finale: regge
+**Pattern:** su un pezzo breve già scelto, `bytedance_video_upscale` standard (preset `aigc` o `common`, quasi uguali) porta la bozza 480p a 1080p per 1 credito invece dei 28 della finale 720p. Un volto di circa 30 px resta lo stesso per tutti i fotogrammi, senza effetto cera; nitidezza (varianza laplaciana) 197 contro 26 di un lanczos, sfarfallio fra fotogrammi +12%, mosso conservato. Perde: lentiggini e grana della pelle (pelle lisciata), bordi un po' pittorici. Esce a 1918×1080: va portato a 1920 in montaggio.
+**Evidenza:** una clip di uno spot, una prova per ciascun preset (`aigc` e `common`), fotogrammi 8-29 a 8 e 24 fps, ritagli 1:1.
+**Quando non vale:** 1 caso, figure piccole e camera ferma. Se il volto è il soggetto in primo piano, serve la finale. Giudicato su fogli, non a velocità vera da una persona.
+**Cliente/progetto:** generale.
+
+## [2026-10-30] Battuta parlata con Seedance 2.5: ancorarla a metà, non in coda
+**Pattern:** se la battuta è l'ultima frase del prompt, finisce negli ultimi 1,5 s e si tronca. «She reaches the desk by the eighth second ... and right away says: "..." Then, for the last few seconds, she ...» prima della riga del suono. Audio nativo gratis, AAC 32 kHz (ricampionare a 48 kHz). Controllo: `mlx_whisper` (small, `--condition-on-previous-text False`) su segmenti di 1,5-2 s; tempi esatti dall'inviluppo RMS in banda voce a 20 ms (Whisper sbaglia di 0,5-1 s).
+**Evidenza:** 3 bozze su 3 in coda (13,6–15,0 s); con l'ancora 11,4–13,7 e 12,7–14,1 s.
+**Quando non vale:** scarto di 1 s fra i casi; timbro e naturalezza li giudica una persona.
+**Cliente/progetto:** generale.
+
+## [2026-10-30] Ridoppiare o ritimare una battuta su una finale approvata
+**Pattern:** traccia voluta costruita in locale (pezzi della voce originale, o Seed Audio con 1 s di riferimento + EQ); si rigenera solo la coda di 5 s con Seedance `omni_reference` (video = coda muta ripulita dai movimenti di bocca non voluti, audio = nuova traccia); dissolvenza di 8 fotogrammi su un gesto veloce. `video_edit` non ritima.
+**Evidenza:** uno spot EN/IT, labiale a 6 fps.
+**Quando non vale:** camera molto mossa nella coda; la coda non è identica al pixel (~26 dB PSNR).
+**Cliente/progetto:** generale.
+
+## [2026-11-05] Nano Banana Pro, modifica del solo viso: si incolla solo il viso
+**Pattern:** «edit only the face» ridisegna tutto il quadro (scala +5%, marchio rifatto male). Si riscala e allinea la modifica per correlazione su una zona fuori dal viso, poi maschera ellittica sfumata.
+**Evidenza:** su un'inquadratura di uno spot, scala 0,945, correlazione 0,976.
+**Quando non vale:** se cambia la posa della testa o la luce sul collo. 1 caso.
+**Cliente/progetto:** generale.
+
+## [2026-11-06] Seedance 2.5 video_extension forward
+**Pattern:** esce solo la continuazione (4 s chiesti = 4 s), raccordata all'ultimo fotogramma; accetta `--image-references`; costa come una bozza omni. Il risultato è in `result_url` (il primo .mp4 del JSON è il video d'ingresso). In 1 caso: deriva (pavimento opaco, pareti più sature, comparse in fila che guardano in camera).
+**Evidenza:** una generazione di prova.
+**Quando non vale:** 1 caso, 480p.
+**Cliente/progetto:** generale.
+
+## [2026-11-06] Seedance 2.5 con `--start-image` + `--end-image`: l'oggetto esce davvero, ma i tempi slittano verso la fine
+**Pattern:** arrivo = stato *dopo* l'uscita (libro fuori quadro) + «carries the closed, rigid book... it never stops and never fades» + ritaglio della mano come `--image-references`: la mano entra, prende e porta fuori il libro intero, nessuna dissolvenza, dita mai fuse (guanto nero contro mano nuda). Ma i tempi scritti in secondi slittano di circa 1 s verso la fine (scritto 1,3/1,8/2,6/<4 s; uscito 1,9/2,5/3,8/4,95 s): l'oggetto esce sull'ultimo fotogramma. Si sceglie la finestra di montaggio sulla bozza, non prima. Il fondo che è uguale in partenza e arrivo si congela dopo il primo secondo; con partenza e arrivo diversi in ogni elemento (comparse in posizioni diverse) resta vivo (≈20× il rumore del muro). Il modello va dritto dalla partenza all'arrivo: un'azione che torna indietro («pulls it back once») non esce (tiro 0%), e una condizione di sequenza («stays still until the book has left») si anticipa di circa 0,5 s.
+**Evidenza:** una clip di uno spot, 2 generazioni, 480p, tutti i 121 fotogrammi, moto e bordo del libro misurati.
+**Quando non vale:** 2 casi, camera ferma, mezzo busto. Per tempi esatti scrivere le azioni circa 1 s prima o allungare la clip; un movimento all'indietro va messo in un keyframe, non solo scritto.
+**Cliente/progetto:** generale.
+
+## [2026-11-06] Eleven v4 (`elevenlabs_v4`) per risate e battute brevi
+**Pattern:**
+- **Prezzo:** si paga a blocchi di 50 caratteri di testo, tag compresi. 0,23 crediti fino a 50 caratteri, 0,46 da 51. Conviene tenere ogni testo entro i 50.
+- **Testo minimo:** un testo di soli tag (`[laughs]`) fallisce. Il job viene rimborsato. Serve almeno una sillaba, per esempio `mm.`.
+- **Voci:** `higgs voices list` non dice genere ed età. Si leggono nel JSON del job, in `params.voices[0]`.
+- **Risate:** con i tag escono soffiate. AST le classifica Gasp o Sigh (Laughter circa 0), CLAP dà «laughing» a 1,00. Per il controllo «laughter» usare CLAP.
+  - Durata 1,4-2,5 s con un solo tag d'azione più `mm.`.
+  - Con tre tag si arriva a 4-5 s.
+  - `[giggles]` dà una risata acuta.
+  - Senza «mm» finale (sillaba `hhh.`/`heh.`/`hah.`): 6 testi su 8 escono solo fiato, senza voce. Solo `[bursts out laughing, low and warm]` dà scoppi sonori (3 job: 2 sonori, 1 solo fiato): lo stesso testo varia molto da un job all'altro, e la voce sale (205 contro 285 Hz). Per una risata piena, più job sullo stesso testo valgono più di testi nuovi.
+- **Battute:** `[calls out firmly, not shouting]` abbassa la voce rispetto a `[calling out from across the room]`.
+- **Uscita:** MP3 44,1 kHz mono, asciutto, senza ambiente.
+**Evidenza:** uno spot, 26 job in due giri di prove. Prezzo da `generate cost` e da `account transactions`.
+**Quando non vale:**
+- Le voci sono giudicate solo con misure, non da una persona all'ascolto.
+- «not shouting» è verificato su 1 voce (f0 di 172 Hz contro 280-320).
+- Il prezzo va riverificato dopo 30 giorni.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 - Costo del doppiaggio Higgsfield (`dubbing`, MCP o CLI): `higgs generate cost dubbing` resta appeso con `--input_video` e rifiuta `--video` senza `duration` (che però non è un parametro accettato). L'MCP non ha anteprima del costo. Inoltre traduce da solo: «Are you ready?» potrebbe diventare «sei pronto?», non «siete pronti?». Alternativa provata: il pattern della coda `omni_reference`.

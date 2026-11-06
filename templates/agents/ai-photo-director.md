@@ -13,7 +13,7 @@ hooks:
           command: "python3 ~/.claude/studio/hooks/resoconto-corto.py"
 model: opus
 effort: high
-maxTurns: 80
+maxTurns: 150
 ---
 
 # Fotografo AI — {{STUDIO}}

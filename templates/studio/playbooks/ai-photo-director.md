@@ -104,6 +104,12 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** 1 su 1 per Seedream: confermare su un'altra scena d'azione.
 **Cliente/progetto:** generale.
 
+## [2026-11-06] Volto di riferimento nuovo in tre viste, senza Soul ID
+**Pattern:** frontale solo da testo con `nano_banana_pro` 4:5 2k: scheda da casting con luce uniforme da due lati, fondo grigio piatto, 50 mm, pelle vera (pori, peluria, asimmetria) e tratti scritti uno per uno. Escono volti naturali, non «AI perfetti» (4 su 4). Il tre quarti si fa col frontale come unico riferimento e il prompt «same woman… only change: turned 45°» (coerente 4 su 4). Il profilo, con «exact side profile, 90°», gira solo di 70–80° (4 su 4). Funziona invece «strict side view, like a passport profile… far eye completely hidden… ear near the centre of the head», con frontale e tre quarti come riferimenti (3 su 3). Anche il costume va scritto nel dettaglio: «leather coat with notched lapels» è uscito una volta come giubbotto da moto. Un'età chiesta come «mid-thirties» con tratti duri è uscita da 45 anni. `soul_cast` non serve per i riferimenti: fa solo il 16:9 e non accetta immagini.
+**Evidenza:** test interno con log delle generazioni, 15 job, 30 crediti.
+**Quando non vale:** la somiglianza con persone note non è misurata da noi: la decide il test cieco di compliance.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 - Nano Banana Pro 2k (2 crediti) dà foto più «moda» e meno sintetiche di soul_cinematic (0,12): 15 scatti su 17 utilizzabili, giudizio del cliente non registrato. Con 21:9 una volta ha prodotto un dittico (due pannelli affiancati): controllare. Con gruppi «four people» a volte ne mette cinque.

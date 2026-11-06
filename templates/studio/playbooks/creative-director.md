@@ -131,6 +131,18 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** quando il cliente chiede esplicitamente di reinterpretare l'idea.
 **Cliente/progetto:** generale
 
+## [2026-11-06] ERRORE: un suono in sincrono si legge sui fotogrammi, non si deduce (tacchi di uno spot)
+**Pattern:** «non è in sync» quasi mai nasce dal mix: nasce da una stima. In uno spot i contatti dei tacchi erano letti sui fotogrammi di una sola inquadratura e **dedotti dalla fase delle gambe** nelle altre tre, poi spostati di un fotogramma per non cadere sulla cassa: deriva di 1-2 fotogrammi, udibile. Regole: si genera perché si possa misurare (figura intera, piedi e pavimento in quadro, se no l'inquadratura si riquadra); si estraggono tutti i fotogrammi e si legge il primo contatto (tacco + riflesso sul lucido); un colpo per contatto letto e **nessun colpo senza contatto** (il silenzio batte la deriva); la griglia musicale non tocca gli eventi sincronizzati (si sposta la cassa, mai il tacco, mai il tonfo); verifica con `audio-understand events` sullo stem solo, scarto massimo 1 fotogramma. Corollario di regia: i suoni di voce si mettono **fuori campo** (risata di spalle e in lontananza) così non chiedono sincrono labiale e si possono registrare veri. Due suoni di voce che il riconoscimento confonde (panico e risata) non stanno nello stesso film: se la risata ha un senso, il panico esce. Il test CLAP «ansito contro risata» si rifà anche sul mix **senza** lo stem della voce: in una versione successiva passi e scatti da soli davano «risata» 0,68-0,75.
+**Evidenza:** giudizio del responsabile creativo su una versione dello spot («i tacchi non sono in sync con le scene»); verifica nello script di montaggio audio; metodo riscritto nel documento di regia dello spot.
+**Quando non vale:** suoni d'ambiente e musica, che non hanno un evento in quadro.
+**Cliente/progetto:** generale
+
+## [2026-11-06] ERRORE: la mia cura contro lo sguardo in camera («teste basse») ha prodotto il coro. I gruppi nei film AI si scrivono uno per uno
+**Pattern:** per evitare che gli inseguitori guardassero in macchina ho scritto «a testa bassa»; il modello li ha messi in fila, a passo uguale, tutti chini, e il cliente l'ha bocciato come irreale. Una regola che toglie un difetto a tutto il gruppo lo rende uniforme. Un gruppo si scrive **figura per figura**: ruolo, da dove entra, quando, azione diversa da tutti gli altri (uno pressa, uno taglia, uno resta indietro, uno parla, uno scivola). Si misura sui fogli a 8 fps: niente tre teste alla stessa altezza (±2%), niente due alla stessa profondità, niente tre con la stessa gamba avanti, una distanza che cresce fra il più veloce e il più lento. Lo sguardo in camera si evita con la geometria, non con la testa: sull'asse ci sta il protagonista, gli altri fuori asse con la testa girata di 10-25° verso di lui. Parole vietate: «formation, line, row, synchronized, marching, squad, in unison, heads down». Nel budget si contano i tentativi veri del giro prima: in uno spot i keyframe sono stati 31 invece dei 12 previsti e la presa 84 crediti invece di circa 45, quindi il 25% di margine non si taglia.
+**Evidenza:** commento in revisione sul confronto della presa («hanno tutti la testa bassa e corrono in linea»); log dei keyframe del giro; regole di scrittura del gruppo nel documento di direzione del giro successivo (non ancora generate).
+**Quando non vale:** gruppi che devono essere un corpo solo apposta (coro, plotone, coreografia).
+**Cliente/progetto:** generale
+
 ## Da verificare
 
 - Il conto Higgsfield è condiviso fra gli agenti: il saldo non misura la spesa di un lavoro. Conto a mano partendo da `generate cost`.
