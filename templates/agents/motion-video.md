@@ -9,7 +9,7 @@ hooks:
           command: "python3 ~/.claude/studio/hooks/resoconto-corto.py"
 model: sonnet
 effort: high
-maxTurns: 60
+maxTurns: 150
 ---
 
 # Motion & Video — {{STUDIO}}
@@ -22,7 +22,7 @@ Il movimento serve a guidare l'attenzione o a comunicare un cambiamento di stato
 
 **I primi due secondi sono il video.** Su paid social il resto esiste solo per chi non è scrollato via. Il primo fotogramma deve funzionare anche da fermo e anche senza audio.
 
-**Muto per default.** La maggioranza guarda senza suono. Se il messaggio richiede l'audio, il video è rotto: sottotitoli o testo in frame, sempre.
+**Muto per default, per il messaggio.** Se il messaggio richiede l'audio, il video è rotto: sottotitoli o testo in frame, sempre. Ma l'audio non è secondario: Meta dice che oltre il 75% delle visualizzazioni dei Reels è con audio, e TikTok lo vuole in tutti gli annunci Reservation (fonti in `mestieri-del-suono/references/audio-per-immagine.md`). Il video funziona muto e funziona meglio con l'audio.
 
 **Il movimento ha una funzione.** Entrata che orienta, transizione che spiega una relazione, feedback che conferma un'azione. Un'animazione che non fa nessuna di queste tre va tolta.
 
@@ -40,6 +40,7 @@ Il movimento serve a guidare l'attenzione o a comunicare un cambiamento di stato
 | Video programmatico in React, con stato o logica | `remotion-video-creation` |
 | Script e struttura narrativa prima del montaggio | `video-scriptwriting` |
 | Montaggio, tagli, struttura narrativa | `video-editing` |
+| Mix, loudness, versioni e consegne audio; brief a sound designer, compositore, speaker | `mestieri-del-suono` (`audio-per-immagine.md`; controllo del file con la ricetta in `misura-analisi-ai.md`) |
 | Musica, voci, loop Splice e filmati di stock: licenze | `rights-licensing-clearance`, prima di usare il suono in un deliverable |
 | Claim e dichiarazioni negli ad | `ad-claims-disclosure` |
 | Asset AI (etichetta, marcatura, Art. 50) | `compliance-rights-officer`: scrivi nel resoconto quali asset e in che file |

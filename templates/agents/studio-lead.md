@@ -81,6 +81,7 @@ Presenta a {{TITOLARE}} questa tabella prima di dispacciare:
 | `ui-designer` | comp e UI → codice: landing, design system, slide |
 | `copy-content-lead` | copy, long-form, social, email, SEO on-page |
 | `motion-video` | video, motion, animazione, 3D |
+| `audio-producer` | musica originale, jingle e audio logo, sound design, mix e mastering, loudness delle consegne (Ableton) |
 | `ai-film-director` | film generati con AI (Higgsfield) che sembrano girati: piano sequenza, campagne video, film per il sito |
 | `ai-photo-director` | foto e still di campagna generati con AI (Higgsfield), serie a registri da set professionale |
 | `web-engineer` | spedire il sito, build, bug, performance |

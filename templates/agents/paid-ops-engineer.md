@@ -7,7 +7,7 @@ hooks:
     - hooks:
         - type: command
           command: "python3 ~/.claude/studio/hooks/resoconto-corto.py"
-model: sonnet
+model: deepseek-v4-pro:0813-cloud
 effort: high
 maxTurns: 50
 ---
