@@ -51,26 +51,6 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** quando i tool_uses sono pochi. Allora è un errore del provider (vedi la voce del 2026-11-08).
 **Cliente/progetto:** generale.
 
-## [2026-11-09] Router: per escludere DeepSeek si cambia modo, non si spegne il processo
-**Pattern:** quando il titolare chiede di «spegnere il router», si usa lo script che lo porta in modo `claude` e a fine sessione lo si rimette in modo `auto`. Non si uccide il processo, per due motivi: anche la sessione in corso passa dal router tramite `ANTHROPIC_BASE_URL`, e launchd con KeepAlive lo riavvierebbe comunque.
-**Evidenza:** sessione di lavoro su uno spot, 2026-11-09.
-**Quando non vale:** se il titolare vuole togliere il router da settings.json in modo permanente.
-**Cliente/progetto:** generale.
-
-## [2026-11-09] Se un agente muore per un errore di modello, si rilancia dicendogli di guardare cosa ha lasciato su disco
-**Pattern:** un agente può chiudere con «The model claude-opus-5-5 is not available on your ollama deployment» dopo molti turni utili e senza scrivere né registro né report. Il lavoro su disco però di solito c'è. Nel brief di ripresa si dice: quanti passaggi ha fatto, che è morto prima del report, dove guardare per capire cosa esiste già, e di riprendere da lì senza ripagare. In più: meglio un registro corto di un silenzio, quindi si ordina di chiudere presto anche lasciando punti aperti.
-**Evidenza:** regista, verifica dell'allungamento Seedance, 2026-11-09: 20 passaggi e nessun output scritto.
-**Quando non vale:** se l'agente aveva già scritto il registro prima di morire.
-**Cliente/progetto:** generale.
-
-## [2026-11-09] Agente che muore con «model … not available»: passa il modello nella chiamata
-**Pattern:** se un agente muore subito con «model … not available on your … deployment», passa `model: "opus"` (o `"sonnet"`) nella chiamata Agent. Il frontmatter `model: opus` viene tradotto in un nome che il provider non ha.
-**Evidenza:** dopo il cambio di account e di /model sono morti l'agente regista, il fotografo e quello di compliance. Con `model` esplicito, il controllo di override è passato e gli agenti sono ripartiti.
-**Aggiornamento 9/11:** `model: "opus"` non basta più: il fotografo è morto con lo stesso errore sullo stesso alias. `claude --model opus` e `--model sonnet` dalla shell rispondono OK, quindi l'alias è buono e il problema è la mappatura del frontmatter. Finché non si corregge, passare `"sonnet"`, che ha retto tutto il giorno.
-**Causa vera (verificata in un'altra sessione, 9/11):** la sessione girava con una versione vecchia del client, senza la correzione per gli agenti. Con ogni probabilità la versione vecchia instrada la richiesta dell'agente al servizio sbagliato. Rimedio: riaprire la sessione con la versione aggiornata del client. **Non toccare il frontmatter.** Dopo il riavvio è stato verificato che l'agente creative director, lanciato senza `model:`, gira su opus senza errori. Prima di riavviare, aspettare che gli agenti in background chiudano oppure annotare cosa riprendere.
-**Quando non vale:** quando il frontmatter degli agenti è stato corretto.
-**Cliente/progetto:** generale.
-
 ## Da verificare
 
 - Questionario di discovery con un'ipotesi di default per ogni domanda ("OK o correggi"): dovrebbe accorciare il giro di risposte rispetto a domande aperte. Primo dato: 11 OK su 15, ma le 4 risposte modificate erano proprio quelle che cambiano i territori (logo, colore, significato, riferimenti). Sembra che il formato faccia emergere le domande che contano, non che spinga a confermare in automatico. Serve un secondo caso.

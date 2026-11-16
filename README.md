@@ -131,7 +131,7 @@ Tu intervieni dove serve una decisione: il brief, il territorio creativo, una sp
 | Cancelli | `delivery-qa` | **Cancello obbligatorio** prima di ogni consegna. Controlla contro il brief e lo standard dello studio. |
 | | `compliance-rights-officer` | GDPR e consenso, licenze di immagini, musica e font, claim e disclosure, accessibilità, dichiarazione dell'uso di AI. Blocca ciò che espone lo studio o il cliente. |
 
-16 agenti usano il modello Opus, 8 Sonnet. Lo cambi nel file di ogni agente.
+16 agenti usano il modello Opus, 9 Sonnet. Lo cambi nel file di ogni agente.
 
 ---
 
