@@ -2,7 +2,7 @@
 # SessionStart: se Claude parte in una cartella nuova dentro la cartella dei progetti ($1, scelta all'installazione),
 # la prepara come progetto cliente (team, contesto, studio-lead come direttore). Fuori da lì non fa niente.
 R="${1%/}"; D="${CLAUDE_PROJECT_DIR:-$PWD}"; N="$(basename "$D")"; S="$(cd "$(dirname "$0")/.." && pwd)"
-[ -n "$R" ] && [ "$(dirname "$D")" = "$R" ] && [ "$D" != "$S" ] && [ "$D" != "$(dirname "$S")" ] && [ "${N#.}" = "$N" ] && [ ! -e "$D/CLAUDE.md" ] || exit 0
+[ -n "$R" ] && [ "$(dirname "$D")" = "$R" ] && [ "$D" != "$S" ] && [ "$D" != "$(dirname "$S")" ] && [ "$(cd "$D" 2>/dev/null && pwd -P)" != "$(cd "$S/.." && pwd -P)" ] && [ "${N#.}" = "$N" ] && [ ! -e "$D/CLAUDE.md" ] || exit 0
 case "$N" in *[[:cntrl:]]*) exit 0;; esac  # a capo o caratteri di controllo nel nome: non si tocca
 SIGLA="$(printf '%s' "$N" | iconv -c -f UTF-8 -t ASCII//TRANSLIT 2>/dev/null | tr -d "\`'^~\"" | tr '[:upper:]' '[:lower:]' | tr -cs 'a-z0-9' '-' | sed 's/^-//;s/-$//')"
 [ -n "$SIGLA" ] || { echo "La cartella «${N}» non è stata preparata: dal nome non si ricava una sigla. Se è un progetto cliente, chiedi all'utente la sigla e lancia: bash $S/nuovo-cliente.sh \"$D\" <sigla>"; exit 0; }

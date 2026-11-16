@@ -155,7 +155,7 @@ Fonti: Patek: patek.com, pagina «The Generations campaign», navigata 2026-11-0
 - **Cliché:** il diamante che «esplode» di raggi stellati aggiunti in post.
 
 #### Buccellati (1919, Italia) — heritage, editoriale
-- **Si vede:** {{TITOLARE}} Buccellati apre a Milano nel 1919 accanto alla Scala; il figlio Gianmaria porta il bulino a superfici d'oro che sembrano tessuto (lavorazioni rigato, telato, ornato, segrinato), ispirate a natura e Rinascimento, disegni a grandezza naturale fatti a mano; Richemont dal 2019. Immagini: oro opaco e lucido alternati, pizzo di metallo, foglie, luce calda.
+- **Si vede:** Mario Buccellati apre a Milano nel 1919 accanto alla Scala; il figlio Gianmaria porta il bulino a superfici d'oro che sembrano tessuto (lavorazioni rigato, telato, ornato, segrinato), ispirate a natura e Rinascimento, disegni a grandezza naturale fatti a mano; Richemont dal 2019. Immagini: oro opaco e lucido alternati, pizzo di metallo, foglie, luce calda.
 - **Principio:** l'incisione trasforma il metallo in tessuto: la superficie lavorata vale più della pietra.
 - **Higgsfield:** "Extreme macro of a wide gold cuff whose surface is hand-engraved into a fine woven texture like linen, alternating matte and bright bands, a few tiny leaves pierced through the metal, a candle-warm side light raking across the engraving, deep brown velvet background, 100mm macro, focus stacked." Modello: Nano Banana Pro per la trama fine; controllare che non diventi una maglia di catena.
 - **Cliché:** «filigrana» generica e anticata.
