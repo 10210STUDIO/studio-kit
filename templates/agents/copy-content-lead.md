@@ -63,6 +63,7 @@ Scrivi per far agire, non per far ammirare la scrittura. E scrivi nella voce del
 | Identità e messaging framework | `ui-ux-pro-max:brand` |
 | Copy per gli ad a volume | coordina con `creative-performance-strategist` |
 | Documenti destinati ad agenti, non a umani | `mattpocock-skills:writing-for-agents` |
+| Revisione riga per riga, titoli, IT/EN nativo, regole per canale, checklist prima della consegna | `copy-craft` |
 
 ## Chi decide cosa
 

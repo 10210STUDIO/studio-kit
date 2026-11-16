@@ -2,7 +2,7 @@
 
 **Uno studio creativo e marketing dentro Claude Code.** 24 agenti, ognuno con un mestiere. Un direttore riceve il brief e assegna il lavoro, due cancelli possono bloccare un progetto, e ogni agente ha una memoria che cresce a ogni lavoro. Tu porti il brief e prendi le decisioni.
 
-*A full creative and marketing studio inside Claude Code: 24 specialised agents, studio rules, per-agent playbooks, 35 craft skills and a cultural atlas to direct image and video models. Content is in Italian. English summary at the bottom.*
+*A full creative and marketing studio inside Claude Code: 24 specialised agents, studio rules, per-agent playbooks, 36 craft skills and a cultural atlas to direct image and video models. Content is in Italian. English summary at the bottom.*
 
 ---
 
@@ -13,7 +13,7 @@
 | **24 agenti** | Direzione, brand, design, foto e film AI, copy, media, CRM, CRO, PR, dati, web, sicurezza, vendite, operazioni, qualità e conformità. |
 | **Regole dello studio** | Un file, `STUDIO.md`, letto da ogni agente prima di ogni lavoro: numeri sempre con fonte, brief prima dell'esecuzione, chi produce non giudica, due cancelli con potere di veto. |
 | **Playbook** | La memoria di ogni agente: cosa funziona, con la prova e il limite. Si aggiornano a fine lavoro. |
-| **35 skill di mestiere** (+ 4 di HyperFrames) | Metodo e checklist per posizionamento, naming, identità, tipografia, stampa, script video, campagne a pagamento, test, tracking, GDPR, diritti, contratti, margine e altro. |
+| **36 skill di mestiere** (+ 4 di HyperFrames) | Metodo e checklist per posizionamento, naming, identità, tipografia, stampa, script video, campagne a pagamento, test, tracking, GDPR, diritti, contratti, margine e altro. |
 | **Atlante culturale** | 437 riferimenti di arte, design, architettura, moda, fotografia, cinema e musica, tradotti in istruzioni per i modelli di immagine e video. |
 | **Una cartella per progetto** | Crei la cartella di un cliente e la apri con Claude: si prepara da sola, con il team e il solo contesto di quel cliente, e `studio-lead` a dirigere. |
 | **`/studio-kit:crea-studio`** | Una skill che fa otto domande e installa tutto nel tuo `~/.claude/`, con il nome del tuo studio. |
@@ -135,7 +135,7 @@ Tu intervieni dove serve una decisione: il brief, il territorio creativo, una sp
 
 ---
 
-## Le 35 skill di mestiere
+## Le 36 skill di mestiere
 
 Gli agenti le usano da soli, secondo la tabella che ognuno ha nel proprio file. Ogni skill dice quando usarla, cosa controllare e quali errori sono ricorrenti.
 
@@ -143,7 +143,7 @@ Gli agenti le usano da soli, secondo la tabella che ognuno ha nel proprio file. 
 |---|---|---|
 | Strategia e offerta | `positioning-method`, `gtm-strategy`, `offer-pricing-packaging`, `qualitative-interviews` | Come si posiziona il cliente e contro chi, come va sul mercato, prezzi e pacchetti, interviste ai clienti del cliente. |
 | Brand e design | `naming`, `brand-architecture`, `visual-identity-marks`, `typography-craft`, `photo-illustration-direction`, `print-packaging-production` | Nomi e screening, marchi multipli, costruzione del marchio, tipografia, direzione di foto e illustrazione, file per la stampa e il packaging. |
-| Contenuti e reputazione | `video-scriptwriting`, `pr-earned-media`, `influencer-creator`, `case-study-production` | Script per durata e contesto, ufficio stampa, collaborazioni con creator, case study con l'autorizzazione del cliente. |
+| Contenuti e reputazione | `copy-craft`, `video-scriptwriting`, `pr-earned-media`, `influencer-creator`, `case-study-production` | Revisione del copy riga per riga in italiano e inglese, titoli, regole per canale; script per durata e contesto, ufficio stampa, collaborazioni con creator, case study con l'autorizzazione del cliente. |
 | Media a pagamento | `meta-ads-ops`, `tiktok-linkedin-ads-ops`, `retail-media-amazon`, `programmatic-ctv-dooh` | Struttura e diagnosi delle campagne, eventi lato server, marketplace, programmatic, TV connessa e affissione digitale. |
 | Misura e test | `gtm-tracking-implementation`, `experiment-stats`, `cro-experimentation`, `mmm-incrementality`, `bi-warehouse`, `martech-stack` | Tracking con tag manager, statistica dei test, ottimizzazione della conversione, quanto la pubblicità ha aggiunto davvero, BI, scelta degli strumenti. |
 | Web, e-commerce, CRM | `cms-architecture`, `shopify-ecommerce`, `email-lifecycle-retention` | Modello dei contenuti e scelta del CMS, architettura Shopify, flussi email e deliverability. |
@@ -270,7 +270,7 @@ Gli agenti funzionano anche senza le dipendenze qui sotto, ma rendono di più co
 skills/crea-studio/    la skill che installa e personalizza
 templates/
   agents/              24 agenti (con segnaposto {{STUDIO}}, {{TITOLARE}}…)
-  skills/              35 skill di mestiere + atlante culturale + 4 skill HyperFrames
+  skills/              36 skill di mestiere + atlante culturale + 4 skill HyperFrames
   studio/              STUDIO.md, playbook, benchmark, listino, CONTEXT di esempio
     hooks/             i due controlli automatici (deploy e playbook) e il loro test
     collaudo/          brief fittizi, rubrica e script per collaudare gli agenti
@@ -299,4 +299,4 @@ I nomi di artisti, fotografi, registi, designer e marchi citati nell'atlante son
 
 ## English summary
 
-`studio-kit` turns Claude Code into a creative and marketing studio. A lead agent turns each request into a five-line brief, splits it into work packages and dispatches 24 specialists in parallel: creative direction, brand, UI, AI photo and film direction, motion, copy, PR, media planning and buying, creative testing, creators, CRM, CRO, measurement, research, web, security, sales and operations. Whoever produces never judges their own work. Two gates can veto: margin before a project is accepted, quality and compliance before anything is delivered. Every agent reads the studio rules, its own playbook and the client's context before working, and adds verified patterns to its playbook afterwards. The kit also includes 35 craft skills and a 437-entry cultural atlas that translates art, design, architecture, fashion, photography, film and music references into prompt fragments for image and video models. All content is in Italian. Install the plugin, run `/studio-kit:crea-studio`, answer eight questions, and the kit is copied and personalised into your `~/.claude/`. Choose a projects folder: every folder you create there and open with Claude sets itself up as a client project, with the team, only that client's context, and the lead agent directing. Your brand, clients, taste, rate card and playbooks stay yours.
+`studio-kit` turns Claude Code into a creative and marketing studio. A lead agent turns each request into a five-line brief, splits it into work packages and dispatches 24 specialists in parallel: creative direction, brand, UI, AI photo and film direction, motion, copy, PR, media planning and buying, creative testing, creators, CRM, CRO, measurement, research, web, security, sales and operations. Whoever produces never judges their own work. Two gates can veto: margin before a project is accepted, quality and compliance before anything is delivered. Every agent reads the studio rules, its own playbook and the client's context before working, and adds verified patterns to its playbook afterwards. The kit also includes 36 craft skills and a 437-entry cultural atlas that translates art, design, architecture, fashion, photography, film and music references into prompt fragments for image and video models. All content is in Italian. Install the plugin, run `/studio-kit:crea-studio`, answer eight questions, and the kit is copied and personalised into your `~/.claude/`. Choose a projects folder: every folder you create there and open with Claude sets itself up as a client project, with the team, only that client's context, and the lead agent directing. Your brand, clients, taste, rate card and playbooks stay yours.
