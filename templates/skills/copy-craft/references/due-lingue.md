@@ -1,0 +1,87 @@
+# Italiano e inglese
+
+Un testo bilingue debole si riconosce perché ogni versione suona tradotta dall'altra: l'inglese ha la sintassi di una lettera commerciale italiana, l'italiano ha i frammenti e le maiuscole dell'inglese. La cura è semplice da dire: ogni lingua si scrive partendo dall'idea, non dall'altro testo.
+
+## 1. Decidi dove nasce il pezzo
+
+Ogni testo ha una lingua di nascita, scritta nel file interno della consegna («nasce in: IT»).
+- Nasce nella lingua del pubblico principale di quel canale.
+- Se l'idea vive di un suono o di un doppio senso che esiste in una lingua sola, nasce in quella, e l'altra versione avrà un'idea diversa con lo stesso effetto.
+- Non si scrivono le due versioni in parallelo frase per frase: è il modo più sicuro per farle sembrare tutte e due tradotte.
+
+## 2. Adattare, non tradurre
+
+Il metodo, in quattro passi:
+1. **Scrivi l'intenzione di ogni riga** dell'originale, in una frase: cosa deve capire o fare chi legge in quel punto. «Deve sentire che il prezzo è chiaro prima di chiedere un preventivo.»
+2. **Chiudi l'originale.** Scrivi la seconda versione dalle intenzioni, con le parole e il ritmo di quella lingua.
+3. **Riapri l'originale e confronta i fatti, solo quelli.** Numeri, periodi, fonti, nomi, condizioni e claim devono coincidere alla lettera. La forma si adatta, i fatti mai.
+4. **Fai leggere a un madrelingua che non sa dell'altra versione** (il test è in `giudizio.md`).
+
+Un gioco di parole non si traduce: si sostituisce con un'altra idea che fa lo stesso effetto, oppure si rinuncia.
+
+**Le frasi del brief non si copiano.** Il brief dà i fatti, non le frasi. Una sua formula (il materiale, il processo, il pubblico) può entrare tale e quale una volta sola per lingua, in tutto il lavoro. Ogni altra volta che quel fatto serve, al suo posto va ciò che il fatto produce e si vede (come invecchia, quanto pesa, cosa cambia per chi lo usa). Controllo: cerca nel testo le sequenze di tre o più parole uguali al brief, in tutte e due le lingue; dalla seconda in poi ognuna è un difetto, anche se è accorciata. In inglese la formula copiata di solito è anche un calco. Pratica di mestiere.
+
+> Brief: «lana di pecora sarda, filata a mano». Altri fatti del brief: la coperta pesa due chili e mezzo, il filo è irregolare.
+> Sbagliato (home, scheda, email): «Coperte in lana di pecora sarda, filata a mano.» · «Ogni coperta è in lana di pecora sarda, filata a mano.» · «La nostra lana sarda filata a mano ti scalda tutto l'inverno.»
+> Giusto: «Coperte in lana di pecora sarda, filata a mano.» · «Pesa due chili e mezzo.» · «Il filo è irregolare: si vede dove la mano ha tirato di più.»
+
+La traduzione letterale non sbaglia sempre. Alcune frasi di prodotto passano da una lingua all'altra quasi parola per parola e suonano normali: la pagina italiana di Apple «Progettati per Apple Intelligence» ricalca l'inglese «Designed for Apple Intelligence» senza stonare [P, letta il 2026-11-16]. Si giudica frase per frase, con l'orecchio di un madrelingua, non per principio.
+
+Fonti: per chi scrive un originale da tradurre, Mailchimp («Writing for Translation») [P] e Microsoft Writing Style Guide [P, non ricontrollata] chiedono di evitare idiomi, slang, riferimenti a una sola cultura e pile di modificatori. Una fonte primaria con metodo e dati sull'adattamento dei testi di marketing fra inglese e italiano non è stata trovata: il metodo in quattro passi è pratica di mestiere.
+
+## 3. Italiano nativo
+
+- **Verbi, non nomi.** «Si paga allo sportello», non «il pagamento si effettua allo sportello»; «firmare», non «apporre la firma» (Guida ITTIG-CNR e Crusca 2011 [P]). È il difetto 2 della revisione, e in italiano è il più frequente.
+- **Frammenti col punto.** «Il gusto, ripensato.», «Fatto per chi fa.», «Una scelta. Precisa.» sono costruzioni dell'inglese pubblicitario. In italiano, in un titolo isolato possono funzionare; in fila, nel corpo del testo, suonano tradotte. Pratica di mestiere: in un blocco di testo, al massimo un frammento, e mai due di seguito.
+- **Calchi.** Un calco non è per forza un errore: *realizzare* nel senso di «rendersi conto» viene dall'inglese, e in una consulenza del 2017 la Crusca lo considera corretto [P]. È il parere su un verbo solo; la regola generale è un ragionamento ricavato da quel caso. La domanda giusta è un'altra: un italiano lo direbbe così, e lo capisce senza tradurre? Parole da passare per quella domanda, ogni volta (pratica, non una lista ufficiale): *implementare*, *performante*, *supportare* (per «aiutare» o «sostenere»), *fare la differenza*, *scopri di più*, *esperienza* per tutto.
+- **Anglicismi.** Si tengono quelli che il pubblico usa davvero e si sostituiscono gli altri. Le informazioni ai consumatori in Italia vanno date almeno in italiano (Codice del consumo, art. 9, letto per l'atlante culturale [P]).
+- **Tu, voi, Lei.** Si decide una volta per marchio e si scrive nella guida. I servizi pubblici digitali usano il «tu» (Designers Italia [P, non ricontrollata]); per altri settori decide il pubblico, non la moda.
+- **Maiuscole.** Nei titoli solo la prima parola e i nomi propri (Internazionale [P, non ricontrollata]). «Il Nostro Metodo» è inglese travestito.
+- **Segni.** Virgolette, apostrofi, lineette, separatore decimale: `typography-craft`.
+
+## 4. Inglese nativo
+
+- **Parti dalla frase del madrelingua, non da quella italiana.** Prima di scrivere una riga, chiediti come la direbbe a voce un madrelingua che vende quella cosa dietro il banco, e scrivi quella; poi confronta i fatti (passo 3 dell'adattamento). Una riga costruita sull'italiano tiene l'ordine italiano anche quando ogni parola è giusta.
+- **Parole corte e di tutti i giorni.** «Use», non «utilise»; «help», non «facilitate» (Orwell 1946, regole 2 e 5 [P]; GOV.UK, «Words to avoid» [P]).
+- **Niente catene di nomi con «of».** «Realisation of the new website» è italiano con parole inglesi: «We built the new website».
+- **Falsi amici che tradiscono chi scrive dall'italiano** (pratica): *actually* vuol dire «in realtà», non «attualmente»; *eventually* vuol dire «alla fine»; *sensible* vuol dire «sensato»; *argument* è una discussione, non un argomento; *important company* suona strano dove l'inglese dice *major* o *large*; *valorise*, *territory* per «zona», *excellences* al plurale e *we remain at your disposal* non li scrive un madrelingua.
+- **Il registro.** Le contrazioni (*we're*, *you'll*) abbassano il tono di un grado; si decide per marchio, come il «tu» in italiano.
+- **Per lettori non madrelingua** (un pubblico internazionale che legge in inglese come seconda lingua): niente idiomi, niente riferimenti solo britannici o americani, una parola per ogni cosa (Mailchimp [P]; Microsoft [P, non ricontrollata]).
+
+**Controllo dei calchi, in revisione** (pratica di mestiere). Sulla versione inglese finita, riga per riga:
+- Participio dopo il nome con i complementi dietro («oil pressed cold in Puglia») è sintassi italiana: l'inglese mette i modificatori davanti («cold-pressed Apulian oil»).
+- Tre o più complementi in fila («made by hand in X by N people, one at a time, with Y») sono una frase italiana: spezzala, o tieni i due che contano.
+- «The X of the Y» dove l'inglese usa un nome composto: «the cost of the delivery» è «delivery cost».
+- Raccordi che servono all'italiano e non all'inglese («after that», «in this way», «for this reason»): prova a toglierli.
+- La riga che fallisce si riscrive dalla frase del madrelingua, non si ritocca parola per parola.
+
+## 5. Lunghezze e spazi
+
+Tradotto dall'inglese, un testo si allunga, e la differenza è maggiore sulle stringhe corte. Le stime che seguono sono le medie per le lingue europee pubblicate da IBM prima del 2007 e riprese da W3C Internationalization (pagina del 2007, rivista nel 2016) [P, fiducia media]. Non sono misure sull'italiano e non sono misure sul marketing:
+
+| Lunghezza del testo inglese | Lunghezza attesa della traduzione |
+|---|---|
+| fino a 10 caratteri | dal 200% al 300% |
+| 11-20 | 180-200% |
+| 21-30 | 160-180% |
+| 31-50 | 140-160% |
+| oltre 70 | 130% |
+
+Manca la riga 51-70: sulla pagina vale 151-170%, più della riga precedente, e rompe l'andamento. Forse è un refuso, e la fonte IBM non è stata letta, quindi non si usa. Su un paragrafo la stessa pagina dice che l'allungamento è minore: per un testo lungo, questi numeri sono un massimo, non una stima. L'unico dato italiano della pagina è una parola: *views* → *visualizzazioni*, il 300%.
+
+Cosa ne segue:
+- **Il layout si progetta sulla lingua più lunga**, e si prova con i testi veri di tutte e due. Bottoni, etichette, voci di menu e titoli a larghezza fissa sono i punti che si rompono per primi.
+- **Quando l'italiano non entra, si riscrive, non si taglia a metà.** Si cerca un'altra frase con la stessa intenzione (il passo 1 dell'adattamento), oppure si cambia lo spazio.
+- **I titoli che devono riempire una misura** si misurano con il carattere vero, in ogni lingua, prima di proporli.
+
+## Esempi
+
+Inventati.
+
+| Nasce in | Sbagliato (tradotto) | Giusto (adattato) |
+|---|---|---|
+| IT → EN | «Valorizziamo le eccellenze del territorio.» → *We valorise the excellences of the territory.* | *We put the region's best small producers in front of people who'd drive an hour for them.* |
+| EN → IT | *Coffee, reimagined.* → «Il caffè, reimmaginato.» | «Lo tostiamo più chiaro: nella tazza si sente la frutta.» |
+| EN → IT | *Get started* → «Inizia il tuo percorso» | «Crea l'account» |
+| IT → EN | «Restiamo a completa disposizione per qualsiasi chiarimento.» → *We remain at your complete disposal for any clarification.* | *Questions? Reply to this email and a person will answer.* |
+| IT → EN | «Ce l'abbiamo nel sangue.» → *We have it in our blood.* | Un'altra idea: *Three generations, same street, same oven.* |
