@@ -15,7 +15,7 @@ Se la forza di una riga sta tutta in un dato tra [ ], coprilo e rileggi: la riga
 
 ## Come si usa
 
-1. **Prima di scrivere.** Nomina chi legge, in che momento, e cosa deve fare dopo. Decidi in quale lingua nasce il testo (`references/due-lingue.md`). Raccogli i fatti: ogni promessa che scriverai deve avere la sua prova sulla stessa pagina.
+1. **Prima di scrivere.** Nomina chi legge, in che momento, e cosa deve fare dopo, in ogni lingua: chi legge l'inglese può non conoscere il sistema italiano e avere un altro problema. Decidi in quale lingua nasce il testo (`references/due-lingue.md`). Raccogli i fatti: ogni promessa che scriverai deve avere la sua prova sulla stessa pagina.
 2. **Scrivi.** Per il formato leggi la sezione del canale in `references/canali.md`, per i titoli `references/titoli.md`.
 3. **Rivedi riga per riga** con i nove passaggi di `references/revisione.md`, nell'ordine: i primi cambiano la struttura, gli ultimi le parole. Su un testo breve (un post, un bottone) bastano i passaggi che il formato tocca, ma il conto delle negazioni si fa sempre, e la prova della foto coperta ogni volta che c'è un'immagine.
 4. **Giudica** con i test e la checklist di `references/giudizio.md`. Se un test fallisce, torni al passaggio che lo corregge. Un testo che non passa la checklist non si consegna, tranne che per le voci marcate «da provare»: quelle si segnalano nel file interno e non bloccano.

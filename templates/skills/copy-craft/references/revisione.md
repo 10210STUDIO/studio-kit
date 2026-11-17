@@ -171,7 +171,7 @@ E l'unica opposizione che la pagina si concede, contro un avversario vero:
 **Il difetto.** L'inglese suona italiano (catene di nomi, «realisation», «valorisation», cortesie da lettera commerciale). L'italiano suona inglese (frammenti col punto, calchi, maiuscole a ogni parola del titolo). Succede quando una lingua nasce dall'altra invece che dall'idea.
 
 **Il controllo.**
-- Decidi in quale lingua nasce il pezzo e scrivilo lì per primo. L'altra versione si scrive dall'intenzione di ogni riga, non dal testo.
+- Decidi in quale lingua nasce il pezzo e scrivilo lì per primo. L'altra versione si scrive dall'intenzione di ogni blocco, non dal testo.
 - Leggi ogni versione ad alta voce a un madrelingua che non sa che esiste l'altra. Se ti chiede «tradotto da cosa?», va riscritta.
 - Per un calco, la domanda non è «viene dall'inglese?» ma «un italiano lo direbbe così, e lo capisce senza tradurre?».
 

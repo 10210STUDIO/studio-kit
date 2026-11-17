@@ -12,8 +12,8 @@ Ogni testo ha una lingua di nascita, scritta nel file interno della consegna («
 ## 2. Adattare, non tradurre
 
 Il metodo, in quattro passi:
-1. **Scrivi l'intenzione di ogni riga** dell'originale, in una frase: cosa deve capire o fare chi legge in quel punto. «Deve sentire che il prezzo è chiaro prima di chiedere un preventivo.»
-2. **Chiudi l'originale.** Scrivi la seconda versione dalle intenzioni, con le parole e il ritmo di quella lingua.
+1. **Scrivi l'intenzione di ogni blocco** dell'originale (titolo, paragrafo, bottone), in una frase: cosa deve capire o fare chi legge lì. «Deve sentire che il prezzo è chiaro prima di chiedere un preventivo.» Non riga per riga: un'intenzione per riga produce una seconda versione riga per riga. Poi chiediti se il lettore dell'altra lingua ha la stessa intenzione o un'altra (§4, «Il lettore che non conosce l'Italia»).
+2. **Chiudi l'originale.** Scrivi la seconda versione dalle intenzioni, con le parole e il ritmo di quella lingua. Ordine e numero delle frasi possono cambiare.
 3. **Riapri l'originale e confronta i fatti, solo quelli.** Numeri, periodi, fonti, nomi, condizioni e claim devono coincidere alla lettera. La forma si adatta, i fatti mai.
 4. **Fai leggere a un madrelingua che non sa dell'altra versione** (il test è in `giudizio.md`).
 
@@ -47,8 +47,29 @@ Fonti: per chi scrive un originale da tradurre, Mailchimp («Writing for Transla
 - **Falsi amici che tradiscono chi scrive dall'italiano** (pratica): *actually* vuol dire «in realtà», non «attualmente»; *eventually* vuol dire «alla fine»; *sensible* vuol dire «sensato»; *argument* è una discussione, non un argomento; *important company* suona strano dove l'inglese dice *major* o *large*; *valorise*, *territory* per «zona», *excellences* al plurale e *we remain at your disposal* non li scrive un madrelingua.
 - **Il registro.** Le contrazioni (*we're*, *you'll*) abbassano il tono di un grado; si decide per marchio, come il «tu» in italiano.
 - **Per lettori non madrelingua** (un pubblico internazionale che legge in inglese come seconda lingua): niente idiomi, niente riferimenti solo britannici o americani, una parola per ogni cosa (Mailchimp [P]; Microsoft [P, non ricontrollata]).
+- **Virgolette e punto finale.** Si sceglie UK o US una volta per marchio, come le contrazioni. US: il punto e la virgola sempre dentro le virgolette di chiusura, due punti e punto e virgola (;) fuori (*he said “yes,” and left*); UK: fuori ogni segno che non appartiene alla citazione, salvo il segno finale quando la citazione chiude anche la frase (*he said “yes”, and left*). In tutte e due la frase ha un solo segno finale: *just “Can I claim this?”.* è sbagliato, la frase finisce col punto di domanda (University of Nottingham, style guide [P]: «Use one – but only one – of these at the end of every sentence»; la regola US: Chicago Manual of Style, CMOS Shop Talk, «Commas and Periods with Quotation Marks», 2020-10-20, che rimanda a CMOS §6.9-6.10 [P, blog dell'editore]). La variante decide anche il lessico (UK *claim* una spesa, US *deduct*).
 
-**Controllo dei calchi, in revisione** (pratica di mestiere). Sulla versione inglese finita, riga per riga:
+**Il lettore che non conosce l'Italia** (pratica di mestiere, da una prova alla cieca su un testo di servizi). Quando l'inglese parla a stranieri che vivono o lavorano in Italia, il suo lettore non è quello italiano in un'altra lingua: ha un problema in più (il sistema italiano, spesso la lingua) e meno parole per nominarlo.
+- **Prima di scrivere, elenca ciò che l'italiano dà per scontato e lo straniero no:** termini fiscali e legali, enti, moduli, abitudini. Per ognuno: o lo spieghi con ciò che significa per lui, o lo togli.
+- **Si spiega con l'effetto, non con la traduzione.** «Forfettario» non diventa *flat-rate scheme* (per un britannico è un regime IVA dell'HMRC, un'altra cosa) né *on the forfettario*: diventa *Italy's simplified flat-tax scheme for small freelancers*, con *(regime forfettario)* tra parentesi la prima volta, solo se lo incontrerà su moduli e lettere. «Srl» è *a limited company (srl)*: una forma di società, non un regime.
+- **Non chiedergli ciò che non sa.** Se l'italiano chiede «il tuo regime», l'inglese chiede ciò a cui lo straniero sa rispondere: se ha una partita IVA, dove sono i suoi clienti.
+- **Il suo problema può cambiare titolo e ordine.** Se l'italiano parte da un momento che l'italiano riconosce (il mese delle tasse), l'inglese può partire dal suo (le tasse di un altro paese, in un'altra lingua), e ciò che in italiano sta in fondo può salire in prima riga. I fatti restano quelli del brief: la lingua in cui si lavora si promette solo se il cliente la conferma.
+
+**Calchi frequenti nel copy di servizi** (pratica: ogni voce viene da un testo reale rivisto con orecchio inglese).
+
+| Italiano | Calco | Perché stona | Meglio |
+|---|---|---|---|
+| primo colloquio | *first meeting* | dice il posto in una serie, non cosa ottiene il lettore | *consultation*, *intro call* (solo se è davvero una chiamata: è un fatto) |
+| regime ordinario | *standard regime* | *regime* è lessico tecnico o politico; il lettore non sa quale | cosa cambia per lui (sopra) |
+| così fai (+ verbo) | *So you ask…* | senza modale ricalca l'italiano; l'inglese dice cosa diventa possibile | *That way you can ask…* |
+| realtà (aziendali) | *realities* | in inglese non indica un'azienda | *businesses*, o il tipo esatto |
+| professionisti | *professionals* | in italiano sono gli autonomi, spesso con albo; in inglese è chiunque abbia un lavoro qualificato | *freelancers*, *self-employed*, o il mestiere |
+| la richiesta è arrivata | *Your request has reached us* | registro da lettera formale | *We've got your request.* |
+| ti scriviamo entro | *we'll write within* | | *we'll get back to you within* |
+| aziende di meno di 10 persone | *companies of fewer than 10 people* | corretto ma rigido | *companies with fewer than 10 people* |
+| Ciao Anna, la tua… | *Hi Anna, we've…* | la minuscola dopo il saluto è una convenzione italiana | *Hi Anna,* a capo, *We've…* |
+
+**Controllo dei calchi, in revisione** (pratica di mestiere). Prima di tutto, **leggi l'inglese senza aver letto l'italiano** (o dopo averlo chiuso da un po'). Se riesci a ricostruire l'italiano frase per frase, o se un termine resta oscuro per chi non conosce l'Italia, il pezzo non è adattato: riscrivilo dalle intenzioni (§2), non ritoccarlo. Poi, sulla versione inglese finita, riga per riga:
 - Participio dopo il nome con i complementi dietro («oil pressed cold in Puglia») è sintassi italiana: l'inglese mette i modificatori davanti («cold-pressed Apulian oil»).
 - Tre o più complementi in fila («made by hand in X by N people, one at a time, with Y») sono una frase italiana: spezzala, o tieni i due che contano.
 - «The X of the Y» dove l'inglese usa un nome composto: «the cost of the delivery» è «delivery cost».

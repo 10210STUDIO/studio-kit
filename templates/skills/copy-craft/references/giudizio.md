@@ -72,7 +72,8 @@ Si passa voce per voce. Un «no» si corregge prima di consegnare: finché resta
 - [ ] Per ogni pezzo è scritto dove nasce; l'altra versione è scritta dalle intenzioni.
 - [ ] Fatti, numeri e condizioni coincidono alla lettera fra le due versioni.
 - [ ] Un madrelingua ignaro ha letto ogni versione senza chiedere «tradotto da?».
-- [ ] L'inglese ha passato il controllo dei calchi (`due-lingue.md`).
+- [ ] Letto senza l'italiano, l'inglese non lascia ricostruire l'italiano frase per frase, e ogni termine del sistema italiano è spiegato con ciò che significa per il lettore o tolto (`due-lingue.md`, §4).
+- [ ] L'inglese ha passato il controllo dei calchi e ha un solo segno finale per frase, con virgolette e punto secondo la variante scelta (`due-lingue.md`).
 - [ ] Le stringhe corte (bottoni, menu, etichette) sono state provate nello spazio vero, nella lingua più lunga.
 
 **Immagini e canali**
