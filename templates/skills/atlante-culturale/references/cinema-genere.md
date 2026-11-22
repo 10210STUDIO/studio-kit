@@ -129,7 +129,7 @@ Nell'atlante dal 2026-11-15, dopo la verifica delle citazioni (seconda istanza) 
 - **Si vede:** alla stazione di Waterloo, a Londra, un uomo guida un giornalista nella folla (per telefono: oss., non nella fonte) per sottrarlo a una squadra della CIA che lo segue con le telecamere; il giornalista si fa prendere dal panico e viene ucciso. Montaggio di Christopher Rouse (Oscar), fotografia di Oliver Wood. La camera a mano «tremante» è stata criticata già all'uscita (Time). Il film ha vinto tre Oscar.
 - **Principio:** l'inseguimento in mezzo alla folla: chi insegue è invisibile, chi fugge non sa dove guardare, e la folla nasconde e tradisce insieme.
 - **Scena:** un uomo al telefono nella folla, un altro che lo guida da lontano, sorveglianti sparsi · l'uomo cambia direzione su ordine della voce · un auricolare, un uomo che si porta la mano all'orecchio a venti metri, è la prova che lo seguono · lo sguardo va dal volto in panico alla figura lontana.
-- **Higgsfield:** (da provare) "Rush hour in a vast railway concourse, a man in a rumpled jacket walks fast through the crowd with a phone pressed to his ear, then abruptly turns against the flow on someone's instruction; twenty metres behind, a man in a grey coat touches his earpiece and changes direction too. Cool fluorescent and daylight mix, departure boards, motion blur of passers-by. Long lens, handheld, frame partly blocked by people crossing." Modello: Seedance 2.0 multishot (fuggitivo, sorvegliante, campo largo), perché regge una folla e tre punti di vista; massimo tre personaggi seguiti per taglio.
+- **Higgsfield:** (da provare) "Rush hour in a vast railway concourse, a man in a rumpled jacket walks fast through the crowd with a phone pressed to his ear, then abruptly turns against the flow on someone's instruction; twenty metres behind, a man in a grey coat touches his earpiece and changes direction too. Cool fluorescent and daylight mix, departure boards, motion blur of passers-by. Long lens, handheld, frame partly blocked by people crossing." Modello: Seedance 2.0 multishot (fuggitivo, sorvegliante, campo largo), perché regge una folla e tre punti di vista; pochi personaggi seguiti per taglio, non più di tre (da provare).
 - **Cliché:** la camera che trema sempre, anche sul dialogo (la critica di Time). La camera a mano si usa nella corsa, non come tic.
 
 #### Tom Tykwer, Lola corre (1998, Germania) — pop
@@ -241,7 +241,7 @@ Come si girano i quattro momenti. Le definizioni di base (piani, assi, movimenti
 - **Due velocità** (Friedkin): treno e auto, folla e uomo, corsa e camminata. Il cambio di velocità (frenata, ostacolo, ginocchio che cede) è l'evento.
 - **Camera a mano solo nella corsa** (la critica a Bourne): sul dialogo e sul fermo la camera torna stabile.
 - **La folla nasconde e tradisce** (Bourne, The Chaser): gli inseguitori non sono in fila; ognuno ha la sua corsia e il suo tempo.
-- **Seedance 2.0:** al massimo tre personaggi seguiti per taglio (formula della skill higgsfield); con più inseguitori, le figure in più vanno in profondità e fuori fuoco.
+- **Seedance 2.0:** conviene seguire non più di tre personaggi per taglio (da provare); con più inseguitori, le figure in più vanno in profondità e fuori fuoco.
 
 ### 4. La presa e la cattura
 - **Il segnale prima del contatto** (gli uccelli in Bonnie and Clyde, il telefono che squilla in The Chaser, il gesso in M): un dettaglio minimo dice che è finita prima che qualcuno tocchi qualcuno.

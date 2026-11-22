@@ -185,6 +185,36 @@ Il video di riferimento va ripulito dai movimenti di bocca non voluti (avanti-in
 - Il prezzo va riverificato dopo 30 giorni.
 **Cliente/progetto:** generale.
 
+## [2026-11-21] Camera nel prompt: decidono la geometria e l'immagine, non i numeri né i divieti
+**Pattern:** cinque prove ripetute dicono la stessa cosa.
+- **Distanza:** la frase di taglio scritta sul corpo governa («head to mid-thigh» Z ≈ 2,4 a 40 mm); i metri scritti no. La focale da sola non fissa il taglio.
+- **Altezza:** «raised above their heads» ignorato 2 su 2 (camera ad altezza spalla, giro in arco); con una partenza l'altezza la decide l'immagine. «Low sideways track at hip height» con ottica lunga taglia fuori la testa; «follows close behind her shoulder» taglia al busto.
+- **Volto e sguardo:** camera di lato o carrello laterale = profilo leggibile anche con «never her face» (3 su 3 e 2 su 2); con camera frontale che arretra lo sguardo va in macchina anche con «never into the lens» (Kling e Seedance). Il volto resta nascosto solo da sopra la spalla di chi insegue, con il soggetto in diagonale (1 su 1). La velocità relativa camera/soggetto non si ottiene a parole.
+- **Tempi:** una reazione scritta si allunga e si esagera («squints» 15-34 f, «blinks hard» 14-18 f, sguardo indietro 18-34 f); un tempo al decimo in Kling 4.0 non si ottiene scrivendolo; in Seedance omni con partenza e arrivo tiene sotto le ~266 parole e slitta di ~1 s sopra; i tagli interni si spostano fino a +0,8 s. Si controlla sulla prima bozza.
+- **Arrivo:** l'azione avviene se scrivi lo stato raggiunto («...and straightens»), non solo l'inizio; un'azione che torna indietro non esce.
+Quindi: taglio sul corpo + ottica + un solo movimento con verso + stato d'arrivo, e la scelta della geometria prima delle parole. Ciò che la geometria non dà si cambia nella partenza o nell'angolo, non aggiungendo divieti.
+**Evidenza:** prove interne ripetute fra inizio e fine novembre su sguardo (Kling), omni, distanza, recitazione, tagli e volto nascosto, con più generazioni per ciascun caso. Le fonti secondarie che concordano o divergono sono raccolte fra i punti da verificare sul metodo del vendor.
+**Quando non vale:** quasi tutto in `omni_reference` con lastra; in t2v puro altezza e distanza non sono state provate a parte.
+**Cliente/progetto:** generale.
+
+## [2026-10-30] Battuta parlata con Seedance 2.5: ancorarla a metà; ritimarla sulla coda
+**Pattern:** se la battuta è l'ultima frase del prompt, finisce negli ultimi 1,5 s e si tronca. «She reaches the desk by the eighth second ... and right away says: "..." Then, for the last few seconds, she ...» prima della riga del suono. Audio nativo gratis, AAC 32 kHz (ricampionare a 48 kHz). Controllo: `mlx_whisper` (small, `--condition-on-previous-text False`) su segmenti di 1,5-2 s; tempi esatti dall'inviluppo RMS in banda voce a 20 ms (Whisper sbaglia di 0,5-1 s). Per ridoppiare o ritimare su una finale approvata: traccia costruita in locale (pezzi della voce originale, o Seed Audio con 1 s di riferimento + EQ); si rigenera solo la coda di 5 s con `omni_reference` (video = coda muta ripulita dai movimenti di bocca, audio = nuova traccia); dissolvenza di 8 fotogrammi su un gesto veloce. `video_edit` non ritima.
+**Evidenza:** 3 bozze su 3 in coda (13,6–15,0 s); con l'ancora 11,4–13,7 e 12,7–14,1 s. Uno spot EN/IT, labiale a 6 fps.
+**Quando non vale:** scarto di 1 s fra i casi; timbro e naturalezza li giudica una persona. Camera molto mossa nella coda; la coda non è identica al pixel (~26 dB PSNR).
+**Cliente/progetto:** generale.
+
+## [2026-11-06] Seedance 2.5 con `--start-image` + `--end-image`: l'oggetto esce, i tempi possono slittare
+**Pattern:** arrivo = stato *dopo* l'uscita (libro fuori quadro) + «carries the closed, rigid book... it never stops and never fades» + ritaglio della mano come `--image-references`: la mano entra, prende e porta fuori il libro intero, dita mai fuse. Il fondo uguale in partenza e arrivo si congela dopo il primo secondo; con comparse in posizioni diverse resta vivo. Il modello va dritto dalla partenza all'arrivo: un'azione che torna indietro non esce (va in un keyframe) e una condizione di sequenza si anticipa di circa 0,5 s. Tempi: con prompt ≤266 parole e PNG originali nessuno slittamento («at 1.8 s» → fotogramma 43, «by 3.6 s» → fotogramma 76); con 278 parole e quattro azioni in più fra 1 e 2,6 s slittano di ~1 s verso la fine. «bare hand» = avambraccio nudo; «right hand, in a charcoal suit sleeve with a white shirt cuff» = manica e polsino. «head turns toward his hand» = occhiata di lato estrema tenuta 40 fotogrammi; «left and down toward his hip» = il libro esce dall'angolo in basso.
+**Evidenza:** due clip di prova con slittamento; due clip di una versione successiva senza slittamento; una clip con prompt da 278 parole.
+**Quando non vale:** camera ferma, mezzo busto. In tutte il fondo che cambia posa si blocca negli ultimi 22-38 fotogrammi. Scrivere i tempi veri e controllare sulla prima bozza.
+**Cliente/progetto:** generale.
+
+## [2026-11-17] Lastra notturna: Nano Banana Pro spegne le luci, Soul Cinema no
+**Pattern:** il video copia la luce della lastra, non del prompt. Per una sala di notte con sole torce, la lastra si fa con `nano_banana_pro` partendo da una lastra esistente: luci spente e fasci di torcia veri, 2 su 2; `soul_cinematic` restituisce la sala illuminata anche quando il prompt dice luci spente, 6 su 6. Nel prompt video i riferimenti si danno per ruolo: «@Image 2: only architecture and light», «@Image 3: only the leather».
+**Evidenza:** prova di metodo del 17/11, con gli asset generati e una nota di diagnosi del metodo.
+**Quando non vale:** una sola scena. Che la prova sembri girata lo giudica il CD.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 - Costo del doppiaggio Higgsfield (`dubbing`, MCP o CLI): `higgs generate cost dubbing` resta appeso con `--input_video` e rifiuta `--video` senza `duration` (che però non è un parametro accettato). L'MCP non ha anteprima del costo. Inoltre traduce da solo: «Are you ready?» potrebbe diventare «sei pronto?», non «siete pronti?». Alternativa provata: il pattern della coda `omni_reference`.

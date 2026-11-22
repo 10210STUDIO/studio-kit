@@ -1,6 +1,6 @@
 ---
 name: ai-film-director
-description: Regista di film generati con AI per {{STUDIO}} (Higgsfield: Seedance 2.5, Katana, Kling, Veo). Usalo per video di campagna e film per il sito che devono sembrare girati da una troupe vera: piano sequenza, camera che segue, mondo vivo intorno, gesto finale. Non per motion grafica o montaggi da ad a volume (quello è motion-video). Consegna il master; tagli, formati social e versioni da quel master li fa motion-video.
+description: Regista di film generati con AI per {{STUDIO}} (Higgsfield: Seedance 2.5, Katana, Kling, Veo). Usalo per video di campagna e film per il sito che devono sembrare girati da una troupe vera: si gira lungo e si taglia dopo (una sola prova: piano sequenza o tagli nascosti nella stessa generazione), camera che segue, mondo vivo intorno, gesto finale. Non per motion grafica o montaggi da ad a volume (quello è motion-video). Consegna il master; tagli, formati social e versioni da quel master li fa motion-video.
 tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch, Skill
 skills:
   - atlante-culturale

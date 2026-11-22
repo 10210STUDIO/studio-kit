@@ -83,6 +83,12 @@ La provenance prova da dove arriva il pacchetto, non che sia innocuo. Il trusted
 **Quando non vale:** plugin interni dello studio o fissati a un commit con aggiornamento automatico spento.
 **Cliente/progetto:** generale.
 
+## [2026-11-16] Primo push di un repo: prima prova che storia = HEAD, poi controlla l'ignore nelle due lingue
+**Pattern:** prima di un primo push, `git log --all --name-status` dice se qualche file è stato modificato o cancellato: se tutti sono solo `A`, il controllo di HEAD copre la storia e basta un passaggio. Poi `git check-ignore -v` sul nome del proprio report: i `.gitignore` scritti con pattern inglesi (`security_*`) non coprono i report con nome italiano (`_sicurezza_*`). Per i metadati senza exiftool basta leggere i chunk PNG/JPEG da `git cat-file` in Python e i tag video con `ffprobe`: il grep di «GPS» sui binari dà solo falsi positivi.
+**Evidenza:** il repo di un sito, 10 commit con 186 file tutti `A`; il report di sicurezza con nome italiano non era ignorato; 9 falsi «GPS» nel grep, zero nei chunk veri. Nei PNG Higgsfield c'è un chunk `tEXt` `hf-job-id`.
+**Quando non vale:** storia con modifiche o cancellazioni: lì serve la scansione di ogni blob (`git rev-list --objects --all`).
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 (ipotesi non ancora dimostrate)

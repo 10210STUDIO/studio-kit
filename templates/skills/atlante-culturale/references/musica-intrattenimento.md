@@ -446,7 +446,7 @@ Terzo verificatore, solo questa sottosezione e Novità 16-18 (Vogue 2020, Kiss A
 #### KPop Demon Hunters (2025, KR/US) — pop
 - **Si vede:** animazione 3D con linee e pose da 2D, palchi con luce dal basso e fumo, neon rosa-viola-turchese, costumi di gruppo, tigre e gazza ispirate alla pittura popolare coreana (minhwa). Coreografia sincronizzata, tagli sul beat. Oscar per film d'animazione e canzone "Golden", 15 marzo 2026.
 - **Principio:** la grammatica dell'idol (palco, coreografia, costume) presa come scenografia di un mondo fantastico.
-- **Higgsfield:** "3D-animated stage with bold 2D-style line work and graphic poses: three performers in coordinated stage outfits hit synchronized choreography under strong uplight and haze, pink-violet and teal beams, traditional folk-painting patterns animating across the backdrop, snap camera moves on the beat." Modello: Seedance 2.0 con il template anime-animation; Minimax Hailuo 2.3 come confronto per danza e animazione.
+- **Higgsfield:** "3D-animated stage with bold 2D-style line work and graphic poses: three performers in coordinated stage outfits hit synchronized choreography under strong uplight and haze, pink-violet and teal beams, traditional folk-painting patterns animating across the backdrop, snap camera moves on the beat." Modello: Seedance 2.0, con lo stile d'animazione scritto nel prompt; Minimax Hailuo 2.3 come confronto per danza e animazione.
 - **Cliché:** neon e demoni come "stile K-pop".
 
 ### Videogiochi e mondi digitali

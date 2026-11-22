@@ -77,10 +77,12 @@ Un modello generativo fa quello che gli descrivi. Se gli scrivi «elegante» o �
 | Cinema: effetti speciali pratici, VFX, virtual production, color science, grading e look, VFX con l'AI | `references/tecnica-cinema-vfx-colore.md` |
 | Fotografia: esposizione, luce naturale, flash, modificatori, schemi di ritratto, luce per still life | `references/tecnica-fotografia-luce.md` |
 | Fotografia: formati e camere, obiettivi, pellicole, tecniche speciali, post-produzione, look nei modelli AI | `references/tecnica-fotografia-camere-ottiche.md` |
+| Higgsfield: il metodo del vendor dal canale ufficiale (masterclass, VFX e modelli, ads e business, film originali con i brief di produzione) e dalla CLI (fogli, location, prompt video, bozza e finale, costi, montaggio), confrontato con le nostre prove; dove divergono vale la prova. Letto il 2026-11-21, da rivedere entro il 2027-02-19. Formato diverso dalle altre voci: punti con fonte, non Cos'è/Si vede | `references/tecnica-higgsfield.md` |
 
 Suono e musica (produzione, registrazione, mix e mastering, live, audio per spot e social, loudness, audio AI): skill separata `mestieri-del-suono`.
 
 Persona coerente in più clip AI (character sheet a tre viste, poi scene in Seedance, più 50 blocchi di realismo): `~/.claude/studio/riferimenti-esterni/character-sheet-seedance.md`. È materiale di terzi e resta solo nello studio.
+Linguaggio di camera nel prompt video (20 parole chiave di focale, taglio, racconto e movimento, più la lista in cinque parti per ogni inquadratura): `~/.claude/studio/riferimenti-esterni/camera-prompt-keywords.md`. Stessa regola: materiale di terzi, resta nello studio. Ciò che mancava è entrato in `tecnica-cinema-inquadratura.md` e `tecnica-cinema-luce-ottiche.md`; dove la guida e le nostre prove non concordano, vale la prova. La guida viene da prompts.ig, che manda una guida in DM a chi commenta un post; la scheda della fonte e l'elenco delle guide ricevute sono in `~/.claude/studio/riferimenti-esterni/prompts-ig.md`, e ogni nuova guida di questa fonte si aggiunge lì.
 
 Nei manuali tecnici i nomi di prodotti (pellicole, obiettivi, camere) possono entrare nel prompt; i nomi di autori no.
 

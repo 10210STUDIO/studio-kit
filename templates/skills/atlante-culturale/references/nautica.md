@@ -424,7 +424,7 @@ Come si producono davvero foto e video di barche. Dove non c'è una fonte, è pr
 - **Higgsfield:** dichiarare la fisica in positivo: "the wake begins exactly at the stern and spreads in a consistent V behind the boat, bow wave proportional to speed, hull shape and windows unchanged throughout, spray falls back with gravity". La skill `higgsfield` suggerisce, per il morphing nelle azioni veloci, di generare al rallentatore e accelerare in post [`skills/shared/negative-constraints.md`, letto 2026-11-08]. Modello: Seedance 2.0 per scala e fisica, Minimax Hailuo 2.3 per i fluidi (model-guide della skill). Per il prodotto vero: partire da una foto reale della barca del cliente (image-to-video) solo con i diritti in regola (regole.md §1.4).
 - **Errore comune:** generare la barca del cliente da testo: ogni dettaglio inventato è un claim sbagliato sul prodotto.
 
-Fonti della Tecnica: shotover.com, cineflex.com, winchdesign.com, skill `higgsfield` [P]; Sports Video Group, IEEE Spectrum, NZ Herald, TM Broadcast [S]; il resto è pratica di mestiere, non verificata su fonte.
+Fonti della Tecnica: shotover.com, cineflex.com, winchdesign.com, skill `higgsfield` [S, skill di terzi, ora archiviata]; Sports Video Group, IEEE Spectrum, NZ Herald, TM Broadcast [S]; il resto è pratica di mestiere, non verificata su fonte.
 
 ## Regole del settore
 

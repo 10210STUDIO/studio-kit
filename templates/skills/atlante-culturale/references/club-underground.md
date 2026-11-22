@@ -436,7 +436,7 @@ Come si fotografa e si riprende davvero un club. Sono pratiche di mestiere, non 
 
 **7. Tradurre nei modelli.**
 - Una sola fonte di luce dominante per prompt (o flash, o luce disponibile, o luce di servizio). Due regimi mescolati danno la media di internet.
-- Folle: Seedance 2.0 regge gruppi in movimento ma perde i volti in campo largo (volti di poche decine di pixel diventano ingestibili). Per i volti, piano medio. Massimo 3 personaggi tracciati fra i tagli: la regola è scritta nella skill `higgsfield`, sotto-skill `higgsfield-prompt` («≤3 characters tracked across cuts»; anche nel documento Seedance 2 della stessa skill; letti 2026-11-15). Fiducia MEDIA (documentazione della skill, non del produttore del modello); la soglia in pixel dei volti è un'osservazione di pratica, fiducia BASSA.
+- Folle: Seedance 2.0 regge gruppi in movimento ma perde i volti in campo largo (volti di poche decine di pixel diventano ingestibili). Per i volti, piano medio. Fra un taglio e l'altro conviene seguire pochi personaggi, non più di tre: oltre, i volti tendono a scambiarsi o a cambiare (da provare; nessun dato del produttore del modello). La soglia in pixel dei volti è un'osservazione di pratica, fiducia BASSA.
 - Specchi: nei club ce ne sono molti (bagni, colonne a specchi); in video si tengono fuori campo.
 - Durate e formati verificati su `specs/model-specs.yaml` della skill higgsfield (riletti dal verificatore il 2026-11-15, corrispondono; istantanea del 2026-09-26, più vecchia di 30 giorni: ricontrollare dal vivo prima di generare): Seedance 2.0 da 4 a 15 s, 21:9 ammesso; Kling 3.0 da 3 a 15 s, solo 16:9, 9:16, 1:1; Veo 3.1 4, 6 o 8 s; Minimax Hailuo 6 o 10 s.
 

@@ -146,6 +146,14 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** installer che copiano l'intera cartella dei modelli senza un elenco.
 **Cliente/progetto:** generale.
 
+## [2026-11-16] Skill corretta dopo una prova: cerca gli esempi vecchi che insegnano il contrario della regola nuova
+**Pattern:** quando una skill aggiunge una regola per chiudere un difetto emerso in prova, per ogni regola nuova cerca in tutti i references la sezione dove l'agente la applicherà davvero (errori, hero, didascalie). Leggi i suoi esempi «giusti»: quelli scritti prima della regola spesso la violano, e l'agente copia l'esempio, non la regola. Controlla anche la provenienza: una regola nata da una sola prova cieca, su un brief inventato, non va scritta come obbligo di checklist senza «(da provare)». Per le «contraddizioni con l'agente», apri anche la skill che l'agente cita: la sua descrizione può essere superata.
+**Evidenza:** una skill di copy, 16/11. La regola «comportamenti di sistema tra [ ]» era contraddetta da un esempio «giusto» di microcopy di pagamento nella stessa sezione del file sui canali. La regola su idea e termini nel sottotitolo era contraddetta da un titolo hero con una promessa di consegna, nel «giusto» dell'hero. Il playbook dell'agente di copy diceva «la skill SEO è di terzi, dà un numero fisso», mentre la skill SEO era già dello studio e corretta.
+**Ampliata (secondo giro, 16/11):** per una skill pubblica nata dalla diagnosi di un sito dello studio, il grep dei nomi non basta. Cerca nel sorgente del sito le etichette e i giudizi degli esempi «sbagliati». Il lead aveva cambiato i conteggi segnalati da security, ma la sezione della revisione usava ancora le etichette del caso studio del sito e i giudizi vaghi del cliente, cioè il caso di un cliente del sito; al primo giro li avevo mancati anche io. Quando correggi l'agente, apri anche il suo playbook: la frase superata spesso resta lì.
+**Ampliata (terzo giro, 16/11):** gli esempi «sbagliato» non bastano. Cerca il caso cliente anche nel testo delle regole (una citazione delle fonti del cliente; il nome di un servizio fra le righe di fattura) e negli esempi «giusto» (stessa forma del risultato). Un confronto automatico su triple di parole non le trova: varianti di preposizione («di» contro «dell'») e coppie di due parole. Fai prima un grep sulle radici delle fonti, dei servizi e dei giudizi del caso del sito. Tieni una copia della skill a ogni giro: senza, non sai dire se un difetto è nuovo o se l'avevi mancato tu.
+**Quando non vale:** regole nuove che non hanno sezioni applicative negli altri file.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 (ipotesi non ancora dimostrate)

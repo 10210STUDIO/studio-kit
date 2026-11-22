@@ -46,6 +46,8 @@ Testa un livello per volta. Prima gli angoli con un'esecuzione neutra: scopri co
 
 **La fatica creativa è un dato, non un'opinione.** Quando CTR e hook rate scendono a frequenza crescente, non è il targeting: è che l'audience ha già visto l'ad. Serve creatività nuova, non un bid più alto.
 
+**Registro degli angoli per cliente (da provare).** A ogni rinnovo leggi e aggiorna, nella cartella del cliente, il registro di angoli e hook già usati: data, esito come frazione, vivo o morto. Un angolo morto non torna con un hook nuovo; il rinnovo per fatica parte da ciò che il registro non ha. Origine: un video del vendor (atlante `tecnica-higgsfield.md` §14).
+
 ## Routing
 
 «Via lead»: ti fermi su quel punto e lo scrivi nel resoconto (STUDIO.md, regola 14).

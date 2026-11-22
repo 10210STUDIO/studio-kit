@@ -5,7 +5,7 @@ Ogni voce ha: Cos'è, Si vede, Quando, Higgsfield, Errore comune. Gli esempi di 
 Letto e redatto il 2026-11-08. Scadenza di revisione: 2027-02-06 (90 giorni), prima per le specifiche di prodotto.
 
 **Legenda della provenienza.** [P] = pagina del costruttore letta il 2026-11-08 (ARRI, Kodak, Blackmagic). [S] = secondaria, citata ma non riletta alla fonte. **std** = definizione fisica o di mestiere consolidata (ottica, esposizione, uso di set), scritta senza una fonte aperta in questa sessione: fiducia MEDIA, da riconfrontare con ASC / American Cinematographer Manual prima di citarla a un cliente. **da verificare** = numero o specifica che non ho letto su pagina primaria; non usarlo in un preventivo né in una promessa.
-**Legenda «Modello».** [V] = verificato nei file della skill `higgsfield` (SKILL.md, vocab.md, model-guide.md) letti il 2026-11-08. [I] = ipotesi di comportamento, non provata con una generazione: va testata prima di promettere il risultato. L'istantanea del catalogo modelli è del 2026-09-26 (più vecchia di 30 giorni): prima di eseguire, rileggere parametri e rapporti d'aspetto con `models_explore`.
+**Legenda «Modello».** [S skill terzi] = riportato da una skill Higgsfield di terzi, ora archiviata, letta il 2026-11-08: fonte secondaria, non una prova dello studio né una generazione. Versioni e metodi aggiornati in `tecnica-higgsfield.md`. [I] = ipotesi di comportamento, non provata con una generazione: va testata prima di promettere il risultato. L'istantanea del catalogo modelli è del 2026-09-26 (più vecchia di 30 giorni): prima di eseguire, rileggere parametri e rapporti d'aspetto con `models_explore`.
 
 ---
 
@@ -15,14 +15,14 @@ Letto e redatto il 2026-11-08. Scadenza di revisione: 2027-02-06 (90 giorni), pr
 - **Cos'è:** la qualità dipende dalle dimensioni apparenti della sorgente viste dal soggetto. Sorgente piccola o lontana rispetto al soggetto = dura (ombra con bordo netto, penombra stretta); sorgente grande o vicina = morbida (penombra larga, transizione graduale). Una sorgente di 1 m a 1 m dal volto è morbida; la stessa a 8 m è quasi dura. Il sole è duro perché sottende circa 0,5° (std). Una nuvola o un diffusore lo trasforma in una sorgente grande.
 - **Si vede:** ombre del naso e delle ciglia nette o sfumate; texture della pelle e dei materiali esaltata (dura) o attenuata (morbida); volume del volto modellato (dura) o appiattito (morbida frontale).
 - **Quando:** dura per tensione, materia, mezzogiorno, interrogatorio, prodotti con texture (metallo, pelle conciata); morbida per cura, bellezza, intimità, cosmetica, cibo. Nel brand: la morbida è il default «accessibile», la dura il default «autoriale».
-- **Higgsfield:** `hard directional sunlight, small source, crisp shadow edges, deep shadow side` / `large soft overhead source, wrapping light, feathered shadow transitions, no hard shadows`. Modello: descrivere sorgente, direzione e geometria dell'ombra funziona meglio degli aggettivi d'umore [V: vocab.md, metodo «scene-physics» della skill]; la resa effettiva di «hard» vs «soft» per modello è [I].
+- **Higgsfield:** `hard directional sunlight, small source, crisp shadow edges, deep shadow side` / `large soft overhead source, wrapping light, feathered shadow transitions, no hard shadows`. Modello: descrivere sorgente, direzione e geometria dell'ombra funziona meglio degli aggettivi d'umore [S skill terzi: vocab.md, metodo «scene-physics» della skill]; la resa effettiva di «hard» vs «soft» per modello è [I].
 - **Errore comune:** scrivere «dramatic lighting» o «soft cinematic light» senza sorgente: si ottiene la media. Credere che «morbida» significhi «fioca»: la qualità non è l'intensità.
 
 #### Direzione della luce
 - **Cos'è:** posizione della sorgente rispetto all'asse camera-soggetto: frontale (0°), tre quarti (30-60°), laterale (90°), controluce (oltre 120°), dall'alto, dal basso (std).
 - **Si vede:** frontale schiaccia il volume e riduce la texture; laterale scolpisce e divide in due; controluce separa dal fondo e produce contorno e silhouette; dall'alto scava le orbite; dal basso rovescia le ombre e sa di innaturale.
 - **Quando:** frontale per commercio e chiarezza; tre quarti è il default narrativo; laterale per conflitto e materia; controluce per ora magica e separazione.
-- **Higgsfield:** `key light from camera left at roughly 45 degrees, shadow falling camera right` / `strong backlight from behind the subject, rim light along hair and shoulders`. Modello: [V] la direzione va nominata con la fisica dell'ombra («shadow falls…»); [I] i modelli video tendono a spostare la direzione quando il soggetto ruota.
+- **Higgsfield:** `key light from camera left at roughly 45 degrees, shadow falling camera right` / `strong backlight from behind the subject, rim light along hair and shoulders`. Modello: [S skill terzi] la direzione va nominata con la fisica dell'ombra («shadow falls…»); [I] i modelli video tendono a spostare la direzione quando il soggetto ruota.
 - **Errore comune:** non specificare da che lato: il modello sceglie e cambia fra le inquadrature di una sequenza.
 
 #### Temperatura colore in Kelvin
@@ -65,14 +65,14 @@ Letto e redatto il 2026-11-08. Scadenza di revisione: 2027-02-06 (90 giorni), pr
 - **Cos'è:** differenza di esposizione, in stop, tra il lato illuminato dal key e il lato in ombra (key + fill contro solo fill). Rapporto 2:1 = 1 stop, 4:1 = 2 stop, 8:1 = 3 stop, 16:1 = 4 stop (std). Il contrasto della scena è sempre da confrontare con la gamma dinamica del supporto (es. 17 stop per ALEXA 35, ARRI [P]).
 - **Si vede:** 2:1 = volto quasi piatto, televisivo; 4:1 = naturale; 8:1 e oltre = drammatico, con ombra scura; il nero è uno spazio, non un errore.
 - **Quando:** rapporti bassi per commedia, beauty, pubblicità; alti per thriller e drammatico. In digitale si decide in ripresa e si rifinisce in color (`tecnica-cinema-vfx-colore.md`).
-- **Higgsfield:** `high contrast, deep unlit shadow side, no fill light` / `low contrast, generous fill, open shadows`. Modello: [I] i modelli tendono a riaprire le ombre; per tenere il nero scrivere `crushed blacks`, che è nel lessico della skill per il registro notte [V].
+- **Higgsfield:** `high contrast, deep unlit shadow side, no fill light` / `low contrast, generous fill, open shadows`. Modello: [I] i modelli tendono a riaprire le ombre; per tenere il nero scrivere `crushed blacks`, che è nel lessico della skill per il registro notte [S skill terzi].
 - **Errore comune:** alzare il fill per «vedere meglio» e perdere il volume; confondere «scuro» (poca luce) con «contrasto» (differenza).
 
 #### Luce motivata
 - **Cos'è:** luce che sembra provenire da una sorgente visibile o plausibile nella scena (finestra, lampada, schermo, fuoco), anche quando è costruita altrove. Principio di continuità illuminotecnica (std).
 - **Si vede:** direzione e colore della luce sul volto coincidono con la sorgente in quadro; la scena sembra «vera» anche se illuminata con attrezzatura.
 - **Quando:** realismo e drammaturgia; negli spot, per far sembrare la luce una scelta del luogo. Una luce non motivata (stilizzata) è una scelta forte: da fare apposta.
-- **Higgsfield:** `window as the only motivated source, light direction matches the window, warm lamp on the table as secondary source`. Modello: nominare la sorgente in quadro e la direzione migliora la coerenza [V come metodo], la tenuta nei piani seguenti è [I].
+- **Higgsfield:** `window as the only motivated source, light direction matches the window, warm lamp on the table as secondary source`. Modello: nominare la sorgente in quadro e la direzione migliora la coerenza [S skill terzi come metodo], la tenuta nei piani seguenti è [I].
 - **Errore comune:** nominare sorgenti che non si vedono né si spiegano; luce che entra da un lato mentre la finestra sta dall'altro.
 
 #### High key e low key
@@ -89,7 +89,7 @@ Letto e redatto il 2026-11-08. Scadenza di revisione: 2027-02-06 (90 giorni), pr
 - **Higgsfield:** `chiaroscuro lighting, single side source, half the face falling into darkness, dark background with no detail`. Modello: [I].
 - **Errore comune:** aggiungere troppe luci di riempimento «per sicurezza».
 
-**Fonti sezione 1:** Kodak, schede VISION3 50D/250D/200T/500T (kodak.com/en/motion/product/camera-films), letta 2026-11-08 [P]; ARRI, pagina ALEXA 35 (arri.com), letta 2026-11-08 [P]; skill `higgsfield`: SKILL.md, vocab.md, model-guide.md, lette 2026-11-08 [P per ciò che dicono sulla piattaforma]. Verifica 2026-11-08: tungsteno 3.200 K e luce diurna (LEE 204/201, Rosco Roscosun) [P]; CRI/TLCI Astera e SSI Aputure [P]. Candela 1.850, incandescenza, sole, cielo coperto, ombra: Kodak Essential Reference Guide (2012, Wayback) [P], letto 2026-11-08. Definizioni CRI/TLCI/SSI, legge dell'inverso del quadrato, rapporti in stop: std, non riletti su fonte (ASC/American Cinematographer Manual non raggiunto).
+**Fonti sezione 1:** Kodak, schede VISION3 50D/250D/200T/500T (kodak.com/en/motion/product/camera-films), letta 2026-11-08 [P]; ARRI, pagina ALEXA 35 (arri.com), letta 2026-11-08 [P]; skill `higgsfield`: SKILL.md, vocab.md, model-guide.md, lette 2026-11-08 [S, skill di terzi, ora archiviata]. Verifica 2026-11-08: tungsteno 3.200 K e luce diurna (LEE 204/201, Rosco Roscosun) [P]; CRI/TLCI Astera e SSI Aputure [P]. Candela 1.850, incandescenza, sole, cielo coperto, ombra: Kodak Essential Reference Guide (2012, Wayback) [P], letto 2026-11-08. Definizioni CRI/TLCI/SSI, legge dell'inverso del quadrato, rapporti in stop: std, non riletti su fonte (ASC/American Cinematographer Manual non raggiunto).
 
 ---
 
@@ -164,14 +164,14 @@ Gli schemi sono configurazioni di sorgente, non ricette. Quasi tutti sono defini
 - **Cos'è:** negative fill = pannello nero (floppy, solid) che toglie luce da un lato per aumentare il contrasto; bounce = luce riflessa da superficie bianca, grigia o dorata (polistirolo, bandiera bianca, muro); ambient/soft source overhead = grande sorgente diffusa sopra la scena (std).
 - **Si vede:** negative fill = ombra più profonda e modellata; bounce = riempimento morbido e colorato dalla superficie; ambiente morbido = base uniforme per scene ampie.
 - **Quando:** negative fill per dare peso a un volto in finestra; bounce per correggere il colore o per ammorbidire; sorgente alta per scene con molti attori.
-- **Higgsfield:** `deep shadow side, light absorbed on one side` / `warm bounce light from a cream wall softly lifting the shadows`. Modello: [V] nominare il rimbalzo è parte del metodo scene-physics della skill; la resa è [I].
+- **Higgsfield:** `deep shadow side, light absorbed on one side` / `warm bounce light from a cream wall softly lifting the shadows`. Modello: [S skill terzi] nominare il rimbalzo è parte del metodo scene-physics della skill; la resa è [I].
 - **Errore comune:** il negative fill è per sottrarre, non è «una luce nera».
 
 #### Pratiche (practicals)
 - **Cos'è:** lampade, schermi, fuochi, neon e candele visibili in quadro che contribuiscono realmente alla luce (std).
 - **Si vede:** sorgenti nel fotogramma con alone, ombre e colore; autenticità del luogo.
-- **Quando:** interni notturni, scene intime; fondamentali per il registro notte: se non si nominano le pratiche il modello produce una «notte luminosa» [V: vocab.md].
-- **Higgsfield:** `night interior lit only by a warm table lamp and a TV glow, crushed blacks, no other light`. Modello: [V] il registro notte nella skill chiede di nominare le pratiche e schiacciare i neri.
+- **Quando:** interni notturni, scene intime; fondamentali per il registro notte: se non si nominano le pratiche il modello produce una «notte luminosa» [S skill terzi: vocab.md].
+- **Higgsfield:** `night interior lit only by a warm table lamp and a TV glow, crushed blacks, no other light`. Modello: [S skill terzi] il registro notte nella skill chiede di nominare le pratiche e schiacciare i neri.
 - **Errore comune:** scrivere solo «night»: il modello illumina tutto come di giorno con cielo blu.
 
 #### Luce di finestra
@@ -185,7 +185,7 @@ Gli schemi sono configurazioni di sorgente, non ricette. Quasi tutti sono defini
 - **Cos'è:** simulare la notte in riprese diurne o con luce controllata, sottoesponendo, virando verso il blu in ripresa/color e usando luce direzionale lunare (std). Il termine «notte americana» si usa in italiano.
 - **Si vede:** ombre morbide ma scure, cielo escluso, colore freddo, contrasto controllato.
 - **Quando:** quando non si può girare di notte (costi, bambini, luoghi pubblici) o per ottenere una notte leggibile.
-- **Higgsfield:** `moonlit night look, cool blue key from high behind, deep shadows, sky not visible, practical lamps warm in contrast`. Modello: [V] la notte va costruita con le pratiche; [I] la resa «moonlight» tende al blu saturo.
+- **Higgsfield:** `moonlit night look, cool blue key from high behind, deep shadows, sky not visible, practical lamps warm in contrast`. Modello: [S skill terzi] la notte va costruita con le pratiche; [I] la resa «moonlight» tende al blu saturo.
 - **Errore comune:** blu uniforme su tutto e cielo visibile con ombre di giorno.
 
 #### Ora d'oro e ora blu
@@ -195,7 +195,7 @@ Gli schemi sono configurazioni di sorgente, non ricette. Quasi tutti sono defini
 - **Higgsfield:** `low golden sun from behind, long warm shadows` / `blue hour, deep blue sky, warm lit windows`. Modello: [I]. Attenzione: la luce dorata di finestra è anche la palette di default del generatore (vedi SKILL.md dell'atlante, controllo della palette di default).
 - **Errore comune:** usare l'oro d'ufficio: è ciò che il modello fa da solo.
 
-**Fonti sezione 2:** definizioni degli schemi: std (mestiere, ASC / American Cinematographer Manual da consultare); metodo scene-physics e registro notte: skill `higgsfield` vocab.md / model-guide.md, lette 2026-11-08 [P]. Nessuna fonte secondaria usata.
+**Fonti sezione 2:** definizioni degli schemi: std (mestiere, ASC / American Cinematographer Manual da consultare); metodo scene-physics e registro notte: skill `higgsfield`, lette 2026-11-08 [S, skill di terzi, ora archiviata]. Nessuna fonte secondaria usata.
 
 ---
 
@@ -281,7 +281,7 @@ Specifiche di prodotto: leggerle sempre sul sito del costruttore prima di una sc
 - **Cos'è:** la dimensione dell'area attiva del sensore. Super 35 = area vicina al fotogramma 35 mm cinema (larghezza circa 24-28 mm a seconda della modalità, da verificare per modello); full frame = 36 x 24 mm (Blackmagic PYXIS 6K/12K dichiarano 36 x 24 mm [P]); large format = più grande del full frame cinematografico. A parità di campo inquadrato, un sensore più grande richiede una focale proporzionalmente più lunga, con minore profondità di campo a parità di T-stop (std). Rapporto approssimato: larghezza 36 mm / circa 25 mm = circa 1,4x.
 - **Si vede:** sensore più grande = fuoco più sottile a parità di campo, sfondi più sfumati, resa più «da stampa»; Super 35 = profondità maggiore, tradizione cinematografica.
 - **Quando:** large format per ritratto e lusso (volti isolati); Super 35 per azione, tradizione e ottiche classiche.
-- **Higgsfield:** `shot on a large-format sensor, very shallow depth of field, soft falloff` / `shot on Super 35, moderate depth of field`. Modello: [I] i modelli non simulano il formato del sensore, simulano la profondità di campo; scrivere la profondità di campo (`shallow depth of field`) è più affidabile. Nel Cinema Studio la scelta camera/lente è un menu a tendina, non testo del prompt [V: skill higgsfield-cinema].
+- **Higgsfield:** `shot on a large-format sensor, very shallow depth of field, soft falloff` / `shot on Super 35, moderate depth of field`. Modello: [I] i modelli non simulano il formato del sensore, simulano la profondità di campo; scrivere la profondità di campo (`shallow depth of field`) è più affidabile. Nel Cinema Studio la scelta camera/lente è un menu a tendina, non testo del prompt [S skill terzi: skill higgsfield-cinema].
 - **Errore comune:** chiedere «full frame» e aspettarsi una focale diversa: il modello non ha un sensore.
 
 #### ARRI ALEXA 35 e ALEXA 35 Xtreme
@@ -310,7 +310,7 @@ Specifiche di prodotto: leggerle sempre sul sito del costruttore prima di una sc
 - **Si vede:** neri molto puliti in condizioni di bassa luce (3200 base), pelle naturale.
 - **Quando:** scene notturne con luce disponibile; set con poca luce.
 - **Higgsfield:** `clean low-light image, minimal noise in the shadows, available practical light only`. Modello: [I].
-- **Errore comune:** attribuire il pulito notturno al sensore anche quando manca la luce vera: senza pratiche il modello produce notte luminosa [V].
+- **Errore comune:** attribuire il pulito notturno al sensore anche quando manca la luce vera: senza pratiche il modello produce notte luminosa [S skill terzi].
 
 #### Blackmagic Design
 - **Cos'è:** URSA Cine (modelli 12K full frame e 17K 65 mm, 16 stop di gamma dinamica) e PYXIS 6K/12K (sensore full frame 36 x 24 mm, fino a 12288 x 8040 per la 12K, 16 stop) con registrazione Blackmagic RAW [P: blackmagicdesign.com, 2026-11-08].
@@ -323,7 +323,7 @@ Specifiche di prodotto: leggerle sempre sul sito del costruttore prima di una sc
 - **Cos'è:** Canon (serie Cinema EOS) e iPhone/smartphone usati come camere B, per spazi stretti, riprese rubate, sociale (std). Canon EOS C400: sensore full frame 6K stacked CMOS retroilluminato, modi Full Frame 3:2, Super 35 e Super 16, triplo ISO base 800/3200/12.800, 16 stop dichiarati, ND meccanici 2/4/6/8/10 stop, attacco RF (PL via adattatore PL-RF), supporto anamorfico 2,0x / 1,8x / 1,3x, corpo RF circa 1.540 g (1.750 g le versioni EF e PL) [P: canon-europe.com/cameras/eos-c400, tabella specifiche, letta in Chrome vero il 2026-11-08; usa.canon.com/shop/p/eos-c400 letta lo stesso giorno in Chrome vero per sensore 6K, modi Full Frame 3:2 / Super 35 / Super 16, ISO base 800/3200/12.800, ND «up to ten stops»; curl dà 403 su entrambi]. **Correzioni:** il peso «circa 1.550 g» del file era sbagliato (1.540 g per RF secondo Canon Europe); «ND con estensore» non compare sulle pagine; «Discontinued» veniva dallo snapshot Wayback del 2026-07-20 ma né la pagina USA né quella europea lo riportano il 2026-11-08 (la scheda USA mostra l'articolo con opzioni body e kit): lo stato commerciale non è verificato. Apple iPhone 18 Pro: tre camere da 48 MP (24 mm f/1,48-4,0; ultra grandangolare 13 mm; tele 100 mm), video 4K Dolby Vision fino a 120 fps, ProRes fino a 4K 120 fps con registrazione esterna, ProRes RAW, Apple Log 2, supporto Genlock, modalità Cinematic fino a 4K 60 fps [P: apple.com, iPhone 18 Pro Technical Specifications, letto 2026-11-08].
 - **Si vede:** smartphone = profondità di campo ampia, immagine molto nitida e digitale; Canon = resa colore morbida e pelle piacevole (opinione diffusa [S], non verificata).
 - **Quando:** contenuti verticali, UGC, backstage, riprese in luoghi dove una camera grande non entra.
-- **Higgsfield:** `shot on a smartphone, deep depth of field, sharp digital image, vertical 9:16, available light` . Modello: i look «smartphone» e UGC sono previsti dalla skill nel Marketing Studio [V per l'esistenza dei preset UGC]; la resa è [I].
+- **Higgsfield:** `shot on a smartphone, deep depth of field, sharp digital image, vertical 9:16, available light` . Modello: i look «smartphone» e UGC sono previsti dalla skill nel Marketing Studio [S skill terzi per l'esistenza dei preset UGC]; la resa è [I].
 - **Errore comune:** pretendere il look cinematografico da uno smartphone senza controllare luce e ottiche.
 
 #### Gamma dinamica e latitudine
@@ -360,21 +360,21 @@ Kodak: ogni scheda letta il 2026-11-08 su kodak.com/en/motion/product/camera-fil
 - **Cos'è:** pellicola larga 35 mm, formato storico del cinema; il fotogramma standard occupa 4 perforazioni in altezza (4-perf), esiste anche 3-perf per risparmiare pellicola. Aree di cattura secondo Kodak: 4-perf 24,90 x 18,70 mm; 3-perf 24,90 x 13,90 mm (25% di pellicola e sviluppo in meno, durata del rullo +33%); 2-perf 24,90 x 9,35 mm (metà pellicola, durata doppia, «native 2.35 aspect ratio»); 8-perf VistaVision (pellicola 35 mm trasportata in orizzontale) 37,72 x 24,92 mm; un rullo da 400 ft (122 m) a 24 fps dura 4 min 26 s in 4-perf, 5 min 55 s in 3-perf, 8 min 53 s in 2-perf [P: Kodak, «Film Formats for Every Look and Budget» / «Why Film?», PDF 2024, kodak.com/content/products-brochures/Film/Film-Format-Choices-Infographic.pdf, letto per testo e impaginazione 2026-11-08]. «Super 35» è la stessa area 4-perf: Kodak la chiama «The Standard 35mm Format»; il nome «Super 35» non compare nel PDF. SMPTE 59-1998 (stabile, «In Force») conferma e dà le aperture di camera: stile A (4-perf, sonoro non anamorfico, formato Academy) 22,0 x 16,0 mm; stile B (4-perf anamorfico) 22,0 x 18,59 mm; stile C (4-perf, «full-frame», senza traccia audio) 24,92 x 18,67 mm; stile D (3-perf) 24,92 x 13,87 mm [P: pub.smpte.org/pub/st59/st0059-1998_stable2015.pdf, letto 2026-11-08]. Kodak (24,90 x 18,70; 24,90 x 13,90) e SMPTE (24,92 x 18,67; 24,92 x 13,87) differiscono di 0,02-0,03 mm: arrotondamento.
 - **Si vede:** grana organica, resa dei toni alti morbida, colore con una sua densità.
 - **Quando:** film, spot ad alto valore, look «reale» senza dichiararsi vintage.
-- **Higgsfield:** `shot on 35mm film, fine organic grain, soft highlight roll-off, natural colour`. Modello: la skill elenca nel vocabolario voci di stock e supporto (Super 8MM, VHS, Portra, Vision3 500T) [V]; la fedeltà è [I].
+- **Higgsfield:** `shot on 35mm film, fine organic grain, soft highlight roll-off, natural colour`. Modello: la skill elenca nel vocabolario voci di stock e supporto (Super 8MM, VHS, Portra, Vision3 500T) [S skill terzi]; la fedeltà è [I].
 - **Errore comune:** grana digitale uniforme sovrapposta: la grana vera varia con la densità.
 
 #### 16 mm e Super 8
 - **Cos'è:** 16 mm = pellicola di formato ridotto (esiste Super 16 con più area); Super 8 = formato amatoriale su cartuccia (std). Aree di cattura secondo Kodak: Super 16 12,42 x 7,44 mm (400 ft a 24 fps = 11 min 06 s; Kodak indica nel disegno i rapporti 1,66, 1,78 e 1,85); Super 8 gate normale 5,79 x 4,01 mm, gate esteso 6,30 x 4,2 mm (50 ft = 3 min 20 s a 18 fps, 2 min 30 s a 24 fps) [P: Kodak, PDF «Film Formats for Every Look and Budget», letto 2026-11-08]. SMPTE 201M-1996 («type W», cioè il Super 16 per l'ingrandimento a 35 mm 1,66:1 o più largo) dà 12,35 x 7,42 mm [P: pub.smpte.org/pub/st201/st0201-1996_stable2015.pdf, letto 2026-11-08]: 0,07 mm più stretto e 0,02 più basso del valore Kodak (le due fonti discordano di poco; non so se per metodo di misura). 16 mm normale (non Super): apertura di camera 10,26 x 7,49 mm (0,404 x 0,295 in; rapporto 1,37), con emulsione verso l'obiettivo; la stessa norma fissa a 24 fps la cadenza standard di ripresa, ammettendo 24, 25 o 30 fps per la televisione [P: SMPTE ST 7-2004, stabile, pub.smpte.org/pub/st7/st0007-2004_stable2015.pdf, letto con PDFKit 2026-11-08]. Kodak: il 16 mm normale ha lo stesso rapporto dell'Academy 35 mm, il Super 16 ha la stessa altezza ma si allarga nell'area delle perforazioni, rapporto nativo 1,66:1 [P: Kodak Essential Reference Guide 2012, pp. 43-44].
 - **Si vede:** 16 mm = grana evidente, immagine grezza ma elegante; Super 8 = grana spessa, instabilità, colori caldi, vignettatura.
 - **Quando:** memoria, nostalgia, backstage, mondo indie; Super 8 per «filmino di famiglia».
-- **Higgsfield:** `shot on 16mm film, visible grain, slightly soft, warm natural colour` / `Super 8MM home-movie look, heavy grain, gate weave, light leaks`. Modello: Super 8MM è nel vocabolario della skill [V]; l'intensità della grana è [I].
+- **Higgsfield:** `shot on 16mm film, visible grain, slightly soft, warm natural colour` / `Super 8MM home-movie look, heavy grain, gate weave, light leaks`. Modello: Super 8MM è nel vocabolario della skill [S skill terzi]; l'intensità della grana è [I].
 - **Errore comune:** Super 8 per un'emozione «romantica» in ogni brief: è diventato cliché.
 
 #### 65/70 mm e IMAX 15/70
 - **Cos'è:** negativo da 65 mm (proiezione su 70 mm), 5 perforazioni per fotogramma; IMAX 15/70 = 65 mm con 15 perforazioni orizzontali per fotogramma, proiezione a 1,43:1. Misure: 65 mm 5-perf, apertura di camera 52,48 x 23,01 mm [P: SMPTE ST 215-1995, stabile, pub.smpte.org/pub/st215/st0215-1995_stable2015.pdf, letto 2026-11-08; Kodak: 52,15 x 23,07 mm, PDF Film Formats 2024]; 15/70, apertura di camera 70,41 x 51,61 mm (2,772 x 2,032 in; rapporto del fotogramma 1,36), passo perforazioni 0,1866 in, 24 fps standard [P: SMPTE ST 417M-2005, pub.smpte.org/pub/st417/st0417-2005_stable2015.pdf, letto 2026-11-08]. **Tre fonti discordano sull'altezza del fotogramma IMAX:** SMPTE 51,61 mm; Kodak 56,62 mm (con l'etichetta «1.41», incoerente con le sue stesse misure: 70,41/56,62 = 1,24); fonti secondarie web 52,63 mm (cinematography.net, GCM Studio [S], solo in snippet di ricerca, non aperte). Si usa il valore SMPTE. Il rapporto 1,43:1 è quello della proiezione, non del fotogramma di camera. Un rullo IMAX da 1.000 ft a 24 fps dura 2 min 57 s [P: Kodak].
 - **Si vede:** enorme dettaglio, quasi assenza di grana percepibile, campo ampio e immersivo.
 - **Quando:** paesaggi, eventi, set-piece, opere di grande impatto.
-- **Higgsfield:** `shot on 65mm large format film, extreme clarity, vast sense of scale, 1.43:1 IMAX framing`. Modello: 1,43:1 non è un rapporto d'uscita dei modelli (vedi sezione 6) [V per l'enum]; la sensazione di scala è un tema in cui Seedance 2.0 è indicato nel model-guide [V].
+- **Higgsfield:** `shot on 65mm large format film, extreme clarity, vast sense of scale, 1.43:1 IMAX framing`. Modello: 1,43:1 non è un rapporto d'uscita dei modelli (vedi sezione 6) [S skill terzi per l'enum]; la sensazione di scala è un tema in cui Seedance 2.0 è indicato nel model-guide [S skill terzi].
 - **Errore comune:** attendersi un'immagine identica alla pellicola 65 mm da un rapporto 16:9.
 
 #### Kodak VISION3 50D e 250D (diurne)
@@ -388,7 +388,7 @@ Kodak: ogni scheda letta il 2026-11-08 su kodak.com/en/motion/product/camera-fil
 - **Cos'è:** negativi bilanciati a 3.200 K; la 200T è descritta da Kodak con «image structure of a 100 speed film with the versatility of a 200 speed»; la 500T è la più sensibile e ha la Dye Layering Technology, che secondo Kodak riduce la grana nelle ombre [P: kodak.com, 2026-11-08]. In esterno si usa il filtro 85 per correggere (Kodak [P]).
 - **Si vede:** 200T = granulosità contenuta, nitidezza; 500T = grana più visibile, buon rendimento in bassa luce, colore versatile.
 - **Quando:** interni, notte, luci miste, look «classico»; 500T è la scelta per notti urbane.
-- **Higgsfield:** `shot on Vision3 500T, tungsten-balanced, visible fine grain, warm practicals, rich shadows`. Modello: Vision3 500T è nel vocabolario della skill [V]; il modello usa il nome come tendenza cromatica [I].
+- **Higgsfield:** `shot on Vision3 500T, tungsten-balanced, visible fine grain, warm practicals, rich shadows`. Modello: Vision3 500T è nel vocabolario della skill [S skill terzi]; il modello usa il nome come tendenza cromatica [I].
 - **Errore comune:** usare la 500T senza il filtro 85 in esterno e trovare tutto blu.
 
 #### Kodak DOUBLE-X (b/n)
@@ -402,7 +402,7 @@ Kodak: ogni scheda letta il 2026-11-08 su kodak.com/en/motion/product/camera-fil
 - **Cos'è:** grana = particelle d'argento o coloranti che formano l'immagine, di dimensione crescente con la sensibilità; halation = alone rosso-arancio attorno alle alte luci, dovuto alla luce che attraversa l'emulsione e si riflette sul supporto. Kodak: la luce riflessa dal supporto dà una seconda esposizione attorno agli oggetti luminosi, che riduce la nitidezza; lo strato antihalation (remjet, sottostrato o supporto colorato) serve a impedirla [P: Kodak, «The Essential Reference Guide for Filmmakers», PDF 2012, snapshot Wayback di motion.kodak.com, letto con PDFKit 2026-11-08, p. 31]. Il colore rosso-arancio dell'alone non è descritto nella pagina: std.
 - **Si vede:** grana che «vibra» in ombre e mezzitoni; alone caldo sulle luci nel buio (lampade, neon, finestre).
 - **Quando:** per un look organico; notte con luci pratiche.
-- **Higgsfield:** `film grain, soft red-orange halation glowing around bright practical lights`. Modello: «Halation Diffusion» è una voce del menu ottiche del Cinema Studio [V]; nel prompt libero è [I], tende a diventare bagliore generico.
+- **Higgsfield:** `film grain, soft red-orange halation glowing around bright practical lights`. Modello: «Halation Diffusion» è una voce del menu ottiche del Cinema Studio [S skill terzi]; nel prompt libero è [I], tende a diventare bagliore generico.
 - **Errore comune:** halation troppo estesa su tutta l'immagine: diventa un filtro «dream».
 
 #### Push, pull, sviluppo e bleach bypass
@@ -418,52 +418,52 @@ Kodak: ogni scheda letta il 2026-11-08 su kodak.com/en/motion/product/camera-fil
 
 ## 6. Formati e aspect ratio
 
-L'aspect ratio finale è larghezza / altezza. Ricordare: i modelli generativi hanno un elenco chiuso di rapporti d'uscita per modello; gli altri rapporti sono solo un'etichetta di look nella linea «Look» [V: HARD RULE 7 della skill higgsfield e vocab.md]. Nel catalogo dell'istantanea 2026-09-26: Kling 3.0 = 16:9, 9:16, 1:1; Seedance 2.0 e 2.5 includono 21:9; Veo 3.1 = 16:9, 9:16; FLUX 3 Video include 2:1 [V: model-guide.md / specs, istantanea da riverificare].
+L'aspect ratio finale è larghezza / altezza. Ricordare: i modelli generativi hanno un elenco chiuso di rapporti d'uscita per modello; gli altri rapporti sono solo un'etichetta di look nella linea «Look» [S skill terzi: HARD RULE 7 della skill higgsfield e vocab.md]. Nel catalogo dell'istantanea 2026-09-26: Kling 3.0 = 16:9, 9:16, 1:1; Seedance 2.0 e 2.5 includono 21:9; Veo 3.1 = 16:9, 9:16; FLUX 3 Video include 2:1 [S skill terzi: model-guide.md / specs, istantanea da riverificare].
 
-| Rapporto | Valore | Uso | Output possibile nei modelli [V, istantanea 2026-09-26] |
+| Rapporto | Valore | Uso | Output possibile nei modelli [S skill terzi, istantanea 2026-09-26] |
 |---|---|---|---|
-| 1,33:1 (4:3) | 1,33 | Cinema muto, TV storica, look archivio | **4:3 nativo** in Seedance 1.5/2.0/2.5, FLUX 3 Video, Wan 2.7/3.0, MiniMax H3, Cinema Studio video; non in Kling e Veo [V: specs/model-specs.json, istantanea 2026-09-26, controllato 2026-11-08; corretto: prima «solo come look»] |
+| 1,33:1 (4:3) | 1,33 | Cinema muto, TV storica, look archivio | **4:3 nativo** in Seedance 1.5/2.0/2.5, FLUX 3 Video, Wan 2.7/3.0, MiniMax H3, Cinema Studio video; non in Kling e Veo [S skill terzi: specs/model-specs.json, istantanea 2026-09-26, controllato 2026-11-08; corretto: prima «solo come look»] |
 | 1,66:1 | 1,66 | Europa storica | solo come look |
 | 1,85:1 | 1,85 | Cinema «piatto» standard | solo come look (16:9 = 1,78 è il più vicino) |
 | 2,00:1 | 2,00 | Streaming e serie | FLUX 3 Video (2:1) |
 | 2,39:1 | 2,39 | Cinemascope | 21:9 = 2,33 (Seedance) è il più vicino; il resto è look |
 | 1,43:1 | 1,43 | IMAX 15/70 | solo come look |
-| 9:16 | 0,5625 | Verticale social | tutti i modelli video del catalogo, Seedance compreso [V: specs/model-specs.json, controllato 2026-11-08] |
-| 4:5 | 0,80 | Feed | nessun modello **video** del catalogo; sì nei modelli immagine (Nano Banana / 2 / Pro, GPT Image 2.5, Cinema Studio Image 2.5, Marketing Studio Image, Recraft V4.1) [V: specs/IMAGE-MODEL-SPECS.md, controllato 2026-11-08] |
+| 9:16 | 0,5625 | Verticale social | tutti i modelli video del catalogo, Seedance compreso [S skill terzi: specs/model-specs.json, controllato 2026-11-08] |
+| 4:5 | 0,80 | Feed | nessun modello **video** del catalogo; sì nei modelli immagine (Nano Banana / 2 / Pro, GPT Image 2.5, Cinema Studio Image 2.5, Marketing Studio Image, Recraft V4.1) [S skill terzi: specs/IMAGE-MODEL-SPECS.md, controllato 2026-11-08] |
 
 #### 1,33 e 1,37:1
 - **Cos'è:** il rapporto classico del cinema muto e poi del formato Academy (1,37), vicino al 4:3 della TV storica. Kodak: 1,37:1 è rimasto lo standard del 35 mm dall'arrivo del sonoro all'introduzione del CinemaScope nel 1953; 1,33:1 è il 4:3 della TV, basato sull'1,37, ed è anche il rapporto del 16 mm normale e del Super 8 [P: Kodak, «The Essential Reference Guide for Filmmakers», PDF 2012, snapshot Wayback di motion.kodak.com, letto con PDFKit 2026-11-08, pp. 37 e 44].
 - **Si vede:** inquadratura quasi quadrata, volti ritti, poco spazio laterale.
 - **Quando:** intimità, memoria, look archivio o ritratto.
-- **Higgsfield:** `1.33:1 academy framing, near-square composition, vertical subjects`. Modello: 1,33 coincide con il 4:3, rapporto d'uscita nativo di Seedance, FLUX 3 Video, Wan 2.7/3.0 (non di Kling e Veo); 1,37 resta solo look, da ottenere con 4:3 e barre in post [V: specs/model-specs.json, controllato 2026-11-08].
+- **Higgsfield:** `1.33:1 academy framing, near-square composition, vertical subjects`. Modello: 1,33 coincide con il 4:3, rapporto d'uscita nativo di Seedance, FLUX 3 Video, Wan 2.7/3.0 (non di Kling e Veo); 1,37 resta solo look, da ottenere con 4:3 e barre in post [S skill terzi: specs/model-specs.json, controllato 2026-11-08].
 - **Errore comune:** richiederlo come output e ricevere un 16:9 allargato.
 
 #### 1,66 e 1,85:1
 - **Cos'è:** rapporti «piatti» europei (1,66) e americani (1,85); 1,66 è più stretto del 16:9 (1,78), 1,85 un po' più largo (corretto: prima «poco più larghi del 16:9» per entrambi). Kodak: negli Stati Uniti i due rapporti di proiezione 35 mm sono 1,85:1 («flat», ottenuto tagliando sopra e sotto l'1,37) e 2,40:1 («scope»); 1,66:1 è comune in Europa perché è il rapporto nativo del Super 16 [P: Kodak, «The Essential Reference Guide for Filmmakers», PDF 2012, snapshot Wayback di motion.kodak.com, letto con PDFKit 2026-11-08, pp. 37-38 e 43].
 - **Si vede:** respiro naturale, nessuna deformazione anamorfica.
 - **Quando:** film d'autore e drammatici, spot sobri.
-- **Higgsfield:** `1.85:1 flat widescreen framing`; output reale: 16:9. Modello: [V per l'enum].
+- **Higgsfield:** `1.85:1 flat widescreen framing`; output reale: 16:9. Modello: [S skill terzi per l'enum].
 - **Errore comune:** confondere rapporto e anamorfico.
 
 #### 2,39:1 (scope) e 2,00:1
 - **Cos'è:** 2,39:1 = formato anamorfico cinematografico (storicamente 2,35, 2,40 in uso); 2,00:1 (Univisium) = formato intermedio comune sui servizi di streaming (std; non verificato su fonte primaria: né Kodak né SMPTE lo nominano nei documenti letti). Kodak: il 2,40:1 deriva dal 2,35:1 del CinemaScope (ottiche anamorfiche in ripresa e in proiezione), poi portato a 2,40:1 [P: Kodak, «The Essential Reference Guide for Filmmakers», PDF 2012, snapshot Wayback di motion.kodak.com, letto con PDFKit 2026-11-08, p. 38]. Per il 2,39: SMPTE 195-2000 stile B (copia anamorfica) dà un'area proiettabile di 20,96 x 17,53 mm (rapporto 1,196 compresso: x 2 di desqueeze = 2,39, calcolo mio) [P: pub.smpte.org/pub/st195/st0195-2000.pdf, letto 2026-11-08]; Kodak indica il 2,35 come rapporto nativo del 2-perf (24,90 x 9,35 mm) [P: PDF Film Formats]. «2,39» come nome d'uso non è in questi documenti; Kodak usa «2.40:1».
 - **Si vede:** 2,39 = orizzontalità, ambienti ampi, volti in primo piano con grande aria; 2,00 = compromesso fra 16:9 e scope.
 - **Quando:** epica, paesaggio, cinema; 2,00 per serie.
-- **Higgsfield:** `2.39:1 anamorphic widescreen, cinematic letterbox` . Modello: il rapporto d'uscita reale più vicino è 21:9 (2,33) con Seedance [V]; 2.39:1 resta una parola di look nella linea Look [V].
+- **Higgsfield:** `2.39:1 anamorphic widescreen, cinematic letterbox` . Modello: il rapporto d'uscita reale più vicino è 21:9 (2,33) con Seedance [S skill terzi]; 2.39:1 resta una parola di look nella linea Look [S skill terzi].
 - **Errore comune:** chiedere 2.39:1 con un modello che accetta solo 16:9: si ottengono barre nere dipinte nell'immagine.
 
 #### IMAX 1,43:1
 - **Cos'è:** rapporto quasi quadrato del 15/70 IMAX (Kodak: «IMAX, which is 1.43:1»; il 70 mm normale è 2,2:1 [P: Kodak, «The Essential Reference Guide for Filmmakers», PDF 2012, snapshot Wayback di motion.kodak.com, letto con PDFKit 2026-11-08, p. 39]); esiste anche un formato IMAX digitale più largo, 1,90:1. IMAX: «In IMAX theatres featuring 15 perf / 70mm film, these scenes will expand images up to a 1.43:1 aspect ratio» [P: imax.com/news/oppenheimer-in-imax-70mm, letto in Chrome vero 2026-11-08; curl 403]; «Filmmakers shoot specifically with IMAX's 1.90:1 or 1.43:1 aspect ratios in mind, using expanded scenes that open vertically to fill the entire IMAX screen» [P: imax.com/en/us/filmed-for-imax, letto 2026-11-08]. Misure del fotogramma di pellicola: vedi sezione 5 (SMPTE ST 417).
 - **Si vede:** altezza verticale gigantesca, immersione.
 - **Quando:** scene spettacolari e verticali (montagne, skyline).
-- **Higgsfield:** `1.43:1 tall IMAX framing`. Modello: solo look [V].
+- **Higgsfield:** `1.43:1 tall IMAX framing`. Modello: solo look [S skill terzi].
 - **Errore comune:** ritagliare un 16:9 per fingere un 1,43.
 
 #### 9:16 e 4:5 (verticale)
 - **Cos'è:** 9:16 = schermo verticale a tutto schermo; 4:5 = feed verticale ridotto (std).
 - **Si vede:** composizione centrata e alta; testo e volto nella zona sicura (area non coperta dall'interfaccia).
 - **Quando:** reel, short, storie; 4:5 per feed.
-- **Higgsfield:** `vertical 9:16 composition, subject centred with headroom, safe area for captions`. Modello: 9:16 è nativo in tutti i modelli video del catalogo, Seedance compreso; 4:5 solo nei modelli immagine [V: specs/model-specs.json e IMAGE-MODEL-SPECS.md, istantanea 2026-09-26, controllati 2026-11-08].
+- **Higgsfield:** `vertical 9:16 composition, subject centred with headroom, safe area for captions`. Modello: 9:16 è nativo in tutti i modelli video del catalogo, Seedance compreso; 4:5 solo nei modelli immagine [S skill terzi: specs/model-specs.json e IMAGE-MODEL-SPECS.md, istantanea 2026-09-26, controllati 2026-11-08].
 - **Errore comune:** girare in 16:9 e ritagliare in verticale: si perde la composizione.
 
 #### Open gate e desqueeze
@@ -473,7 +473,7 @@ L'aspect ratio finale è larghezza / altezza. Ricordare: i modelli generativi ha
 - **Higgsfield:** non traducibile come prompt: è una decisione di ripresa e post. Modello: [I].
 - **Errore comune:** dimenticare il desqueeze e consegnare volti stretti.
 
-**Fonti sezione 6:** ARRI, ALEXA 35 [P]; skill higgsfield, HARD RULE 7, vocab.md, model-guide.md (rapporti per modello, istantanea 2026-09-26) [P per la skill]; valori storici dei rapporti (1,33, 1,37, 1,66, 1,85, 2,35/2,40, 2,2, 1,43): Kodak, «The Essential Reference Guide for Filmmakers», PDF 2012, snapshot Wayback di motion.kodak.com, letto con PDFKit 2026-11-08 [P]; SMPTE ST 59, 195, 201, 215, 417 (pub.smpte.org, PDF stabili gratuiti) [P], letti 2026-11-08; rapporti d'uscita dei modelli: specs/model-specs.json e IMAGE-MODEL-SPECS.md della skill higgsfield, controllati 2026-11-08 [V]. Resta std: 2,00:1 Univisium.
+**Fonti sezione 6:** ARRI, ALEXA 35 [P]; skill Higgsfield di terzi, ora archiviata (rapporti per modello, istantanea 2026-09-26) [S]; valori storici dei rapporti (1,33, 1,37, 1,66, 1,85, 2,35/2,40, 2,2, 1,43): Kodak, «The Essential Reference Guide for Filmmakers», PDF 2012, snapshot Wayback di motion.kodak.com, letto con PDFKit 2026-11-08 [P]; SMPTE ST 59, 195, 201, 215, 417 (pub.smpte.org, PDF stabili gratuiti) [P], letti 2026-11-08; rapporti d'uscita dei modelli: dalla stessa skill di terzi, controllati 2026-11-08 [S]; da rileggere sulla CLI del giorno. Resta std: 2,00:1 Univisium.
 
 ## 7. Obiettivi
 
@@ -483,7 +483,7 @@ Verifica 2026-11-08: le pagine ufficiali di Cooke, Zeiss (ARRI/ZEISS Master Prim
 - **Cos'è:** l'angolo di campo dipende dalla focale f e dalla larghezza w del sensore: AOV orizzontale = 2·atan(w / 2f). Per sensore full frame (w = 36 mm): 18 mm = 90°; 24 mm = 73,7°; 35 mm = 54,4°; 50 mm = 39,6°; 85 mm = 23,9°; 135 mm = 15,2° (calcolo mio, formula std). Su Super 35 (più stretto) gli angoli sono minori, quindi servono focali più corte per lo stesso campo. La prospettiva (rapporto fra primi piani e sfondo) dipende dalla distanza della camera dal soggetto, non dalla focale: la focale decide quanto si inquadra a quella distanza.
 - **Si vede:** corte (14-24 mm) = spazio esteso, linee che convergono, volti deformati da vicino; medie (35-50 mm) = rapporto naturale; lunghe (85-200 mm) = piani compressi, sfondo ingrandito, isolamento.
 - **Quando:** corto per ambienti e movimento; medio per dialogo; lungo per intimità e osservazione a distanza.
-- **Higgsfield:** `wide 24mm lens, expansive space, slight perspective stretch` / `85mm portrait lens, compressed background, flattering facial proportions` / `200mm telephoto compression, stacked layers`. Modello: nel Cinema Studio la focale è un menu (8/14/35/50/75 mm) [V]; nel prompt libero l'effetto è [I]. Per volti da vicino i grandangoli deformano come nella realtà, ma i modelli tendono a correggere i volti.
+- **Higgsfield:** `wide 24mm lens, expansive space, slight perspective stretch` / `85mm portrait lens, compressed background, flattering facial proportions` / `200mm telephoto compression, stacked layers`. Modello: nel Cinema Studio la focale è un menu (8/14/35/50/75 mm) [S skill terzi]; nel prompt libero l'effetto è [I]. Per volti da vicino i grandangoli deformano come nella realtà, ma i modelli tendono a correggere i volti.
 - **Errore comune:** credere che la focale lunga «avvicini» il soggetto senza cambiare la prospettiva: è la distanza che la cambia.
 
 | Focale (full frame) | AOV orizzontale | Effetto |
@@ -495,11 +495,14 @@ Verifica 2026-11-08: le pagine ufficiali di Cooke, Zeiss (ARRI/ZEISS Master Prim
 | 85 mm | 23,9° | ritratto, isolamento |
 | 135 mm | 15,2° | compressione forte |
 
+**Dai millimetri alle ancore di Seedance** (aggiunta del 2026-11-21). Seedance vuole il campo in gradi da una lista fissa, mai i millimetri (skill di terzi, ora archiviata, letta il 2026-11-21, [S]; da provare). Le equivalenze di quella lista tornano con l'angolo **diagonale** su pieno formato, 2·atan(43,3 / 2f), non con l'orizzontale della tabella sopra (calcolo mio): 18 mm = 100,5° → ancora 107° (la più vicina; 18 mm è un po' più stretto); 24 mm = 84,1° → 84°; 35 mm = 63,4° → 63°; 50 mm = 46,8° → 47°; 85 mm = 28,6° → 29°; 135 mm = 18,2° → 18°. Errore da evitare: convertire dalla colonna orizzontale (24 mm = 74°), che non è un'ancora.
+La focale non basta a fissare il taglio: vedi `tecnica-cinema-inquadratura.md` §2, «Altezza e distanza della camera».
+
 #### Sferiche e anamorfiche
 - **Cos'è:** sferica = ottica con simmetria circolare, immagine con le proporzioni del sensore; anamorfica = ottica con elementi cilindrici che comprimono l'immagine in orizzontale (fattore tipico 2x, ma esistono 1,3x e 1,5x per sensori più larghi o alti) e richiedono il desqueeze (std).
 - **Si vede:** anamorfica = flare orizzontali (spesso azzurri, dipende dai trattamenti), bokeh ovale (verticale), leggera distorsione a barilotto, campo orizzontale più ampio con la stessa altezza; sferica = flare circolari, bokeh tondo.
 - **Quando:** anamorfica per «sapore cinema» e panoramiche; sferica per pulizia, prodotto, spazio stretto.
-- **Higgsfield:** `shot on anamorphic lenses, horizontal blue lens flare streaks, oval bokeh, mild barrel distortion, 2.39:1 widescreen look` / `spherical prime lenses, round bokeh, clean flares`. Modello: Compact Anamorphic e Classic Anamorphic sono opzioni del menu ottiche del Cinema Studio [V]; nei prompt liberi lo streak orizzontale è tendenza ma spesso eccessiva [I]. 2.39:1 qui è parola di look, non rapporto d'uscita [V].
+- **Higgsfield:** `shot on anamorphic lenses, horizontal blue lens flare streaks, oval bokeh, mild barrel distortion, 2.39:1 widescreen look` / `spherical prime lenses, round bokeh, clean flares`. Modello: Compact Anamorphic e Classic Anamorphic sono opzioni del menu ottiche del Cinema Studio [S skill terzi]; nei prompt liberi lo streak orizzontale è tendenza ma spesso eccessiva [I]. 2.39:1 qui è parola di look, non rapporto d'uscita [S skill terzi].
 - **Errore comune:** flare azzurro su ogni luce, anche quando non ci sono sorgenti forti in quadro.
 
 **Set di ottiche e carattere (tabella di confronto)**
@@ -526,14 +529,14 @@ Verifica 2026-11-08: le pagine ufficiali di Cooke, Zeiss (ARRI/ZEISS Master Prim
 - **Cos'è:** tre famiglie di riferimento. «Cooke look»: Cooke lo definisce «sharp, subtle, smooth rendering» con dimensionalità e alto contrasto, ottiche tarate per immagini «warm and natural»; la pagina cita anche una citazione di Ed Lachman, ASC, su Erin Brockovich («balanced colour and smooth contrast») [P: cookeoptics.com/cooke-look, letta 2026-11-08]. Zeiss: la pagina Master Prime insiste su velocità (T1.3), risoluzione e assenza di breathing, non sul «neutro» (la parola «neutro» resta lettura di mestiere, std). Panavision: ottiche proprietarie; la pagina Panavision dice «Contact Us for Availability», cioè solo su contatto (la formula «a noleggio» è std, non riportata dalla pagina).
 - **Si vede:** Cooke = volti piacevoli e leggermente caldi; Zeiss Master Prime = neutro e dettagliato; Panavision C = anamorfico vintage con aberrazioni.
 - **Quando:** Cooke per ritratto e narrazione; Zeiss neutro per VFX e commerciale; Panavision per epica.
-- **Higgsfield:** `warm creamy focus falloff, flattering skin, gentle contrast` / `clean neutral sharp optics, high micro-contrast` / `vintage anamorphic character, flares and edge softness`. Modello: voci Vintage Prime, Warm Cinema Prime, Clinical Sharp Prime, 70s Cinema Prime nel menu [V]; il testo libero è [I].
+- **Higgsfield:** `warm creamy focus falloff, flattering skin, gentle contrast` / `clean neutral sharp optics, high micro-contrast` / `vintage anamorphic character, flares and edge softness`. Modello: voci Vintage Prime, Warm Cinema Prime, Clinical Sharp Prime, 70s Cinema Prime nel menu [S skill terzi]; il testo libero è [I].
 - **Errore comune:** attribuire il «Cooke look» solo alla lente: pesano luce, sensore, grading.
 
 #### Macro, probe, tilt-shift/swing
 - **Cos'è:** macro = riproduzione 1:1 o simile, distanza minima di fuoco molto corta; probe = lente allungata e sottile che entra in spazi stretti; tilt-shift / swing = inclinazione del piano focale (o spostamento della lente) per cambiare la zona a fuoco o correggere le linee verticali (std).
 - **Si vede:** macro = dettagli giganti con fuoco sottilissimo; probe = prospettive impossibili; tilt = fuoco a fetta (look «miniatura»); swing/rotazione = fuoco che taglia obliquamente.
 - **Quando:** macro per prodotto, cibo, texture; probe per interni di oggetti e cibo; tilt per effetti onirici o miniatura.
-- **Higgsfield:** `extreme macro, razor-thin focus plane, tiny details huge in frame` / `tilt lens with a diagonal slice of sharpness, miniature-world look`. Modello: «Creative Tilt Lens» è una voce del menu del Cinema Studio [V]; il macro nei modelli è facile [I].
+- **Higgsfield:** `extreme macro, razor-thin focus plane, tiny details huge in frame` / `tilt lens with a diagonal slice of sharpness, miniature-world look`. Modello: «Creative Tilt Lens» è una voce del menu del Cinema Studio [S skill terzi]; il macro nei modelli è facile [I].
 - **Errore comune:** richiedere profondità di campo in un macro: fisicamente quasi assente.
 
 #### Split diopter
@@ -547,7 +550,7 @@ Verifica 2026-11-08: le pagine ufficiali di Cooke, Zeiss (ARRI/ZEISS Master Prim
 - **Cos'è:** zoom = focale variabile; prime = focale fissa (std).
 - **Si vede:** prime = più luminosi e con carattere; zoom = comodità, ma meno luminosità e un look «televisivo»; lo zoom in ripresa è diverso dal dolly (cambia il campo senza cambiare la prospettiva).
 - **Quando:** zoom per documentario e sport; prime per dramma e pubblicità.
-- **Higgsfield:** `slow optical zoom in, perspective unchanged, background growing larger` (vs) `dolly in, parallax between layers`. Modello: lo zoom e il dolly sono distinti nei preset di camera; in higgsfield-style/SKILL.md (riga 50) Kling 2.6/3.0 e Dolly In sono indicati come abbinamento per lo stile Cinematic [V solo come abbinamento; la frase «punto di forza di Kling» non è nelle file della skill: corretto il 2026-11-08]; la distinzione zoom/dolly nel prompt libero è [I]. Dettagli sui movimenti: `tecnica-cinema-inquadratura.md`.
+- **Higgsfield:** `slow optical zoom in, perspective unchanged, background growing larger` (vs) `dolly in, parallax between layers`. Modello: lo zoom e il dolly sono distinti nei preset di camera; in higgsfield-style/SKILL.md (riga 50) Kling 2.6/3.0 e Dolly In sono indicati come abbinamento per lo stile Cinematic [S skill terzi solo come abbinamento; la frase «punto di forza di Kling» non è nelle file della skill: corretto il 2026-11-08]; la distinzione zoom/dolly nel prompt libero è [I]. Dettagli sui movimenti: `tecnica-cinema-inquadratura.md`.
 - **Errore comune:** chiedere «dolly zoom» e ottenere un semplice avvicinamento.
 
 #### T-stop e f-stop
@@ -555,7 +558,7 @@ Verifica 2026-11-08: le pagine ufficiali di Cooke, Zeiss (ARRI/ZEISS Master Prim
   Kodak: un cambio di uno stop (f o T) raddoppia o dimezza la luce sulla pellicola; il T-stop si ottiene misurando la luce che attraversa davvero l'obiettivo, l'f-stop è una stima matematica [P: Kodak, «The Essential Reference Guide for Filmmakers», PDF 2012, snapshot Wayback di motion.kodak.com, letto con PDFKit 2026-11-08, p. 66]. La formula T = f/√τ resta std.
 - **Si vede:** due lenti a f/2 possono dare esposizioni diverse; con i T-stop, no.
 - **Quando:** il cinema usa i T-stop perché devono combaciare fra obiettivi diversi.
-- **Higgsfield:** `wide open at T2` / `stopped down to f/8, deep focus`. Modello: nel Cinema Studio l'apertura è un menu (f/1.4, f/4, f/11) [V]; nel prompt libero conta come tendenza di profondità di campo [I].
+- **Higgsfield:** `wide open at T2` / `stopped down to f/8, deep focus`. Modello: nel Cinema Studio l'apertura è un menu (f/1.4, f/4, f/11) [S skill terzi]; nel prompt libero conta come tendenza di profondità di campo [I].
 - **Errore comune:** confondere f e T, o credere che un'apertura grande renda più nitida l'immagine.
 
 #### Profondità di campo
@@ -570,10 +573,10 @@ Verifica 2026-11-08: le pagine ufficiali di Cooke, Zeiss (ARRI/ZEISS Master Prim
 - **Cos'è:** il fuoco è la distanza del piano nitido; il rack focus sposta il fuoco da un soggetto a un altro durante l'inquadratura; il focus puller (assistente alla camera) lo regola con il follow focus (std).
 - **Si vede:** attenzione guidata da nitido a sfocato; respirazione dell'ottica (focus breathing: il campo cambia leggermente).
 - **Quando:** rivelazione, sguardo, passaggio di attenzione fra volto e oggetto.
-- **Higgsfield:** `rack focus from the foreground object to the face in the background, smooth transition over two seconds`. Modello: «Rack Focus» è nel vocabolario e la skill ha una Lens Behavior Sequence per gli eventi di fuoco [V]; la tenuta del soggetto durante lo spostamento è [I].
+- **Higgsfield:** `rack focus from the foreground object to the face in the background, smooth transition over two seconds`. Modello: «Rack Focus» è un termine riportato dalla fonte di terzi; per lo spostamento di fuoco si scrive da quale piano a quale e in quanto tempo [S skill terzi]; la tenuta del soggetto durante lo spostamento è [I].
 - **Errore comune:** non dire il punto di partenza e quello di arrivo.
 
-**Fonti sezione 7:** lette il 2026-11-08 sulle pagine dei costruttori [P]: Cooke (cookeoptics.com: /cooke-look/, /lens/s4-i-prime/, /lens/s4-ff-i/, /lens/panchro-classic-i-s35/, Panchro Classic FF, Panchro 65/i); Zeiss (zeiss.com/photonics-and-optics/us/cinematography/lenses/master-prime-lenses.html); Panavision (panavision.com/camera-and-optics/optics/product-detail/c-c-series, e-e-series, g-g-series, 65p-primo-65); ARRI Signature Prime (arri.com); Leitz (leitz-cine.com/product/summilux-c e /thalia). Le descrizioni del carattere sono testo di marketing dei costruttori: marcate come tali. Le Zeiss Super Speed (zeiss.com: pagina non trovata via lettore, nessuno snapshot Wayback), le Canon K35, le Petzval e le ottiche vintage rehoused restano std, non lette. Skill higgsfield (vocab.md, SKILL.md, model-guide.md, skill cinema): [V]. Kodak Essential Reference Guide 2012 (T-stop, profondità di campo, circolo di confusione 1/1000", iperfocale) [P, letto 2026-11-08]. Formule di ottica e calcoli: std + calcolo mio (ricontrollati: AOV = 2·atan(w/2f) dà 90,0° a 18 mm, 73,7° a 24 mm, 54,4° a 35 mm, 39,6° a 50 mm, 23,9° a 85 mm, 15,2° a 135 mm su 36 mm). Rental house (camaleonrental.com, cinevisuals.com, direct-digital.com, movingpicture.com) [S]: non più usate come fonte delle righe in tabella.
+**Fonti sezione 7:** lette il 2026-11-08 sulle pagine dei costruttori [P]: Cooke (cookeoptics.com: /cooke-look/, /lens/s4-i-prime/, /lens/s4-ff-i/, /lens/panchro-classic-i-s35/, Panchro Classic FF, Panchro 65/i); Zeiss (zeiss.com/photonics-and-optics/us/cinematography/lenses/master-prime-lenses.html); Panavision (panavision.com/camera-and-optics/optics/product-detail/c-c-series, e-e-series, g-g-series, 65p-primo-65); ARRI Signature Prime (arri.com); Leitz (leitz-cine.com/product/summilux-c e /thalia). Le descrizioni del carattere sono testo di marketing dei costruttori: marcate come tali. Le Zeiss Super Speed (zeiss.com: pagina non trovata via lettore, nessuno snapshot Wayback), le Canon K35, le Petzval e le ottiche vintage rehoused restano std, non lette. Skill higgsfield (vocab.md, SKILL.md, model-guide.md, skill cinema): [S skill terzi]. Kodak Essential Reference Guide 2012 (T-stop, profondità di campo, circolo di confusione 1/1000", iperfocale) [P, letto 2026-11-08]. Formule di ottica e calcoli: std + calcolo mio (ricontrollati: AOV = 2·atan(w/2f) dà 90,0° a 18 mm, 73,7° a 24 mm, 54,4° a 35 mm, 39,6° a 50 mm, 23,9° a 85 mm, 15,2° a 135 mm su 36 mm). Rental house (camaleonrental.com, cinevisuals.com, direct-digital.com, movingpicture.com) [S]: non più usate come fonte delle righe in tabella.
 
 ---
 
@@ -599,7 +602,7 @@ I filtri valgono per ripresa vera. Nei modelli generativi sono tendenze di look,
 - **Cos'è:** filtri di diffusione che ammorbidiscono le alte luci creando un alone, riducendo il contrasto. Black Pro-Mist (Tiffen): gradi 1/8, 1/4, 1/2, 1 e 2 (la pagina del 4 x 4" li elenca così); Tiffen scrive che combina «unique layering of contrast» con una «gauzy paint like halation», che già al grado più basso aumenta l'halation aggiungendo «a pleasing depth of warmth» senza trasferirla ai toni della pelle, e che gli effetti diventano più evidenti da 1/4 in su [P: tiffen.com/products/4-x-4-black-pro-mist-filter, letta 2026-11-08]. Glimmerglass (Tiffen): filtro «beauty» che ammorbidisce dettagli della pelle, imperfezioni e rughe, dà alte luci «glowing» e una lieve riduzione del contrasto; visto dal soggetto sembra scintillare; gradi da 1/16 in su (1/16 ammorbidisce meno di 1/8) [P: tiffen.com, catalogo prodotti (products.json del negozio ufficiale), letto 2026-11-08, scheda «4 x 4" Glimmerglass 1/16»]. Hollywood Black Magic: attribuito a Schneider, descrizione da verificare (non è nel catalogo Tiffen; schneideroptics.com dà errore di certificato al lettore, nessuno snapshot Wayback utile con le ricerche CDX provate).
 - **Si vede:** luci pratiche che brillano, volto con pelle più morbida, neri più alti.
 - **Quando:** per togliere durezza al digitale, «cinematografizzare» un'immagine nitida; ritratto, notte con luci.
-- **Higgsfield:** `soft black diffusion filter, glowing halation around highlights, lifted blacks, softened skin` . Modello: la voce Halation Diffusion del Cinema Studio [V]; nel testo libero tendenza [I] a un bagliore eccessivo.
+- **Higgsfield:** `soft black diffusion filter, glowing halation around highlights, lifted blacks, softened skin` . Modello: la voce Halation Diffusion del Cinema Studio [S skill terzi]; nel testo libero tendenza [I] a un bagliore eccessivo.
 - **Errore comune:** gradi alti su un'immagine già morbida; sulle luci pratiche un 1/4 può bastare.
 
 #### Black Satin, Star e Streak
@@ -633,7 +636,7 @@ I filtri valgono per ripresa vera. Nei modelli generativi sono tendenze di look,
 - **Cos'è:** numero di fotogrammi al secondo; 24 fps = standard cinema, 25 fps = standard televisivo europeo, 30 fps (29,97) = standard televisivo americano. SMPTE ST 7 (16 mm): «The standard frame rate for motion-picture photography is 24 frames per second», con 24, 25 o 30 fps ammessi per i film destinati alla televisione [P: pub.smpte.org, letto 2026-11-08]; il 29,97 e l'abbinamento 25 = Europa / 30 = America restano std.
 - **Si vede:** 24 = movimento con una certa sfocatura e ritmo «cinema»; 30 = più continuo, più «video»; 25 = in Europa è la base televisiva.
 - **Quando:** 24 per il look cinema; 25 per consegne televisive europee; 30 per notizie, sport, sociale.
-- **Higgsfield:** `24 fps cinematic motion cadence` . Modello: durata e frame rate dipendono dal modello; verificare nello schema (`models_explore`), non nel prompt [V come regola]; la resa «cadenza» è [I].
+- **Higgsfield:** `24 fps cinematic motion cadence` . Modello: durata e frame rate dipendono dal modello; verificare nello schema (`models_explore`), non nel prompt [S skill terzi come regola]; la resa «cadenza» è [I].
 - **Errore comune:** richiedere 24 fps in un modello con frame rate fisso diverso.
 
 #### 48, 60 fps e alta frequenza (HFR)
@@ -647,7 +650,7 @@ I filtri valgono per ripresa vera. Nei modelli generativi sono tendenze di look,
 - **Cos'è:** overcrank = girare a più di 24 fps e riprodurre a 24, ottenendo slow motion; undercrank = girare a meno e riprodurre a 24, ottenendo movimento accelerato. Esempio di calcolo: 120 fps riprodotti a 24 = 5x più lento; ALEXA 35 Xtreme a 330 fps [P] = 13,75x. (Formula: fattore = fps ripresa / fps riproduzione.)
 - **Si vede:** overcrank = gocce, tessuti, capelli, volti con rallentatore; undercrank = movimento a scatti accelerato, comico o nervoso.
 - **Quando:** overcrank per enfasi e bellezza; undercrank per frenesia e per simulare velocità.
-- **Higgsfield:** `overcranked slow motion, droplets suspended mid-air` / `undercranked, jerky accelerated motion`. Modello: Overcranked e Undercranked sono nel vocabolario della skill [V]; la resa del modello è [I].
+- **Higgsfield:** `overcranked slow motion, droplets suspended mid-air` / `undercranked, jerky accelerated motion`. Modello: Overcranked e Undercranked sono nel vocabolario della skill [S skill terzi]; la resa del modello è [I].
 - **Errore comune:** chiedere slow motion di una scena che ha già un movimento lento.
 
 #### Regola dei 180° e angolo dell'otturatore
@@ -655,7 +658,7 @@ I filtri valgono per ripresa vera. Nei modelli generativi sono tendenze di look,
   Kodak: l'otturatore a disco da 180° è il più comune e le cineprese a pellicola girano per lo più a 24 fps; dimezzare l'angolo (da 180 a 90) dimezza il tempo di esposizione; angoli piccoli fermano l'azione ed evitano il mosso; alcune luci che sfarfallano, come gli HMI più vecchi, richiedono un otturatore a 172° [P: Kodak, «The Essential Reference Guide for Filmmakers», PDF 2012, snapshot Wayback di motion.kodak.com, letto con PDFKit 2026-11-08, pp. 64-65].
 - **Si vede:** 180° dà la sfocatura di movimento «naturale» del cinema; angoli più stretti danno nitidezza a scatti; più larghi, scie.
 - **Quando:** 180° di default; ridurlo per azione e guerra; aumentarlo per sogno e velocità.
-- **Higgsfield:** `natural 180-degree motion blur`. Modello: «Low Shutter» è nel vocabolario [V]; il valore preciso dell'angolo è [I].
+- **Higgsfield:** `natural 180-degree motion blur`. Modello: «Low Shutter» è nel vocabolario [S skill terzi]; il valore preciso dell'angolo è [I].
 - **Errore comune:** indicare l'angolo dell'otturatore come se il modello lo misurasse.
 
 #### Otturatore stretto e largo
@@ -672,7 +675,7 @@ I filtri valgono per ripresa vera. Nei modelli generativi sono tendenze di look,
 - **Higgsfield:** non traducibile. Modello: [I] se un modello restituisce effetti skew, sono artefatti, non una scelta.
 - **Errore comune:** attribuire all'obiettivo la distorsione che nasce dal sensore.
 
-**Fonti sezione 9:** ARRI, ALEXA 35 Xtreme (330 fps) [P]; vocab.md della skill higgsfield (Overcranked, Undercranked, Low Shutter) [P]; verifica 2026-11-08 [P]: SMPTE ST 7 (24 fps standard; 24/25/30 per TV), Kodak Essential Reference Guide 2012 (otturatore 180°, 90°, 172° per HMI), American Cinematographer ago. 1998 su theasc.com (Salvate il soldato Ryan, 45°/90°). Restano std: 29,97, effetto HFR, elenco delle camere global shutter (solo RED V-RAPTOR [X] letto, sezione 4).
+**Fonti sezione 9:** ARRI, ALEXA 35 Xtreme (330 fps) [P]; termini Overcranked, Undercranked, Low Shutter da una skill Higgsfield di terzi [S]; verifica 2026-11-08 [P]: SMPTE ST 7 (24 fps standard; 24/25/30 per TV), Kodak Essential Reference Guide 2012 (otturatore 180°, 90°, 172° per HMI), American Cinematographer ago. 1998 su theasc.com (Salvate il soldato Ryan, 45°/90°). Restano std: 29,97, effetto HFR, elenco delle camere global shutter (solo RED V-RAPTOR [X] letto, sezione 4).
 
 ---
 
@@ -728,7 +731,7 @@ I filtri valgono per ripresa vera. Nei modelli generativi sono tendenze di look,
 
 - **Passata di verifica delle citazioni (2026-11-08, non indipendente, fatta dall'autore):** riconfrontati con le pagine scaricate i valori ARRI (17 stop, EI 160-6400, 330 fps, 660 fps a 11 stop, Open Gate 4,6K, LogC4, REVEAL), Kodak (codici di emulsione, filtri di bilanciamento e ND suggeriti, DLT della 500T, DOUBLE-X per luce bassa e profondità di campo), Sony VENICE 2 (8,6K, 16 stop, 800/3200, ND a 8 stop), Blackmagic (16 stop, PYXIS 36 x 24 mm). Si chiede al lead un verificatore indipendente.
 - **Ancora non verificato su pagina primaria (aggiornato 2026-11-08, vedi «Verifica del 2026-11-08»):** vedi l'elenco «Ancora aperti» nella sezione finale. Rischio: un preventivo o una scheda tecnica costruiti su quei punti possono contenere errori.
-- **Comportamenti dei modelli:** solo ciò che sta nei file della skill `higgsfield` è marcato [V]. Il resto è [I] e va provato con una generazione prima di entrare in un brief. L'istantanea del catalogo (2026-09-26) è più vecchia di 30 giorni.
+- **Comportamenti dei modelli:** ciò che viene dalla skill Higgsfield di terzi è marcato [S skill terzi]. Il resto è [I] e va provato con una generazione prima di entrare in un brief. L'istantanea del catalogo (2026-09-26) è più vecchia di 30 giorni.
 - **Esempi di film:** presenti in due voci (otturatore stretto; push/pull e bleach bypass), entrambi da Salvate il soldato Ryan con fonte American Cinematographer (ago. 1998, su theasc.com) [P, letto 2026-11-08]; più l'esempio IMAX nella sezione 6. Le altre voci non portano esempi: da aggiungere solo con fonte.
 - **Prossima revisione:** entro 2027-02-06, e al primo cambio di catalogo Higgsfield.
 
@@ -736,7 +739,7 @@ I filtri valgono per ripresa vera. Nei modelli generativi sono tendenze di look,
 
 Tre verificatori indipendenti dall'autore, in sequenza (sessioni Chrome `ver-cineluce`, `ver-cineluce3`); lavoro chiuso.
 - **Controllati:** le due passate precedenti non hanno registrato i conteggi (le loro voci sono elencate sotto); la terza ha controllato 43 dati std / [S] / «da verificare» (33 promossi, 8 corretti, 10 ancora aperti) più 10 controlli a campione su fonti già [P] (ALEXA 35, LEE 201 e 204, Astera Titan, Aputure STORM, Cooke Look, Panavision C, Blackmagic PYXIS, SMPTE ST 417, Kodak 500T): tutti e 10 confermati; due precisazioni (LEE 201 riporta 34 e 35% di trasmissione; Aputure dice «4K HMI or 10K tungsten fresnel»).
-- **Promossi a [P] o [V] (tutte le passate):** camere (ARRI Mini LF e 265, RED V-RAPTOR [X], Sony Burano e VENICE 2 6K, Canon C400 in Chrome vero, iPhone 18 Pro); ottiche (Cooke, Zeiss Master Prime, Panavision, ARRI Signature, Leitz); luce (SkyPanel, Titan, STORM, Rosco, LEE, Dedolight da Wayback); fotogrammi di pellicola (Kodak PDF 2024; SMPTE ST 7, 59, 195, 201, 215, 417, PDF gratuiti su pub.smpte.org, non a pagamento); tabella Kelvin (Kodak Essential Reference Guide 2012, Wayback); rapporti 1,33/1,37/1,66/1,85/2,40/2,2/1,43 (Kodak); EI DOUBLE-X 200/250 (Kodak H-1-5222); filtri Tiffen (Glimmerglass, Black Satin, Streak, IRND, polarizzatori, densità ND); T-stop, profondità di campo, otturatore 180°/172°; rapporti d'uscita dei modelli (specs della skill higgsfield).
+- **Promossi a [P] (tutte le passate):** camere (ARRI Mini LF e 265, RED V-RAPTOR [X], Sony Burano e VENICE 2 6K, Canon C400 in Chrome vero, iPhone 18 Pro); ottiche (Cooke, Zeiss Master Prime, Panavision, ARRI Signature, Leitz); luce (SkyPanel, Titan, STORM, Rosco, LEE, Dedolight da Wayback); fotogrammi di pellicola (Kodak PDF 2024; SMPTE ST 7, 59, 195, 201, 215, 417, PDF gratuiti su pub.smpte.org, non a pagamento); tabella Kelvin (Kodak Essential Reference Guide 2012, Wayback); rapporti 1,33/1,37/1,66/1,85/2,40/2,2/1,43 (Kodak); EI DOUBLE-X 200/250 (Kodak H-1-5222); filtri Tiffen (Glimmerglass, Black Satin, Streak, IRND, polarizzatori, densità ND); T-stop, profondità di campo, otturatore 180°/172°. **Non [P]:** i rapporti d'uscita dei modelli sono riportati dalla skill di terzi (specs della skill higgsfield), quindi [S skill terzi].
 - **Corretti (14):** ALEXA 265 = 15 stop, non 17; Titan Tube = tubo da 0,55 a 2 m; CTO «5.600 → 3.200 K» dipende da marca e taglio; «Dolly In punto di forza di Kling» non è nella skill; «Zeiss neutre» non è del costruttore; Canon C400 1.540 g (non 1.550) e «Discontinued» non confermato; **4:3 è un'uscita nativa** di Seedance, FLUX 3 Video, Wan (prima «solo look»); 4:5 esiste solo nei modelli immagine; candela 1.850 K (non 1.900); sole all'alba 2.000 K (non 3.000-4.000); cielo coperto 6.000 K (non 6.500-7.000); 1,66 è più stretto del 16:9; Black Satin descritto in modo errato; IMAX: SMPTE e Kodak discordano sull'altezza (si usa SMPTE 51,61 mm).
 - **Esempi di film con fonte:** Salvate il soldato Ryan (otturatore 45°/90°, ENR al 70%, ottiche senza trattamento), American Cinematographer ago. 1998 su theasc.com [P].
 - **Ancora aperti (circa 35, quasi tutti std di mestiere):** schemi di luce e definizioni (sezioni 1-2: nessun manuale ASC gratuito); 2,00:1 Univisium; Hollywood Black Magic (Schneider: certificato non valido, Wayback senza pagina); legenda false color ARRI; VENICE «+6/-10 stop» [S]; Zeiss Super Speed, Canon K35, Petzval; filtri star e fog; fascio DLH4 5-48° [S]; ora blu in K; push/pull/bleach bypass; elenco camere global shutter. Metodi provati per ognuno: curl, r.jina.ai, Chrome vero, Wayback.

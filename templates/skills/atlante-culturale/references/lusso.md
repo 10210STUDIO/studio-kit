@@ -471,7 +471,7 @@ Il mestiere specifico del lusso. La luce generica per still life (campo chiaro e
 - **Higgsfield:** «a small engraved number on a polished metal plate, 7 of 20, raking light revealing the engraving, everything else out of focus». Il numero va composto in grafica se deve essere leggibile.
 - **Errore comune:** «edizione limitata» senza numero; scarsità annunciata e poi smentita dal riassortimento (resta negli archivi web).
 
-Fonti: GIA, [4Cs – Diamond Cut](https://4cs.gia.edu/en-us/diamond-cut/) (definizioni di brightness, fire, scintillation, letto con jina 2026-11-08 [P]); siti delle case navigati il 2026-11-08 (vedi Siti di riferimento) [P]; skill `photo-illustration-direction`, `typography-craft`, `ad-claims-disclosure`, `higgsfield` (SKILL.md letti 2026-11-08) [P interna]; D.Lgs. 114/1998, art. 14 (vedi Regole) [P]. La convenzione del 10:10, gli schemi di luce per vetro e gioielli, l'architettura d'hotel all'ora blu e la struttura del film di savoir-faire sono conoscenza di mestiere, non lette su fonte primaria oggi: affidabilità media.
+Fonti: GIA, [4Cs – Diamond Cut](https://4cs.gia.edu/en-us/diamond-cut/) (definizioni di brightness, fire, scintillation, letto con jina 2026-11-08 [P]); siti delle case navigati il 2026-11-08 (vedi Siti di riferimento) [P]; skill `photo-illustration-direction`, `typography-craft`, `ad-claims-disclosure`, (SKILL.md letti 2026-11-08) [P interna]; skill `higgsfield` letta 2026-11-08 [S, skill di terzi, ora archiviata]; D.Lgs. 114/1998, art. 14 (vedi Regole) [P]. La convenzione del 10:10, gli schemi di luce per vetro e gioielli, l'architettura d'hotel all'ora blu e la struttura del film di savoir-faire sono conoscenza di mestiere, non lette su fonte primaria oggi: affidabilità media.
 
 ## Regole del settore
 

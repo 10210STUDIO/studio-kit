@@ -70,6 +70,19 @@ Protocollo in ../STUDIO.md. Potare sopra le 150 righe.
 **Quando non vale:** grafica palesemente non fotografica; prodotto reale su sfondo IA che non inganna sul prodotto. Né le linee guida né il Codice nominano C2PA, e «i titoli di coda non bastano» non è una frase loro: non scriverli ai clienti come obblighi.
 **Cliente/progetto:** generale.
 
+## [2026-11-16] Riscrivere la storia di un repo non pubblicato: clone di lavoro, cherry-pick -n, niente -x
+**Pattern:** per correggere un valore in un commit vecchio senza `rebase -i`: clone in una cartella temporanea, `checkout --orphan` per la radice, poi per ogni commit `cherry-pick -n`, modifica, `commit -C <vecchio>` (messaggio e data d'autore restano). Mai `-x`: scrive l'hash vecchio nel messaggio. Si riporta nel repo vero con `fetch <clone> <ramo>:<ramo>` + `reset --hard <ramo>` (file ignorati e node_modules restano), poi `reflog expire --expire=now --all` + `gc --prune=now`. Prova: `git diff --stat <vecchio> HEAD` mostra solo le modifiche volute, `git grep -a` su `rev-list --all`, `git cat-file -e <vecchio>` fallisce.
+**Evidenza:** un sito, 10 commit riscritti, 5 file diversi dal vecchio HEAD, vecchi oggetti non più presenti dopo gc.
+**Quando non vale:** storia già pubblicata o con merge/modifiche ai file sovrapposte (cherry-pick -n darebbe conflitti).
+**Cliente/progetto:** generale.
+
+## [2026-11-16] Fissare la versione di un plugin di terzi in Claude Code: dipende dalla versione del client
+
+**Pattern:** si fissa il marketplace con `ref` = SHA completo (minuscolo) nella `source` git/github di `extraKnownMarketplaces`; i plugin con `source` relativa (`./`) seguono quel commit, quelli con source remota vanno fissati con `sha` nella loro entry. Prima di scriverlo controlla `claude --version`: sotto la 2.1.324 un marketplace fissato così non si carica. Se il client è più vecchio, il plugin con hook diventa opzionale (non in `enabledPlugins`, conferma nello script di installazione). Nel `.gitignore` un pattern con `/` in mezzo è ancorato alla radice: dentro un symlink o una sottocartella serve il prefisso della sottocartella, e si prova con `git check-ignore -v`.
+**Evidenza:** [P] code.claude.com/docs/en/plugins/marketplace-reference (campo `ref` e «Plugin sources»), letta il 2026-11-16; Claude Code sul Mac usato per la prova: 2.1.302; i tre marketplace in uso (impeccable, ponytail, understand-anything) hanno entry relative.
+**Quando non vale:** non ho provato il caricamento di un marketplace fissato con SHA (nessun client ≥ 2.1.324 a disposizione); riverificare dopo l'aggiornamento di Claude Code.
+**Cliente/progetto:** generale.
+
 ## Da verificare
 
 (ipotesi non ancora dimostrate)

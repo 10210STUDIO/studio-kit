@@ -297,6 +297,13 @@ Principio: l'inquadratura è la prima decisione e l'unica non correggibile in po
 - **Higgsfield:** `out-of-focus foreground element framing the subject, reflection in a window, layered depth`.
 - **Errore comune:** riflessi con fotografo visibile; nel modello, riflessi incoerenti con la scena.
 
+#### Vetro o lente in scena davanti all'obiettivo (glass / lens in front of the camera)
+- **Cos'è:** un oggetto ottico vero (lente, blocco di vetro, vetrina spessa, acqua) messo fra camera e soggetto come elemento della scena, non come filtro. Deforma ciò che sta dietro di lui e lascia il resto com'è (std).
+- **Si vede:** materia ingrandita o piegata dentro il vetro, nitida fuori; sui bordi del vetro frange sottili di colore (aberrazione cromatica), il fondo capovolto in una lente convessa, un riflesso della stanza sulla superficie. Sono queste le prove fisiche che separano un vetro vero da un effetto applicato (std).
+- **Quando:** quando l'immagine deve avere una seconda lettura che l'occhio decifra; still life e dettagli di gesto più che ritratti.
+- **Higgsfield:** scrivere tre cose: cosa il vetro deforma, cosa resta nitido e non deformato (volto, mani, il gesto), e una prova fisica sul bordo. Es. `a thick optical glass block held in front of the lens; the wool texture behind it magnified and bent inside the glass; thin cool and warm fringes along its edges; fingers and gesture outside the glass stay sharp and undistorted`. Modello: **(da provare)**, nessuna generazione dello studio; il metodo viene da un prompt di terzi letto il 2026-11-21 [S, una sola fonte, non nostra], fiducia BASSA. Le forme rotonde e cave possono uscire come lettere.
+- **Errore comune:** non dire cosa resta intatto, così il modello deforma anche il volto e l'immagine sembra AI; vetro senza frange né riflessi, che legge come filtro.
+
 #### Carosello e sequenze per i social (carousel / sequences)
 - **Cos'è:** serie 4:5 o 1:1 pensata con ritmo: apertura forte, dettaglio, ambiente, ritratto, chiusura. Stessa luce e stessa palette per la coerenza.
 - **Si vede:** narrazione visiva; ripetizione di un elemento visivo come filo.
@@ -304,7 +311,7 @@ Principio: l'inquadratura è la prima decisione e l'unica non correggibile in po
 - **Higgsfield:** genera in serie con Soul ID o Soul Cast e lo stesso prompt base, cambiando solo scala e angolo (verificato nei file: Soul Cast per personaggio). Nano Banana Pro per modifiche coerenti.
 - **Errore comune:** variazioni troppo simili fra loro, o troppo diverse.
 
-Fonti: [S] metodo compositivo di mestiere; formati: standard. Rapporti d'aspetto e modelli Higgsfield: file della skill `higgsfield` (`image-models.md`, letto 2026-11-08, [P] per la skill). Regole di direzione: skill `photo-illustration-direction` (letta).
+Fonti: [S] metodo compositivo di mestiere; formati: standard. Rapporti d'aspetto e modelli Higgsfield: file della skill `higgsfield` (`image-models.md`, letto 2026-11-08, [S, skill di terzi, ora archiviata]). Regole di direzione: skill `photo-illustration-direction` (letta).
 
 ---
 
@@ -735,7 +742,7 @@ Fonti: [S] conoscenza di mestiere; `fotografia.md` (voci, lettura precedente). D
 - **Higgsfield:** n/a.
 - **Errore comune:** consegnare un output AI come foto di un prodotto reale.
 
-Fonti: [P, skill interna] `image-models.md` e `SKILL.md` (lette, snapshot 2026-09-26; stale oltre 30 giorni: i parametri di modello vanno riverificati dal vivo prima di una produzione); `vocab.md` (Film Stock Emulation righe 266-271, Fisheye riga 91: [V] ritrovati 2026-11-08; Frontier, Noritsu, tilt-shift assenti dalla skill). [S] comportamento dei token di camera/pellicola nei modelli: nessuna fonte, inferenza. Data 2026-11-08.
+Fonti: [S, skill di terzi, ora archiviata] `image-models.md` e `SKILL.md` (lette, snapshot 2026-09-26; stale oltre 30 giorni: i parametri di modello vanno riverificati dal vivo prima di una produzione); `vocab.md` (Film Stock Emulation righe 266-271, Fisheye riga 91: [V] ritrovati 2026-11-08; Frontier, Noritsu, tilt-shift assenti dalla skill). [S] comportamento dei token di camera/pellicola nei modelli: nessuna fonte, inferenza. Data 2026-11-08.
 
 ---
 

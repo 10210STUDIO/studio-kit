@@ -10,7 +10,7 @@ Serve a una cosa sola: far muovere i corpi nei film AI come corpi veri. Le note 
 - Piani, angolazioni, blocking e continuità: `tecnica-cinema-inquadratura.md` (§7 blocking). Qui c'è solo la regia del corpo dentro l'inquadratura.
 - Registi e direttori della fotografia: `cinema.md`. Danza nello sport (pattinaggio, ginnastica): `sport.md`.
 
-**Legenda.** [P] fonte primaria (sito dell'autore o della compagnia, testo di legge) letta il 2026-11-15. [P via ricerca] pagina primaria vista solo nell'estratto di ricerca, non aperta. [S] secondaria (stampa, archivio, scuola). Fiducia per voce: ALTA / MEDIA / BASSA. Modelli citati senza versione: versioni e limiti nella skill `higgsfield`. Tutti i frammenti «Higgsfield» sono **da provare**: nessuno è stato generato (zero crediti). Nessun video di spettacolo è stato guardato con `watch`: le descrizioni di scena vengono da fonti scritte.
+**Legenda.** [P] fonte primaria (sito dell'autore o della compagnia, testo di legge) letta il 2026-11-15. [P via ricerca] pagina primaria vista solo nell'estratto di ricerca, non aperta. [S] secondaria (stampa, archivio, scuola). Fiducia per voce: ALTA / MEDIA / BASSA. Modelli citati senza versione: versioni e limiti in `tecnica-higgsfield.md`. Tutti i frammenti «Higgsfield» sono **da provare**: nessuno è stato generato (zero crediti). Nessun video di spettacolo è stato guardato con `watch`: le descrizioni di scena vengono da fonti scritte.
 
 ---
 
@@ -28,13 +28,13 @@ Termini di movimento che un modello video capisce se li scrivi in inglese come f
 - **Presa da dietro / guida** — una mano che conduce senza trattenere. *his hand rests on the back of her upper arm, behind the elbow, guiding, not gripping.*
 - **Ripetizione e accumulo** — lo stesso gesto rifatto, più veloce o più stanco ogni volta. *the same gesture repeats three times, faster each time, the third one ragged.*
 - **Gesto quotidiano** — azione comune dentro una coreografia. *between the sharp movements she tucks her hair behind her ear, an ordinary gesture.*
-- **Camminata** — il ritmo base del palco. *heel lands first, strict left-right alternation, one foot always on the ground* (frase del file FAILURE-MODES di Higgsfield, vedi Tecnica).
+- **Camminata** — il ritmo base del palco. scrivere che il tallone tocca per primo, che i piedi si alternano e che uno resta sempre a terra (regola riportata da una fonte di terzi [S], vedi Tecnica; da provare).
 - **Immobilità attiva (stillness)** — fermi con il corpo acceso. *standing still but alive: breath in the chest, tiny balance corrections in the ankles.*
 - **Durata** — un'azione tenuta molto più del normale finché diventa il soggetto. In video: un'azione sola per tutta la clip.
 - **Unisono / canone** — tutti insieme / uno dopo l'altro con uno scarto. Nei gruppi AI l'unisono è il difetto (corpi troppo sincronizzati, allineati); il canone è la regola. *the gesture travels down the line, each person starting a beat after the one before.*
 - **Spazio scenico: proscenio, fondo, diagonale, perimetro** — dove sta il corpo dice il rapporto con chi guarda. *she crosses the room on the diagonal, from the far corner toward the lens.*
 - **Sguardo interno / esterno** — a un compagno, a un oggetto, al vuoto, al pubblico. Per i modelli: dire sempre dove va lo sguardo e perché.
-- **Prossemica** — intima < 0,5 m, personale 0,5-1,2, sociale 1,2-3,5, pubblica > 3,5 (file acting di Higgsfield). Nel prompt: la distanza in metri o in «lunghezza di un braccio».
+- **Prossemica** — intima < 0,5 m, personale 0,5-1,2, sociale 1,2-3,5, pubblica > 3,5 (da una guida di recitazione per modelli video di terzi [S]). Nel prompt: la distanza in metri o in «lunghezza di un braccio».
 
 ---
 
@@ -374,18 +374,18 @@ Gesti codificati fuori dal teatro, utili perché ogni movimento ha un ordine, un
 
 ## Tecnica — come si dirige un gesto credibile
 
-Il blocking (chi sta dove, entrate, uscite, assi) è in `tecnica-cinema-inquadratura.md` §7. Qui c'è il mestiere del corpo e i difetti noti dei modelli sul contatto. Fonti: file Higgsfield letti il 2026-11-15 (FAILURE-MODES di Seedance, acting, negative-constraints) e playbook dello studio `ai-film-director.md` [P interno: bozze misurate dallo studio, un caso o pochi casi per voce].
+Il blocking (chi sta dove, entrate, uscite, assi) è in `tecnica-cinema-inquadratura.md` §7. Qui c'è il mestiere del corpo e i difetti noti dei modelli sul contatto. Fonti: guide di terzi su Seedance lette il 2026-11-15 (difetti noti, recitazione, vincoli negativi) [S], e playbook dello studio `ai-film-director.md` [P interno: bozze misurate dallo studio, un caso o pochi casi per voce].
 
 ### 1. Il gesto in quattro tempi (dalla danza al prompt)
 1. **Preparazione.** Prima del gesto il corpo carica nel verso opposto: il peso va indietro prima di tirare, la spalla scende prima che il braccio salga. Nel prompt: una frase sola, prima dell'azione.
 2. **Peso.** Dire su quale piede sta il corpo e dove va il peso alla fine. Un corpo senza peso scritto galleggia e sembra inanimato.
 3. **Il corpo dell'altro reagisce.** Ogni contatto ha due metà: chi tocca e chi è toccato. Chi è toccato cede, resiste o si irrigidisce, e lo fa nel busto prima che nel viso (maschera neutra, Lecoq). Se il secondo corpo non è scritto, resta fermo come un manichino.
-4. **Assestamento.** Dopo il gesto il corpo oscilla e respira. Scrivere lo stato finale e tenerlo: il file FAILURE-MODES, «Truncated action», chiede di nominare lo stato di completamento come fatto visibile e lasciarlo assestare.
+4. **Assestamento.** Dopo il gesto il corpo oscilla e respira. Scrivere lo stato finale e tenerlo: una guida di terzi [S] chiede di nominare lo stato di completamento come fatto visibile e lasciarlo assestare.
 
 ### 2. Tempo e ritmo
 - **Un'azione per clip.** Più azioni in 5 s: se ne perde sempre una; una sola azione in 4 s tiene (playbook, 2026-11-06, presa con 10 persone).
 - **I secondi scritti nel prompt non comandano.** Seedance ha messo i tempi in ritardo di circa 1 s in un caso (2026-11-06) e li ha rispettati in un altro con prompt sotto le 266 parole (2026-11-08); con 5-6 comparse l'orario non è affidabile in nessuna direzione (2026-11-09). Per un tempo preciso la leva è l'immagine (partenza o arrivo) o lo stacco, non il testo.
-- **Canone, non unisono.** I gruppi vanno sfalsati: il file acting di Higgsfield chiede reazioni «in a wave, never in sync», e il modello tiene in modo affidabile al massimo 3 personaggi fra un taglio e l'altro (acting, rimando a ENGINE-RULES regola 5).
+- **Canone, non unisono.** I gruppi vanno sfalsati: le reazioni partono una dopo l'altra, come un'onda, mai tutte insieme; e fra un taglio e l'altro conviene seguire non più di tre personaggi (da provare).
 - **Ripetizione come struttura.** La danza (Bausch, De Keersmaeker) ripete il gesto e lo cambia a ogni giro. In un modello video la ripetizione rischia il riempimento con azione inversa: scrivere ogni giro con una differenza (più veloce, più stanco) e il punto d'arrivo.
 
 ### 3. Cosa sbagliano i modelli su prese e contatti
@@ -393,12 +393,12 @@ Le righe «caso dello studio» vengono da bozze misurate su pochi casi: la fonte
 
 | Difetto | Cosa succede | Contromisura | Fonte |
 |---|---|---|---|
-| Azione inversa | l'azione finisce presto e il resto della clip la riavvolge (si avvicina, poi torna indietro) | 2-3 azioni concatenate nella stessa direzione; un andata e ritorno sono due inquadrature | FAILURE-MODES, «Action-reversal fill» |
-| Azione troncata | si vede il tentativo, non il risultato | nominare lo stato finale visibile e tenerlo | FAILURE-MODES, «Truncated action» |
-| Manipolazione mimata | le mani lavorano, l'oggetto non cambia | catena causale: struttura iniziale, ancoraggio, forza, risposta del materiale | FAILURE-MODES, «Mimed manipulation» |
-| Arti orfani e terza mano | nei gruppi compare una mano senza corpo; anche con una persona sola nei primi piani | contare le mani e dire da dove entra ciascuna: «There are only two hands in the frame, both belonging to the same person…»; al massimo due personaggi con mani attive per inquadratura, gli altri guardano | FAILURE-MODES, «Orphan limbs in a group shot» |
-| Arti fusi | due corpi troppo vicini, il modello non sa di chi è il braccio | distanza di un braccio o inquadrature separate; «distinct body separation between characters» | negative-constraints, «Limb merging» |
-| Camminata | piedi che scivolano, alternanza persa | «heel lands first, strict left-right alternation, one foot always on the ground»; due persone affiancate: «shoulder to shoulder, on one depth line, both heads the same size» | FAILURE-MODES, «Walking is the hardest stunt» |
+| Azione inversa | l'azione finisce presto e il resto della clip la riavvolge (si avvicina, poi torna indietro) | 2-3 azioni concatenate nella stessa direzione; un andata e ritorno sono due inquadrature | fonte di terzi su Seedance [S] |
+| Azione troncata | si vede il tentativo, non il risultato | nominare lo stato finale visibile e tenerlo | fonte di terzi su Seedance [S] |
+| Manipolazione mimata | le mani lavorano, l'oggetto non cambia | catena causale: struttura iniziale, ancoraggio, forza, risposta del materiale | fonte di terzi su Seedance [S] |
+| Arti orfani e terza mano | nei gruppi compare una mano senza corpo; anche con una persona sola nei primi piani | contare le mani e dire di chi sono e da dove entra ciascuna; al massimo due personaggi con mani attive per inquadratura, gli altri guardano | fonte di terzi su Seedance [S] |
+| Arti fusi | due corpi troppo vicini, il modello non sa di chi è il braccio | distanza di un braccio o inquadrature separate; «distinct body separation between characters» | fonte di terzi su Seedance [S] |
+| Camminata | piedi che scivolano, alternanza persa | tallone per primo, piedi alternati, uno sempre a terra; due persone affiancate: spalla a spalla, sulla stessa linea di profondità, teste della stessa misura | fonte di terzi su Seedance [S] |
 | Mano che non chiude | palmi aperti sulla presa | «fingers wrap all the way around… clamp tight… never open» chiude; «grip… and hold on» lascia il palmo aperto | caso dello studio, n non registrato; playbook `ai-film-director`, 2026-11-06 |
 | Mano libera che vaga | la mano libera attraversa il corpo e si posa sulla presa (sembrano due mani fuse) | «other hand hanging loose at his side»: resta giù 3 su 3 | caso dello studio, n=3; playbook `ai-film-director`, 2026-11-09 |
 | Braccio teso nel passaggio | chi prende parte fermo e tende il braccio orizzontale | 10 su 10 con chi prende fermo; con chi **entra camminando** il gomito resta piegato 2 su 2: la camminata che porta vicino è la leva | caso dello studio, n=12 (10+2); playbook `ai-film-director`, 2026-11-10 e 2026-11-11 |
@@ -407,11 +407,11 @@ Le righe «caso dello studio» vengono da bozze misurate su pochi casi: la fonte
 | Comparse congelate | con un'immagine d'arrivo i personaggi secondari si fermano nell'ultimo tratto; chi ha posa di corsa nell'arrivo corre sul posto (non ritrovato nel playbook dalla verifica del 15/11) | partenza e arrivo diversi per ogni elemento; correggere la posa nell'immagine d'arrivo | caso dello studio, n non registrato; playbook `ai-film-director`, 2026-11-06 e 2026-11-08 |
 
 ### 4. Regole pratiche che vengono dal palco
-- **Descrivi le posizioni del corpo, non il nome della presa** (negative-constraints): non *a fireman's carry* ma *his shoulder under her stomach, her arms hanging down his back*.
-- **Il punto di contatto ha un proprietario.** Dire di chi è la mano, quale mano, quale manica, da che lato entra, dove torna (FAILURE-MODES, arti orfani).
-- **Chi ascolta ha un compito.** Il file acting dice che un ascoltatore muto senza compito riporta la faccia morta: dargli qualcosa da fare con il corpo (tenere, aggiustare, contare). Nelle voci sopra il campo «Scena» dà sempre lo sguardo e il compito.
-- **Distanza in metri.** Prossemica del file acting: intima sotto 0,5 m (amore o violenza), personale 0,5-1,2, sociale 1,2-3,5. Una presa arriva da una distanza: scriverla.
-- **Lentezza scritta come velocità del gesto, non come rallentatore.** Butoh, Wilson, Sehgal: *so slowly that the gesture fills the whole shot*. Il file FAILURE-MODES chiede di vietare per nome lo slow motion nei combattimenti; per analogia (non verificata) vale anche qui.
+- **Descrivi le posizioni del corpo, non il nome della presa** (guida di terzi [S]): non *a fireman's carry* ma *his shoulder under her stomach, her arms hanging down his back*.
+- **Il punto di contatto ha un proprietario.** Dire di chi è la mano, quale mano, quale manica, da che lato entra, dove torna (guida di terzi [S], arti orfani).
+- **Chi ascolta ha un compito.** Una guida di terzi [S] dice che un ascoltatore muto senza compito riporta la faccia morta: dargli qualcosa da fare con il corpo (tenere, aggiustare, contare). Nelle voci sopra il campo «Scena» dà sempre lo sguardo e il compito.
+- **Distanza in metri.** Prossemica di una guida di terzi [S]: intima sotto 0,5 m (amore o violenza), personale 0,5-1,2, sociale 1,2-3,5. Una presa arriva da una distanza: scriverla.
+- **Lentezza scritta come velocità del gesto, non come rallentatore.** Butoh, Wilson, Sehgal: *so slowly that the gesture fills the whole shot*. Una guida di terzi [S] chiede di vietare per nome lo slow motion nei combattimenti; per analogia (non verificata) vale anche qui.
 - **La reazione si scrive nel corpo quando il viso è piccolo.** Bacino, spalle, testa, in quest'ordine (Lecoq). Utile quando il volto in corsa deriva.
 
 ---
@@ -471,7 +471,7 @@ Nessuna novità di ottobre-novembre 2026 verificata: la sezione va rifatta entro
 
 ## Verifica del 2026-11-15
 
-- Passata di controllo delle citazioni fatta dallo stesso autore: **non indipendente**. Riconfrontati sulle pagine il testo della L. 633 (artt. 2, 25, 26, 37, 80) e le frasi dei file Higgsfield e del playbook usate nella Tecnica. Le citazioni da pagine [P] lette (Rosas, Gaga, DV8, Trisha Brown) vengono dai testi scaricati nella stessa giornata; non rilette una seconda volta.
+- Passata di controllo delle citazioni fatta dallo stesso autore: **non indipendente**. Riconfrontati sulle pagine il testo della L. 633 (artt. 2, 25, 26, 37, 80) e le frasi delle guide di terzi e del playbook usate nella Tecnica. Le citazioni da pagine [P] lette (Rosas, Gaga, DV8, Trisha Brown) vengono dai testi scaricati nella stessa giornata; non rilette una seconda volta.
 - Le scene delle voci vengono da descrizioni scritte, non da video guardati: un verificatore dovrebbe confrontare almeno Café Müller, Rosas danst Rosas e Rest Energy con una registrazione.
 - **Verifica indipendente del 2026-11-15** (altra istanza di insight-research, su fonti scritte, senza registrazioni). Corretti chi fa cosa in Café Müller, la durata di Rest Energy, la fonte della L. 633 (Normattiva) e la nota Fabre; aggiunte primarie per Kontakthof, Betroffenheit, Einstein, Peeping Tom, Crowd e FOLK-S.
 - Tutti i frammenti «Higgsfield» sono da provare: zero generazioni.
@@ -481,4 +481,4 @@ Nessuna novità di ottobre-novembre 2026 verificata: la sezione va rifatta entro
 Revisione di direzione creativa, 2026-11-15: Café Müller, frammento riscritto sulla Scena corretta dalla verifica (il terzo uomo compone la presa, lui la lascia cadere), senza caffè, sedie, sottoveste né occhi chiusi, con luogo e mestiere sostituiti dentro il frammento; Kontakthof, sorriso sostituito dalla postura; Rest Energy, «without blinking» / «senza sbattere» tolto (nessuna fonte); Frantic Assembly e Torero, luce e materiali spostati dal default; varianti portate dentro i frammenti (Betroffenheit, Vandekeybus, Papaioannou, Trapani); Rituale diventa `### Rituale` dentro Voci; tabella dei difetti con le righe del playbook marcate «caso dello studio, n=…» e rimando al playbook; riferimenti a progetti specifici tolti; nomi dei modelli senza versione. Fatti, date e fonti non toccati (unica eccezione: la frase sulla Scena di Rest Energy nelle Fonti, che ora dice che lo sguardo senza sbattere è stato tolto).
 
 
-Ultimo giro, 2026-11-15: Café Müller riscritto anche nei gesti (cappotto messo e caduto al posto del sollevamento e della caduta, niente terzo uomo scalzo), Scena senza residui dell'opera; righe Modello con la versione dai nomi della skill `higgsfield` (`model-guide.md`, catalogo del 2026-09-26): Seedance 2.0 (4-15 s, 21:9), Seedance 2.5 solo per il piano sequenza oltre 15 s, Kling 3.0 (3-15 s), Minimax Hailuo (6/10 s). Versioni da riconfermare con `higgsfield model list` prima di generare. Fatti e fonti non toccati.
+Ultimo giro, 2026-11-15: Café Müller riscritto anche nei gesti (cappotto messo e caduto al posto del sollevamento e della caduta, niente terzo uomo scalzo), Scena senza residui dell'opera; righe Modello con la versione dal catalogo di una skill di terzi del 2026-09-26 [S]: Seedance 2.0 (4-15 s, 21:9), Seedance 2.5 solo per il piano sequenza oltre 15 s, Kling 3.0 (3-15 s), Minimax Hailuo (6/10 s). Versioni da riconfermare con `higgsfield model list` prima di generare. Fatti e fonti non toccati.
