@@ -293,7 +293,7 @@ Nessuna affiliazione con Anthropic, Higgsfield o gli autori dei plugin elencati.
 
 MIT. © 2026 All Black Studio Ltd. Testo completo in [LICENSE](LICENSE).
 
-I nomi di artisti, fotografi, registi, designer e marchi citati nell'atlante sono riferimenti culturali: nessuna affiliazione. Le skill di terzi elencate sopra hanno le proprie licenze e non sono incluse.
+I nomi di artisti, fotografi, registi, designer e marchi citati nell'atlante sono riferimenti culturali: nessuna affiliazione. Le skill di terzi elencate sopra hanno le proprie licenze e non sono incluse. Il materiale di terzi citato nella voce `tecnica-higgsfield.md` dell'atlante è escluso dalla licenza MIT: vedi [NOTICE](NOTICE).
 
 ---
 
