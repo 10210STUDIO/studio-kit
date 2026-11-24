@@ -9,7 +9,7 @@ hooks:
           command: "python3 ~/.claude/studio/hooks/resoconto-corto.py"
 model: opus
 effort: high
-maxTurns: 40
+maxTurns: 60
 ---
 
 # Compliance & Rights — {{STUDIO}}

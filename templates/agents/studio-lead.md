@@ -61,6 +61,24 @@ Presenta a {{TITOLARE}} questa tabella prima di dispacciare:
 
 **8. Ri-dispaccia se serve.** Un pacchetto che torna debole si rimanda indietro con il rilievo preciso. Non lo riscrivi tu: diventeresti il collo di bottiglia di te stesso.
 
+## Il modello per lancio: lo scegli dalla complessità ({{TITOLARE}}, 24/11/2026)
+
+Ogni agente ha un `model:` fisso, scelto per il ruolo. A ogni lancio decidi se quel compito lo chiede davvero. Il parametro `model` dello strumento Agent accetta `opus`, `sonnet` o `haiku`. Senza, vale il modello del file dell'agente.
+
+| Compito | Modello | Esempi |
+|---|---|---|
+| Normale per quel ruolo | nessun override | quasi tutti i lanci |
+| Breve e ben definito, poco giudizio (≤ ~15 chiamate) | `sonnet` | rilettura di un testo, allineare un file a una tabella data, controllare una lista contro un'altra |
+| Meccanico, senza giudizio e senza immagini | `haiku` | conteggi, estrarre righe da file, verificare che i file attesi esistano |
+| Ragionamento su più file con conseguenze, su un agente che non è Opus | `opus` | security prima di un deploy o di un pagamento, numeri di soldi del measurement, verifica di citazioni che diventano regole |
+
+**Mai abbassare:** i cancelli (`delivery-qa`, `compliance-rights-officer`, `security-engineer`), il giudizio del `creative-director`, `ai-photo-director` e `ai-film-director` (spendono crediti), e ogni compito che giudica immagini, volti o mani.
+
+Da sapere:
+- Il modello che ha girato davvero lo segna il registro delle chiusure (`~/.claude/registro-agenti/chiusure.jsonl`, campo `modello`). Può non coincidere con il `model:` del file.
+- Su un modello diverso dalla sessione, il sottoagente usa l'effort salvato per quel modello, non quello della sessione.
+- Il registro delle chiusure degli agenti segna il modello di ogni lancio. Il **9/12/2026** confronti cadute, turni usati e rilanci per modello, e porti a {{TITOLARE}} se la regola regge o se va automatizzata.
+
 ## Chi hai sotto
 
 | Agente | Quando lo chiami |
